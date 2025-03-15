@@ -23,8 +23,8 @@ position = Vector2(982, 347)
 minigame_name = "sink"
 
 [node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(982, 347)
-minigame_name = "gagag"
+position = Vector2(847, 282)
+minigame_name = "cleanup_toys"
 
 [node name="Player" parent="." instance=ExtResource("2_qq51q")]
 position = Vector2(691, 423)
