@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0rryeea1gkhy"]
 
-[ext_resource type="Script" path="res://scenes/levels/SimpleGameController.gd" id="1_u2st1"]
+[ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
 [ext_resource type="PackedScene" uid="uid://bddbyx2k1888e" path="res://scenes/player/player.tscn" id="2_qq51q"]
-[ext_resource type="PackedScene" uid="uid://cudp4v2d65pm8" path="res://scenes/activates/simple_interactable.tscn" id="3_koioy"]
+[ext_resource type="PackedScene" uid="uid://cudp4v2d65pm8" path="res://scenes/activates/activator.tscn" id="3_koioy"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
@@ -12,7 +12,7 @@ script = ExtResource("1_u2st1")
 position = Vector2(0, -4)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(625, 414)
+position = Vector2(624, 405)
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
 position = Vector2(861, 426)
@@ -22,9 +22,5 @@ minigame_name = "homework"
 position = Vector2(982, 347)
 minigame_name = "sink"
 
-[node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(982, 347)
-minigame_name = "gagag"
-
 [node name="Player" parent="." instance=ExtResource("2_qq51q")]
-position = Vector2(691, 423)
+position = Vector2(693, 412)
