@@ -14,14 +14,13 @@ func _ready():
 	add_child(label)
 	
 	# Подключаем сигналы
-	connect("body_entered", _on_body_entered)
-	connect("body_exited", _on_body_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
 func _input(event):
 	# Проверяем нажатие клавиши E (ui_accept) или KEY_E
-	if player_in_range and event is InputEventKey and event.pressed:
-		if event.keycode == KEY_E or event.is_action_pressed("ui_accept"):
-			_start_minigame()
+	if player_in_range and event.is_action_pressed("interact"):
+		_start_minigame()
 
 func _process(delta):
 	# Обновляем позицию метки

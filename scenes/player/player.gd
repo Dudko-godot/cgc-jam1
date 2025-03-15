@@ -7,8 +7,8 @@ const FRICTION = 1000.0
 func _physics_process(delta: float) -> void:
 	# Получаем направление движения
 	var input_direction = Vector2.ZERO
-	input_direction.x = Input.get_axis("ui_left", "ui_right")
-	input_direction.y = Input.get_axis("ui_up", "ui_down")
+	input_direction.x = Input.get_axis("move_left", "move_right")
+	input_direction.y = Input.get_axis("move_up", "move_down")
 	input_direction = input_direction.normalized()
 	
 	# Применяем ускорение или трение
