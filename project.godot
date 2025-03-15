@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MiniGameManager="*res://global/mini_game_manager.gd"
 InputManager="*res://global/input_manager.gd"
+GameTasks="*res://global/game_tasks.gd"
 
 [display]
 
