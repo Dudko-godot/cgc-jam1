@@ -14,7 +14,7 @@ var minigame_active = false  # Флаг активности мини-игры
 
 # Словарь с путями к сценам мини-игр
 var minigames = {
-	"test_game": "res://scenes/mini-games/test_game/test-game.tscn",
+	"test_game": "res://scenes/mini-games/test_game/test_game.tscn",
 	"sink": "res://scenes/mini-games/washing_dishes/sink.tscn",
 	"homework": "res://scenes/mini-games/homework/homework.tscn"
 }
@@ -50,10 +50,10 @@ func start_minigame(minigame_name: String):
 		
 		# Подключаем сигналы
 		if current_minigame.has_signal("game_completed"):
-			current_minigame.connect("game_completed", _on_minigame_completed)
+			current_minigame.game_completed.connect(_on_minigame_completed)
 		
 		if current_minigame.has_signal("game_cancelled"):
-			current_minigame.connect("game_cancelled", _on_minigame_cancelled)
+			current_minigame.game_cancelled.connect(_on_minigame_cancelled)
 		
 		# Запоминаем имя текущей мини-игры и устанавливаем флаг активности
 		current_minigame_name = minigame_name
