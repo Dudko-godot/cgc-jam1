@@ -6,6 +6,7 @@ signal game_cancelled
 @onready var solved_problems = $Paper/MarginContainer/VBoxContainer/SolvedProblems
 @onready var current_problem = $Paper/MarginContainer/VBoxContainer/CurrentProblem
 @onready var answer_options = $AnswerOptions
+@onready var homework_theme = preload("res://scenes/mini-games/homework/homework_theme.tres")
 
 var homework_manager: Node
 var problems_to_complete = 4
@@ -16,6 +17,7 @@ func _ready() -> void:
 	add_child(homework_manager)
 	
 	homework_manager.homework_completed.connect(_on_homework_completed)
+	current_problem.theme = homework_theme
 	update_display()
 	create_answer_buttons()
 
@@ -28,7 +30,7 @@ func update_display() -> void:
 	for problem in homework_manager.solved_problems:
 		var label = Label.new()
 		label.text = problem
-		label.add_theme_color_override("font_color", Color(0.2, 0.2, 0.2, 1))
+		label.theme = homework_theme
 		solved_problems.add_child(label)
 
 func create_answer_buttons() -> void:
@@ -39,6 +41,7 @@ func create_answer_buttons() -> void:
 		var button = Button.new()
 		button.text = str(answer)
 		button.custom_minimum_size = Vector2(100, 60)
+		button.theme = homework_theme
 		button.pressed.connect(func(): on_answer_selected(answer))
 		answer_options.add_child(button)
 
