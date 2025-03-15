@@ -7,10 +7,6 @@ signal move_input(direction)
 signal interact_pressed
 signal interact_released
 
-# Сигналы для мини-игр
-signal minigame_action_pressed
-signal minigame_cancel_pressed
-
 # Флаг для блокировки ввода
 var input_enabled = true
 
@@ -33,12 +29,6 @@ func _input(event):
 		interact_pressed.emit()
 	elif event.is_action_released("interact"):
 		interact_released.emit()
-		
-	# Обработка действий мини-игры
-	if event.is_action_pressed("minigame_action"):
-		minigame_action_pressed.emit()
-	if event.is_action_pressed("minigame_cancel"):
-		minigame_cancel_pressed.emit()
 
 # Методы для включения/отключения ввода
 func enable_input():
