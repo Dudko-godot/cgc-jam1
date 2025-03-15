@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://duucg5refao0j"]
+[gd_scene load_steps=4 format=3 uid="uid://duucg5refao0j"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/homework/homework.gd" id="1_2k4u3"]
+[ext_resource type="Theme" uid="uid://c2y31y2mrk3a1" path="res://scenes/mini-games/homework/homework_theme.tres" id="2_eu32f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8p2x"]
 bg_color = Color(0.921569, 0.913725, 0.843137, 1)
@@ -55,6 +56,7 @@ theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="Paper/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_eu32f")
 theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 24
 text = "Математика"
@@ -66,6 +68,7 @@ theme_override_constants/separation = 10
 
 [node name="CurrentProblem" type="Label" parent="Paper/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_eu32f")
 theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 32
 text = "5 + 3 = ?"

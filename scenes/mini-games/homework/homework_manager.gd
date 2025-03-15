@@ -52,17 +52,16 @@ func generate_new_problem() -> void:
 			"*":
 				wrong = correct_answer + rng.randi_range(1, 3) * (rng.randi_range(0, 1) * 2 - 1)
 		
-		
 		if wrong > 0 and wrong < 100 and not wrong in answers:
 			answers.append(wrong)
 	
-
 	answers.shuffle()
 	current_problem["options"] = answers
 
 func check_answer(selected: int) -> bool:
 	if selected == current_problem.answer:
-		solved_problems.append(current_problem.text + " = " + str(current_problem.answer))
+		var problem_text = str(current_problem.text).replace(" = ?", "")
+		solved_problems.append(problem_text + " = " + str(current_problem.answer))
 		generate_new_problem()
 		return true
 	return false 
