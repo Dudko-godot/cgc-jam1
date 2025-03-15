@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=6 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
 [ext_resource type="PackedScene" uid="uid://bddbyx2k1888e" path="res://scenes/player/player.tscn" id="2_qq51q"]
 [ext_resource type="PackedScene" uid="uid://cudp4v2d65pm8" path="res://scenes/activates/activator.tscn" id="3_koioy"]
+[ext_resource type="PackedScene" uid="uid://cei62be2swy2j" path="res://scenes/ui/task_list_ui.tscn" id="5_nl5dp"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
@@ -12,15 +13,21 @@ script = ExtResource("1_u2st1")
 position = Vector2(0, -4)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(624, 405)
+position = Vector2(677, 465)
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(861, 426)
-minigame_name = "homework"
+position = Vector2(772, 462)
+task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(982, 347)
-minigame_name = "sink"
+position = Vector2(853, 459)
+task_id = "do_homework"
 
 [node name="Player" parent="." instance=ExtResource("2_qq51q")]
-position = Vector2(693, 412)
+position = Vector2(692, 400)
+
+[node name="TaskListUi" parent="." instance=ExtResource("5_nl5dp")]
+offset_left = 65.0
+offset_top = 52.0
+offset_right = 365.0
+offset_bottom = 452.0

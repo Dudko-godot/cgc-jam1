@@ -51,4 +51,4 @@ func on_answer_selected(answer: int) -> void:
 		create_answer_buttons()
 
 func _on_homework_completed() -> void:
-	emit_signal("game_completed") 
+	game_completed.emit() 
