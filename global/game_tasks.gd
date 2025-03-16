@@ -51,6 +51,15 @@ var tasks = {
 		"state": TaskState.INACTIVE,
 		"prompt_text": "Нажмите E чтобы запустить тестовую игру",
 		"disabled_text": "Тестовая игра недоступна"
+	},
+	"water_plants": {
+		"id": "water_plants",
+		"title": "Полить растения",
+		"description": "Полей все растения в комнате",
+		"scene_path": "res://scenes/mini-games/plants/plants.tscn",
+		"state": TaskState.INACTIVE,
+		"prompt_text": "Нажмите E чтобы полить растения",
+		"disabled_text": "Растения уже политы"
 	}
 	# Добавляйте новые задачи здесь
 }
