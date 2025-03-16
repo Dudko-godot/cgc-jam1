@@ -23,7 +23,7 @@ var upright_force: float = 1.5  # Сила выравнивания
 var max_water: float = 10.0
 var current_water: float = 0.0
 var watering_rate: float = 2.5  # Скорость полива
-var filling_rate: float = 2.5  # Скорость наполнения
+var filling_rate: float = 2.0 # Cкорость наполнения
 var is_watering: bool = false
 var current_plant: Node2D = null
 var is_near_tap: bool = false
@@ -163,10 +163,10 @@ func handle_water_loss(delta: float) -> void:
 			water_level_changed.emit(current_water, max_water)
 
 # Обработчики сигналов коллизий для носика лейки
-func _on_spout_body_entered(body: Node2D) -> void:
+func _on_spout_body_entered(_body: Node2D) -> void:
 	pass
 
-func _on_spout_body_exited(body: Node2D) -> void:
+func _on_spout_body_exited(_body: Node2D) -> void:
 	pass
 
 func _on_spout_area_entered(area: Area2D) -> void:
