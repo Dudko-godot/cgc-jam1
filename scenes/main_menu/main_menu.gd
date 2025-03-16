@@ -5,6 +5,11 @@ extends Control
 @export var button_game_start : Button
 @export var button_credits : Button
 @export var button_exit : Button
+@export_subgroup('Misc')
+@export var darkener_animation_player : AnimationPlayer
+
+
+signal start_game_clicked
 
 
 func _ready() -> void:
@@ -14,7 +19,8 @@ func _ready() -> void:
 
 
 func _on_pressed_start() -> void:
-	pass
+	#start_game_clicked.emit()
+	darkener_animation_player.play('darken')
 
 
 func _on_pressed_credits() -> void:
@@ -23,3 +29,8 @@ func _on_pressed_credits() -> void:
 
 func _on_pressed_exit() -> void:
 	get_tree().quit()
+
+
+func start_game() -> void:
+	pass
+	#darkener_animation_player.play('darken')
