@@ -1,9 +1,11 @@
-[gd_scene load_steps=232 format=3 uid="uid://du02gi83mn7xr"]
+[gd_scene load_steps=241 format=3 uid="uid://du02gi83mn7xr"]
 
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_ds3f1"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_wulsb"]
 [ext_resource type="Texture2D" uid="uid://dxyt35u6weyr3" path="res://visuals/menus/main_menu/floor_texture_base.jpg" id="2_fqda6"]
+[ext_resource type="Script" path="res://scenes/main_menu/display_buttons.gd" id="2_ol78w"]
 [ext_resource type="Texture2D" uid="uid://6icb60m6xcni" path="res://visuals/menus/main_menu/floor_texture_darker.jpg" id="2_t6qa3"]
+[ext_resource type="Script" path="res://scenes/main_menu/main_scene_loader.gd" id="2_wje63"]
 [ext_resource type="Texture2D" uid="uid://mna03mbv2moq" path="res://visuals/menus/main_menu/dad_shadow_composite.png" id="3_06l5u"]
 [ext_resource type="Texture2D" uid="uid://dc533cpvxlgx3" path="res://visuals/reference/Artboard 1.png" id="3_u1j2s"]
 [ext_resource type="Texture2D" uid="uid://cgkyudyyfwchw" path="res://visuals/menus/title_static/logo_full.png" id="5_igu77"]
@@ -220,16 +222,386 @@
 [ext_resource type="Texture2D" uid="uid://gk8fsgyxubjq" path="res://visuals/menus/main_menu/title_frames/!main_00209.png" id="159_rnk3p"]
 [ext_resource type="Texture2D" uid="uid://cvmberetmh1gn" path="res://visuals/menus/main_menu/title_frames/!main_00210.png" id="160_dah6m"]
 [ext_resource type="Script" path="res://scenes/main_menu/title_sprite.gd" id="220_x508l"]
+[ext_resource type="AudioStream" uid="uid://c60y7cic303t" path="res://audio/horror_stiners/men_long.ogg" id="221_i1g1a"]
 [ext_resource type="AudioStream" uid="uid://bmnfoo22s2f04" path="res://audio/music/begin2.ogg" id="222_y7oqx"]
 
-[sub_resource type="Gradient" id="Gradient_r37oo"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.114833, 1)
-colors = PackedColorArray(0.141176, 0.0941176, 0.14902, 1, 0.141675, 0.0945, 0.15, 0)
+[sub_resource type="Animation" id="Animation_unoiv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FLOOR_DARK:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FLOOR_DARK:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FLOOR_DARK:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FLOOR_DARK:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xlpkm"]
-gradient = SubResource("Gradient_r37oo")
-fill_to = Vector2(0, 1)
+[sub_resource type="Animation" id="Animation_v8e3j"]
+resource_name = "appear"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FLOOR_DARK:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FLOOR_DARK:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FLOOR_DARK:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FLOOR_DARK:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.166667, 0.578738, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6buy"]
+_data = {
+"RESET": SubResource("Animation_unoiv"),
+"appear": SubResource("Animation_v8e3j")
+}
+
+[sub_resource type="Animation" id="Animation_co36x"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/ButtonGameStart:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/ButtonGameStart:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/ButtonGameStart:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/ButtonGameStart:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons/ButtonCredits:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons/ButtonCredits:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Buttons/ButtonCredits:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Buttons/ButtonCredits:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Buttons/ButtonExit:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Buttons/ButtonExit:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Buttons/ButtonExit:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Buttons/ButtonExit:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lghsb"]
+resource_name = "show_buttons"
+length = 0.9
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons/ButtonGameStart:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/ButtonGameStart:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/ButtonGameStart:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/ButtonGameStart:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.166667, 0.543537, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.533333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Buttons/ButtonCredits:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buttons/ButtonCredits:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Buttons/ButtonCredits:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Buttons/ButtonCredits:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.166667, 0.549937, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.166667, 0.733333)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Buttons/ButtonExit:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Buttons/ButtonExit:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Buttons/ButtonExit:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Buttons/ButtonExit:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.166667, 0.562737, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3, 0.9)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5hl7l"]
+_data = {
+"RESET": SubResource("Animation_co36x"),
+"show_buttons": SubResource("Animation_lghsb")
+}
 
 [sub_resource type="Animation" id="Animation_k58h6"]
 length = 0.001
@@ -355,6 +727,39 @@ tracks/10/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Light/FatherShadow:scale:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Light/FatherShadow:scale:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Light/FatherShadow:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_t0g5v"]
 resource_name = "enter_father"
@@ -424,7 +829,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(318, -0.25, 0, 0.25, 0, 318, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.3)
+"times": PackedFloat32Array(0, 1)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
@@ -434,7 +839,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-400, -0.25, 0, 0.333333, 16.5, -153, -1.5, 0, 0.25, 0),
+"points": PackedFloat32Array(-600, -0.25, 0, 0.233333, 103.474, -153, -1.5, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1.5)
 }
 tracks/7/type = "bezier"
@@ -480,6 +885,39 @@ tracks/10/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.666667)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Light/FatherShadow:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.5)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Light/FatherShadow:scale:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.5)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Light/FatherShadow:scale:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.35, -0.25, 0, 0.133333, 0.230395, 1, -1.23333, -0.00163919, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
 }
 
 [sub_resource type="Animation" id="Animation_138ap"]
@@ -614,6 +1052,118 @@ _data = {
 "enter_father": SubResource("Animation_t0g5v"),
 "hide": SubResource("Animation_138ap")
 }
+
+[sub_resource type="Animation" id="Animation_t4us1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuDarkener:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullDarkener:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v05wh"]
+resource_name = "darken"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuDarkener:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.5, 0.466517),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullDarkener:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.833333, 1.46667),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TitleSprite")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"outro", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_game"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Stinger")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nr2d7"]
+_data = {
+"RESET": SubResource("Animation_t4us1"),
+"darken": SubResource("Animation_v05wh")
+}
+
+[sub_resource type="Gradient" id="Gradient_r37oo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.114833, 1)
+colors = PackedColorArray(0.141176, 0.0941176, 0.14902, 1, 0.141675, 0.0945, 0.15, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xlpkm"]
+gradient = SubResource("Gradient_r37oo")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yogn5"]
 animations = [{
@@ -1272,110 +1822,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Animation" id="Animation_t4us1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MenuDarkener:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FullDarkener:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_v05wh"]
-resource_name = "darken"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MenuDarkener:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1.5, 0.466517),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FullDarkener:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.833333, 1.46667),
-"transitions": PackedFloat32Array(4, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TitleSprite")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"outro", 1.0, false],
-"method": &"play"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"start_game"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Stinger")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nr2d7"]
-_data = {
-"RESET": SubResource("Animation_t4us1"),
-"darken": SubResource("Animation_v05wh")
-}
-
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_credits", "button_exit", "darkener_animation_player")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_credits", "button_exit", "darkener_animation_player", "loader")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1388,6 +1835,41 @@ button_game_start = NodePath("Buttons/ButtonGameStart")
 button_credits = NodePath("Buttons/ButtonCredits")
 button_exit = NodePath("Buttons/ButtonExit")
 darkener_animation_player = NodePath("Darkener")
+loader = NodePath("BackgroundLoader")
+
+[node name="Appear" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b6buy")
+}
+autoplay = "appear"
+
+[node name="DisplayButtons" type="AnimationPlayer" parent="." node_paths=PackedStringArray("loader")]
+libraries = {
+"": SubResource("AnimationLibrary_5hl7l")
+}
+script = ExtResource("2_ol78w")
+loader = NodePath("../BackgroundLoader")
+
+[node name="FatherPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dp6h5")
+}
+autoplay = "hide"
+
+[node name="Darkener" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nr2d7")
+}
+
+[node name="FatherAnimationManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("8_of7ir")
+player = NodePath("../FatherPlayer")
+delay = 1.6
+speeed = 0.8
+
+[node name="BackgroundLoader" type="Node" parent="."]
+script = ExtResource("2_wje63")
+path = "res://scenes/levels/game.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -1396,7 +1878,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.141176, 0.0941176, 0.14902, 1)
+color = Color(0.137255, 0.0901961, 0.145098, 1)
 
 [node name="FLOOR_DARK" type="TextureRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.5)
@@ -1487,34 +1969,25 @@ grow_vertical = 2
 theme_override_constants/separation = 62
 
 [node name="ButtonGameStart" parent="Buttons" instance=ExtResource("1_ds3f1")]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(204, 44)
 layout_mode = 2
 text = "Начать Игру"
 font_size = 32
 
 [node name="ButtonCredits" parent="Buttons" instance=ExtResource("1_ds3f1")]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(235, 44)
 layout_mode = 2
 text = "Разработчики"
 font_size = 32
 
 [node name="ButtonExit" parent="Buttons" instance=ExtResource("1_ds3f1")]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(104, 44)
 layout_mode = 2
 text = "Выйти"
 font_size = 32
-
-[node name="FatherPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_dp6h5")
-}
-autoplay = "hide"
-
-[node name="FatherAnimationManager" type="Node" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("8_of7ir")
-player = NodePath("../FatherPlayer")
-delay = 1.6
-speeed = 0.8
 
 [node name="MenuDarkener" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -1527,12 +2000,13 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.141176, 0.0941176, 0.14902, 1)
 
-[node name="TitleSprite" type="AnimatedSprite2D" parent="."]
+[node name="TitleSprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("main_menu")]
 position = Vector2(640, 183)
 scale = Vector2(0.69, 0.68)
 sprite_frames = SubResource("SpriteFrames_yogn5")
 animation = &"loop"
 script = ExtResource("220_x508l")
+main_menu = NodePath("..")
 
 [node name="FullDarkener" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -1545,13 +2019,8 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.141176, 0.0941176, 0.14902, 1)
 
-[node name="Darkener" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_nr2d7")
-}
-
 [node name="Stinger" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("222_y7oqx")
+stream = ExtResource("221_i1g1a")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("222_y7oqx")

@@ -28,6 +28,14 @@ window/size/viewport_height=720
 window/size/resizable=false
 mouse_cursor/custom_image="res://visuals/ui/cursor/cursorHand_grey.png"
 
+[file_customization]
+
+folder_colors={
+"res://scenes/characters/character_visuals/": "purple",
+"res://scenes/characters/components/": "orange",
+"res://scenes/characters/cool_sprite_2d/": "blue"
+}
+
 [input]
 
 move_left={

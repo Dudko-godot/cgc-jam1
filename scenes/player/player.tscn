@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bddbyx2k1888e"]
+[gd_scene load_steps=5 format=3 uid="uid://bddbyx2k1888e"]
 
-[ext_resource type="Texture2D" uid="uid://btoee8lpwxkyu" path="res://icon.svg" id="1_63i4t"]
+[ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="1_63i4t"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_saung"]
+[ext_resource type="PackedScene" uid="uid://dydtxrpup3lyw" path="res://scenes/characters/character_visuals.tscn" id="3_1sfaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_neaeu"]
 radius = 16.2788
@@ -15,3 +16,6 @@ texture = ExtResource("1_63i4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_neaeu")
+
+[node name="CharacterVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_1sfaa")]
+body = NodePath("..")
