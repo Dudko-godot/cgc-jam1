@@ -14,31 +14,38 @@ script = ExtResource("1_u2st1")
 position = Vector2(166, -81)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1346, 957)
+position = Vector2(2232, 1694)
 task_id = "water_plants"
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1347, 65)
+position = Vector2(2233, 802)
 task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(17, 2)
+position = Vector2(903, 739)
 task_id = "do_homework"
 
 [node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(709, 459)
+position = Vector2(1595, 1196)
 
 [node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(-393, 195)
+position = Vector2(493, 932)
 task_id = "hang_laundry"
 
 [node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(-128, 962)
+position = Vector2(758, 1699)
 task_id = "cleanup_tv"
 
 [node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(67, -327)
+position = Vector2(953, 410)
 task_id = "cleanup_toys"
+
+[node name="Player" parent="map" instance=ExtResource("2_qq51q")]
+unique_name_in_owner = true
+position = Vector2(1661, 1950)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" parent="map/Player" instance=ExtResource("6_ixnqm")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -51,9 +58,3 @@ offset_right = 300.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="Player" parent="." instance=ExtResource("2_qq51q")]
-position = Vector2(637, 572)
-
-[node name="Camera2D" parent="Player" instance=ExtResource("6_ixnqm")]
-zoom = Vector2(0.7, 0.7)

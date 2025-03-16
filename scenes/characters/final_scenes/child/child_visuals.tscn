@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx6rouy4tgcj3"]
+
+[ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_u5w2x"]
+[ext_resource type="Script" path="res://scenes/characters/phase_component.gd" id="2_12lok"]
+
+[node name="ChildVisuals" type="Node2D"]
+script = ExtResource("1_u5w2x")
+
+[node name="PhaseComponent" type="Node" parent="." node_paths=PackedStringArray("visuals")]
+script = ExtResource("2_12lok")
+visuals = NodePath("..")
