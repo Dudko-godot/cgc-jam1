@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnygytn81heti"]
+
+[ext_resource type="Script" path="res://scenes/mini-games/laundry/clothesline.gd" id="1_clothesline"]
+
+[node name="Clothesline" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+script = ExtResource("1_clothesline")
+
+[node name="Line" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 100.0
+offset_right = -100.0
+offset_bottom = 4.0
+grow_horizontal = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Poles" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="LeftPole" type="ColorRect" parent="Poles"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = -50.0
+offset_right = 108.0
+offset_bottom = 50.0
+color = Color(0.4, 0.27, 0.15, 1)
+
+[node name="RightPole" type="ColorRect" parent="Poles"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_top = -50.0
+offset_right = -100.0
+offset_bottom = 50.0
+grow_horizontal = 0
+color = Color(0.4, 0.27, 0.15, 1)
+
+[node name="ClothesSlots" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 120.0
+offset_top = -48.0
+offset_right = -120.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_constants/separation = 40
+alignment = 1
