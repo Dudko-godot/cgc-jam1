@@ -13,9 +13,16 @@ config_version=5
 config/name="cgc-jam1"
 run/main_scene="res://scenes/map/map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon_happy.png"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+mouse_cursor/custom_image="res://visuals/ui/cursor/cursorHand_grey.png"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.137255, 0.0901961, 0.145098, 1)

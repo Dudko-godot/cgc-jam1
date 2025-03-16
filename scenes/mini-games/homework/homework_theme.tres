@@ -4,4 +4,4 @@
 
 [resource]
 default_font = ExtResource("1_6st1x")
-Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0.301961, 0.168627, 0.266667, 1)

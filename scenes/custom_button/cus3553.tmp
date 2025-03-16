@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt33ri6tu17fr"]
+
+[ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_3uy0d"]
+[ext_resource type="Script" path="res://scenes/custom_button/custom_button.gd" id="1_o2n76"]
+[ext_resource type="Script" path="res://scenes/custom_button/hover_control.gd" id="3_0x3pk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_af56o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l3r27"]
+resource_local_to_scene = true
+
+[node name="CustomButton" type="Button" node_paths=PackedStringArray("label")]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("1_3uy0d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_af56o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_af56o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_af56o")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_af56o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_af56o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_af56o")
+script = ExtResource("1_o2n76")
+label = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Sample Text"
+label_settings = SubResource("LabelSettings_l3r27")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HoverControl" type="Node" parent="." node_paths=PackedStringArray("button", "label")]
+script = ExtResource("3_0x3pk")
+button = NodePath("..")
+label = NodePath("../MarginContainer/Label")
