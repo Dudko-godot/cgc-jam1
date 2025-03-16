@@ -14,19 +14,31 @@ script = ExtResource("1_u2st1")
 position = Vector2(166, -81)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(464, 717)
+position = Vector2(1346, 957)
 task_id = "water_plants"
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(595, 717)
+position = Vector2(1347, 65)
 task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(723, 717)
+position = Vector2(17, 2)
 task_id = "do_homework"
 
 [node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(853, 713)
+position = Vector2(709, 459)
+
+[node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(-393, 195)
+task_id = "hang_laundry"
+
+[node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(-128, 962)
+task_id = "cleanup_tv"
+
+[node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(67, -327)
+task_id = "cleanup_toys"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
