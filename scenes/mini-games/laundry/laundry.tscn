@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dga8m22glww5o"]
+
+[ext_resource type="Script" path="res://scenes/mini-games/laundry/laundry.gd" id="1_laundry"]
+[ext_resource type="PackedScene" uid="uid://bxxx" path="res://scenes/mini-games/laundry/laundry_basket.tscn" id="2_basket"]
+[ext_resource type="PackedScene" uid="uid://cnygytn81heti" path="res://scenes/mini-games/laundry/clothesline.tscn" id="3_line"]
+
+[node name="laundry" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_laundry")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.878431, 0.878431, 0.8)
+
+[node name="Clothesline" parent="." instance=ExtResource("3_line")]
+layout_mode = 1
+offset_top = 100.0
+offset_bottom = 108.0
+
+[node name="BasketArea" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -250.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LaundryBasket" parent="BasketArea" instance=ExtResource("2_basket")]
+layout_mode = 2
+texture_normal = null
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Развесьте белье на веревке"
+horizontal_alignment = 1
