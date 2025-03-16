@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://btub3usyym7tn"]
+
+[ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/cleanup_toys.gd" id="1_8p4ky"]
+[ext_resource type="Texture2D" uid="uid://diyivhpk3xqlv" path="res://scenes/mini-games/cleanup_toys/test_box.png" id="2_3k4nt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.4, 0.4, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_vertical"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_horizontal"]
+size = Vector2(20, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(217, 75)
+
+[node name="cleanup_toys" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8p4ky")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_wall_vertical")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(800, 300)
+shape = SubResource("RectangleShape2D_wall_vertical")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(400, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_wall_horizontal")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(400, 600)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_wall_horizontal")
+
+[node name="Basket" type="Area2D" parent="."]
+position = Vector2(400, 500)
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Basket"]
+scale = Vector2(1.5, 0.75)
+texture = ExtResource("2_3k4nt")

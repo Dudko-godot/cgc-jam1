@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tppjfw0j54a"]
+
+[ext_resource type="Texture2D" uid="uid://b2hcy666eos0l" path="res://denis_test/2.png" id="1_gevrh"]
+[ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/plate.gd" id="2_3k4rg"]
+
+[node name="plate" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_gevrh")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_3k4rg")
