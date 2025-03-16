@@ -68,6 +68,7 @@ func _on_plant_watering_completed() -> void:
 		await get_tree().create_timer(1.0).timeout
 		game_completed.emit()
 
+
 ## Обработчик нажатия кнопки отмены
 #func _on_cancel_button_pressed() -> void:
 	#game_cancelled.emit()

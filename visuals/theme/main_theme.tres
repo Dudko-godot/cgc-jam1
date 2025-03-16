@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bylwp77cy87mw"]
+
+[ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/ShantellSans/ShantellSans-SemiBold.ttf" id="1_ke7k3"]
+[ext_resource type="Texture2D" uid="uid://ck2jgg25e8ux5" path="res://visuals/ui/checkbox/checkbox_checked@0.6x.png" id="1_strkl"]
+[ext_resource type="Texture2D" uid="uid://beeli3pyxacs2" path="res://visuals/ui/checkbox/checkbox_unchecked@0.6x.png" id="2_jbysg"]
+
+[resource]
+default_font = ExtResource("1_ke7k3")
+CheckBox/icons/checked = ExtResource("1_strkl")
+CheckBox/icons/unchecked = ExtResource("2_jbysg")
+Label/colors/font_shadow_color = Color(0.172549, 0.117647, 0.184314, 1)
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 2
