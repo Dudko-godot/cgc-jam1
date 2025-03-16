@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctt25ub4wqnhi"
-path="res://.godot/imported/InteriorTilesLITE2x.png-74e41bcae0163932a22922fdec5475ba.ctex"
+uid="uid://mbxvf2t5tiuq"
+path="res://.godot/imported/plant4.png-bbbbccb7a9d588d2efacfa040a54da84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://denis_test/InteriorTilesLITE2x.png"
-dest_files=["res://.godot/imported/InteriorTilesLITE2x.png-74e41bcae0163932a22922fdec5475ba.ctex"]
+source_file="res://scenes/mini-games/plants/plant4.png"
+dest_files=["res://.godot/imported/plant4.png-bbbbccb7a9d588d2efacfa040a54da84.ctex"]
 
 [params]
 

@@ -51,6 +51,42 @@ var tasks = {
 		"state": TaskState.INACTIVE,
 		"prompt_text": "Нажмите E чтобы запустить тестовую игру",
 		"disabled_text": "Тестовая игра недоступна"
+	},
+	"hang_laundry": {
+		"id": "hang_laundry",
+		"title": "Развесить белье",
+		"description": "Развесьте чистое белье на веревке",
+		"scene_path": "res://scenes/mini-games/laundry/laundry.tscn",
+		"state": TaskState.INACTIVE,
+		"prompt_text": "Нажмите E чтобы развесить белье",
+		"disabled_text": "Корзина пуста"
+	},
+	"cleanup_toys": {
+		"id": "cleanup_toys",
+		"title": "Убрать игрушки",
+		"description": "Собери разбросанные игрушки в коробку",
+		"scene_path": "res://scenes/mini-games/cleanup_toys/cleanup_toys.tscn",
+		"state": TaskState.INACTIVE,
+		"prompt_text": "Нажмите E чтобы убрать игрушки",
+		"disabled_text": "Игрушки уже убраны"
+	},
+	"cleanup_tv": {
+		"id": "cleanup_tv",
+		"title": "Протереть телевизор",
+		"description": "Очисти телевизор от пыли",
+		"scene_path": "res://scenes/mini-games/cleanup_tv/cleanup_tv.tscn",
+		"state": TaskState.INACTIVE,
+		"prompt_text": "Нажмите E чтобы протереть телевизор",
+		"disabled_text": "Телевизор уже чистый"
+	},
+	"water_plants": {
+		"id": "water_plants",
+		"title": "Полить растения",
+		"description": "Полей все комнатные растения",
+		"scene_path": "res://scenes/mini-games/plants/plants.tscn",
+		"state": TaskState.INACTIVE,
+		"prompt_text": "Нажмите E чтобы полить растения",
+		"disabled_text": "Растения уже политы"
 	}
 	# Добавляйте новые задачи здесь
 }

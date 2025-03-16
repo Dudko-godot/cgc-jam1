@@ -1,33 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=7 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
 [ext_resource type="PackedScene" uid="uid://bddbyx2k1888e" path="res://scenes/player/player.tscn" id="2_qq51q"]
 [ext_resource type="PackedScene" uid="uid://cudp4v2d65pm8" path="res://scenes/activates/activator.tscn" id="3_koioy"]
 [ext_resource type="PackedScene" uid="uid://cei62be2swy2j" path="res://scenes/ui/task_list_ui.tscn" id="5_nl5dp"]
+[ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
-position = Vector2(0, -4)
+position = Vector2(166, -81)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(677, 465)
+position = Vector2(1346, 957)
+task_id = "water_plants"
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(772, 462)
+position = Vector2(1347, 65)
 task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(853, 459)
+position = Vector2(17, 2)
 task_id = "do_homework"
 
-[node name="Player" parent="." instance=ExtResource("2_qq51q")]
-position = Vector2(692, 400)
+[node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(709, 459)
 
-[node name="TaskListUi" parent="." instance=ExtResource("5_nl5dp")]
-offset_left = 65.0
-offset_top = 52.0
-offset_right = 365.0
-offset_bottom = 452.0
+[node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(-393, 195)
+task_id = "hang_laundry"
+
+[node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(-128, 962)
+task_id = "cleanup_tv"
+
+[node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(67, -327)
+task_id = "cleanup_toys"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TaskListUi" parent="CanvasLayer" instance=ExtResource("5_nl5dp")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Player" parent="." instance=ExtResource("2_qq51q")]
+position = Vector2(637, 572)
+
+[node name="Camera2D" parent="Player" instance=ExtResource("6_ixnqm")]
+zoom = Vector2(0.7, 0.7)

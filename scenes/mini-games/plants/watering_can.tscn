@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvabf0yjqxjm1"]
+
+[ext_resource type="Texture2D" uid="uid://bhxp60e032p0m" path="res://scenes/mini-games/plants/watering can.png" id="1_2is63"]
+[ext_resource type="Script" path="res://scenes/mini-games/plants/watering_can.gd" id="1_ixnqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvnqm"]
+size = Vector2(95, 71)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnvsu"]
+radius = 18.1108
+
+[node name="WateringCan" type="RigidBody2D"]
+collision_mask = 3
+mass = 2.0
+linear_damp = 5.0
+script = ExtResource("1_ixnqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_2is63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_yvnqm")
+
+[node name="SpoutCollider" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpoutCollider"]
+position = Vector2(-77, -19)
+shape = SubResource("CircleShape2D_cnvsu")
