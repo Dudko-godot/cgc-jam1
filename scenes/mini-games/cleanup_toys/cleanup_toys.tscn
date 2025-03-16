@@ -45,8 +45,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
 
 [node name="Walls" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 16
+collision_mask = 16
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(0, 300)
@@ -68,8 +68,8 @@ shape = SubResource("RectangleShape2D_wall_horizontal")
 
 [node name="Basket" type="Area2D" parent="."]
 position = Vector2(400, 500)
-collision_layer = 4
-collision_mask = 2
+collision_layer = 32
+collision_mask = 16
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
