@@ -13,7 +13,7 @@ func _ready():
 	# Генерируем случайный набор задач
 	if has_node("/root/GameTasks"):
 		var game_tasks = get_node("/root/GameTasks")
-		game_tasks.generate_random_tasks(2)  # Активируем 3 случайные задачи
+		game_tasks.generate_random_tasks(6)  # Активируем 3 случайные задачи
 
 func _on_minigame_started(_minigame_name):
 	# Отключаем управление игроком во время мини-игры

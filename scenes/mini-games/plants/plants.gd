@@ -35,7 +35,7 @@ func _initialize_plants() -> void:
 			var plant: Node2D = plants[i]
 			randomize_plant_sprite(plant)
 			
-			var water_types = [2.0, 3.0, 4.0, 5.0]
+			var water_types = [3.0, 4.0, 5.0]
 			var water_requirement: float = water_types[randi() % water_types.size()]
 			plant.set_required_water(water_requirement)
 
@@ -68,6 +68,6 @@ func _on_plant_watering_completed() -> void:
 		await get_tree().create_timer(1.0).timeout
 		game_completed.emit()
 
-# Обработчик нажатия кнопки отмены
-func _on_cancel_button_pressed() -> void:
-	game_cancelled.emit()
+## Обработчик нажатия кнопки отмены
+#func _on_cancel_button_pressed() -> void:
+	#game_cancelled.emit()
