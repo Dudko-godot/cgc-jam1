@@ -18,7 +18,7 @@ func attach_visuals(visuals_ : CharacterVisuals) -> void:
 func attach_actor(actor_ : Node2D, attach_signals : bool = true) -> void:
 	actor = actor_
 	if not attach_signals : return
-	attach_actor_signals(actor)
+	_attach_actor_signals(actor)
 
-func attach_actor_signals(_actor : Node2D) -> void:
+func _attach_actor_signals(_actor : Node2D) -> void:
 	pass

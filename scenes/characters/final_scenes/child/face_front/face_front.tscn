@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://bo8b2fw36r185"]
+
+[ext_resource type="Script" path="res://scenes/characters/cool_sprite_2d/cool_sprite_2d.gd" id="1_54qj1"]
+[ext_resource type="Texture2D" uid="uid://dm6hrrn121g5w" path="res://visuals/reference/demo_child_poses.png" id="1_gjucj"]
+[ext_resource type="Texture2D" uid="uid://c30aoosoybiut" path="res://visuals/character_pngs/child/mouth_default.png" id="3_gsynm"]
+[ext_resource type="Texture2D" uid="uid://l6xqvqnudpfa" path="res://visuals/character_pngs/child/hair_front.png" id="3_x55th"]
+[ext_resource type="Script" path="res://scenes/characters/final_scenes/child/face_front/eyes.gd" id="4_balgi"]
+[ext_resource type="PackedScene" uid="uid://dnyjweiam6ts7" path="res://scenes/characters/final_scenes/child/eyes/eye.tscn" id="4_qa3pg"]
+
+[sub_resource type="Gradient" id="Gradient_eq023"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.684058, 0.698551)
+colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a5sbv"]
+gradient = SubResource("Gradient_eq023")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nql3t"]
+gradient = SubResource("Gradient_eq023")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="FaceFront" type="Sprite2D"]
+script = ExtResource("1_54qj1")
+
+[node name="DemoChildPoses" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(234, 24)
+texture = ExtResource("1_gjucj")
+metadata/_edit_lock_ = true
+
+[node name="HeadSpriteReference" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.843137, 0.701961, 1)
+clip_children = 2
+scale = Vector2(0.921875, 0.921875)
+texture = SubResource("GradientTexture2D_a5sbv")
+metadata/_edit_lock_ = true
+
+[node name="Blushes" type="Sprite2D" parent="."]
+modulate = Color(1, 0.51, 0.584, 0.5)
+position = Vector2(0, 45.24)
+scale = Vector2(0.65625, 0.65625)
+
+[node name="BlushL" type="Sprite2D" parent="Blushes"]
+position = Vector2(-48, 0)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("GradientTexture2D_nql3t")
+
+[node name="BlushR" type="Sprite2D" parent="Blushes"]
+position = Vector2(48, 0)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("GradientTexture2D_nql3t")
+
+[node name="DemoChildPoses2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.15)
+position = Vector2(234, 24)
+texture = ExtResource("1_gjucj")
+metadata/_edit_lock_ = true
+
+[node name="Hair" type="Sprite2D" parent="."]
+position = Vector2(29, -37)
+texture = ExtResource("3_x55th")
+offset = Vector2(-29, 6)
+
+[node name="Mouth" type="Node2D" parent="."]
+position = Vector2(0, 34)
+
+[node name="Default" type="Sprite2D" parent="Mouth"]
+texture = ExtResource("3_gsynm")
+
+[node name="Eyes" type="Node2D" parent="." node_paths=PackedStringArray("face", "eye_l", "eye_r")]
+position = Vector2(0, 27)
+script = ExtResource("4_balgi")
+face = NodePath("..")
+eye_l = NodePath("EyeL")
+eye_r = NodePath("EyeR")
+
+[node name="EyeL" parent="Eyes" instance=ExtResource("4_qa3pg")]
+position = Vector2(-24, 0)
+
+[node name="EyeR" parent="Eyes" instance=ExtResource("4_qa3pg")]
+position = Vector2(20, 0)

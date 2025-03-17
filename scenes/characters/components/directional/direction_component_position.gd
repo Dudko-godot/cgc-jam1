@@ -14,7 +14,7 @@ func _set_position(position_ : Vector2) -> void:
 	if position == position_ : return
 	position = position_
 	
-	changed.emit()
+	position_changed.emit(position)
 
 
 func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
@@ -29,5 +29,5 @@ func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
 			position = right
 
 
-func attach_actor_signals(actor_ : Node2D = actor) -> void:
+func _attach_actor_signals(actor_ : Node2D = actor) -> void:
 	position_changed.connect(actor_.set_position)

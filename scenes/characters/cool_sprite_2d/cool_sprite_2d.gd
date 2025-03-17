@@ -11,7 +11,7 @@ class_name CoolSprite2D extends Sprite2D
 
 
 func _ready() -> void:
-	pass
+	_initialize_all_existing_components()
 
 
 func _initialize_all_existing_components() -> void:
@@ -26,9 +26,8 @@ func _initialize_all_existing_components() -> void:
 
 func _initialize_direction_component(component_ : DirectionComponent) -> void:
 	if not component_ : return
-	
-	direction_component_visibility.attach_visuals(character_visuals)
-	direction_component_visibility.attach_actor(self)
+	component_.attach_visuals(character_visuals)
+	component_.attach_actor(self)
 	
 	#if component_ is DirectionComponentVisibility:
 		#_initialize_visibility_component(component_)

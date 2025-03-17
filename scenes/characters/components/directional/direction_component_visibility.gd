@@ -27,7 +27,7 @@ func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
 	else:
 		is_visible = false
 
-func attach_actor_signals(actor_ : Node2D = actor) -> void:
+func _attach_actor_signals(actor_ : Node2D = actor) -> void:
 	hide.connect(actor_.hide)
 	show.connect(actor_.show)
 	
