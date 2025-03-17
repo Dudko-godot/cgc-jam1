@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3b1ih0san5o1"]
+[gd_scene load_steps=12 format=3 uid="uid://b3b1ih0san5o1"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/sink.gd" id="1_4k2rg"]
 [ext_resource type="Texture2D" uid="uid://gp5vrklgktgo" path="res://visuals/minigames/washing_dishes/sink_background.png" id="2_717eb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/spinned_container.gd" id="3_ynqsw"]
 [ext_resource type="Texture2D" uid="uid://6i37knhchtgy" path="res://visuals/minigames/washing_dishes/water_noise.jpg" id="4_fgaq8"]
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/water.gd" id="6_8xwj1"]
+[ext_resource type="AudioStream" uid="uid://cs7vnekwpv1js" path="res://audio/sound/waterwash.ogg" id="9_eicjm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfahk"]
 bg_color = Color(1, 0, 0, 1)
@@ -140,3 +141,9 @@ offset_top = 148.0
 offset_right = 513.0
 offset_bottom = 465.0
 mouse_filter = 2
+
+[node name="Waterwash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_eicjm")
+volume_db = -25.0
+autoplay = true
+parameters/looping = false

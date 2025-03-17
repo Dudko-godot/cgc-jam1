@@ -6,7 +6,7 @@
 script = ExtResource("1_7yr8v")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 32.0
-target_desired_distance = 64.0
+path_desired_distance = 48.0
+target_desired_distance = 96.0
 path_max_distance = 128.0
 path_postprocessing = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=17 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
 [ext_resource type="Texture2D" uid="uid://cj2re6jsn6bky" path="res://visuals/minigames/toys/toys_on_map.png" id="9_ih2pa"]
 [ext_resource type="AudioStream" uid="uid://dmvw2a1lh0pfr" path="res://audio/music/housemusicfinal.ogg" id="10_7080l"]
+[ext_resource type="PackedScene" uid="uid://pogowju22iv6" path="res://scenes/TriggerSound/Kitchen/HOLODOS.tscn" id="11_hb3h3"]
+[ext_resource type="PackedScene" uid="uid://21up44i8m4v4" path="res://scenes/TriggerSound/LivingRoom/telek.tscn" id="12_3aljl"]
+[ext_resource type="PackedScene" uid="uid://cag8n58iwesw" path="res://scenes/TriggerSound/BathRoom/Clock.tscn" id="14_ia8wj"]
+[ext_resource type="PackedScene" uid="uid://ckqi6ropl1skw" path="res://scenes/TriggerSound/BedRoomParent/Window.tscn" id="15_s32lp"]
 
 [sub_resource type="GDScript" id="GDScript_48jmk"]
 
@@ -110,10 +114,16 @@ texture = ExtResource("9_ih2pa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="map"]
 stream = ExtResource("10_7080l")
-volume_db = -10.0
+volume_db = -30.0
 autoplay = true
 parameters/looping = false
 script = SubResource("GDScript_48jmk")
+
+[node name="StaticBody2D" parent="map" instance=ExtResource("11_hb3h3")]
+position = Vector2(1977, 818)
+
+[node name="StaticBody2D2" parent="map" instance=ExtResource("12_3aljl")]
+position = Vector2(899, 1662)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -127,3 +137,9 @@ offset_right = 320.0
 offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="StaticBody2D" parent="." instance=ExtResource("14_ia8wj")]
+position = Vector2(263, 833)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("15_s32lp")]
+position = Vector2(1276, 260)

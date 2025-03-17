@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmexgjdgk1sp1"]
 
-[ext_resource type="Texture2D" uid="uid://btoee8lpwxkyu" path="res://icon.svg" id="2_diu08"]
+[ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="2_diu08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofjx8"]
 
@@ -11,7 +11,6 @@ position = Vector2(791, 340)
 volume_db = -11.358
 autoplay = true
 max_distance = 300.0
-bus = &"Sound"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

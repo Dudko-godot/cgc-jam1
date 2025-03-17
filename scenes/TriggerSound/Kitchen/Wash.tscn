@@ -13,7 +13,6 @@ stream = ExtResource("1_61qxg")
 volume_db = -25.0
 autoplay = true
 max_distance = 200.0
-bus = &"Sound"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

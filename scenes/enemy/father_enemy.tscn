@@ -17,7 +17,7 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_6jq5e")
 
 [node name="NavigationComponent" parent="." instance=ExtResource("2_10wx8")]
-speed = 250.0
+speed = 260.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
