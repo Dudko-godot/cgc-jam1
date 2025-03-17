@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bndxdbo54lffu"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plants.gd" id="1_ixnqm"]
-[ext_resource type="PackedScene" uid="uid://uuutdck3rovj" path="res://scenes/mini-games/plants/plant.tscn" id="2_ixnqm"]
+[ext_resource type="PackedScene" uid="uid://b3dankgimqthf" path="res://scenes/mini-games/plants/plant.tscn" id="2_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://bvabf0yjqxjm1" path="res://scenes/mini-games/plants/watering_can.tscn" id="3_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c35iv2kfu2pfm" path="res://scenes/mini-games/plants/water_tap.tscn" id="4_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c5i12kp5cq4pa" path="res://scenes/mini-games/plants/water_level_ui.tscn" id="5_ixnqm"]

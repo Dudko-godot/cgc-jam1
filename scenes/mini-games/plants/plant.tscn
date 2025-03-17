@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://uuutdck3rovj"]
+[gd_scene load_steps=7 format=3 uid="uid://b3dankgimqthf"]
 
-[ext_resource type="Texture2D" uid="uid://bwqshlvp64abk" path="res://scenes/mini-games/plants/plant1.png" id="1_13ny7"]
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plant.gd" id="1_yvnqm"]
+[ext_resource type="Texture2D" uid="uid://ddjwaj2paffst" path="res://scenes/mini-games/plants/plant_00.png" id="2_tys01"]
+[ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="3_m44wc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyej8"]
 radius = 19.0
@@ -19,7 +20,7 @@ script = ExtResource("1_yvnqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_13ny7")
+texture = ExtResource("2_tys01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 13)
@@ -48,5 +49,6 @@ offset_left = -89.0
 offset_top = 50.0
 offset_right = 91.0
 offset_bottom = 76.0
+theme = ExtResource("3_m44wc")
 text = "Вода: 5/10"
 horizontal_alignment = 1

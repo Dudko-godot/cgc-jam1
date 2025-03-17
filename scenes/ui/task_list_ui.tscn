@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cei62be2swy2j"]
+[gd_scene load_steps=8 format=3 uid="uid://cei62be2swy2j"]
 
 [ext_resource type="Script" path="res://scenes/ui/task_list_ui.gd" id="1_b3djv"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_tveu3"]
+[ext_resource type="Texture2D" uid="uid://flfj84edg3u5" path="res://visuals/ui/backgrounds/note_bg_clean.png" id="3_2mf1f"]
 [ext_resource type="Script" path="res://scenes/ui/tween_component.gd" id="3_va37o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b10km"]
+texture = ExtResource("3_2mf1f")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5nqx"]
+font_color = Color(0.301961, 0.168627, 0.266667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqj7k"]
+font_size = 12
+font_color = Color(0.173, 0.118, 0.184, 0.9)
 
 [node name="TaskListUi" type="Control"]
 layout_mode = 3
@@ -17,26 +32,55 @@ mouse_filter = 2
 theme = ExtResource("1_tveu3")
 script = ExtResource("1_b3djv")
 
-[node name="TaskContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b10km")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Успеть до прихода папы:"
+label_settings = SubResource("LabelSettings_y5nqx")
+
+[node name="TaskContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TweenComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_va37o")
+actor = NodePath("..")
 
 [node name="TaskItemTemplate" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 280.0
-offset_bottom = 92.0
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 85.0
 
 [node name="CheckBox" type="CheckBox" parent="TaskItemTemplate"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 focus_mode = 0
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_font_sizes/font_size = 14
 text = "Название задачи"
 
 [node name="Description" type="Label" parent="TaskItemTemplate"]
 custom_minimum_size = Vector2(230, 30)
 layout_mode = 2
 text = "Описание задачи"
-
-[node name="TweenComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("3_va37o")
-actor = NodePath("..")
+label_settings = SubResource("LabelSettings_vqj7k")
