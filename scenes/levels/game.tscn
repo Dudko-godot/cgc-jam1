@@ -1,51 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=10 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
 [ext_resource type="PackedScene" uid="uid://bddbyx2k1888e" path="res://scenes/player/player.tscn" id="2_qq51q"]
 [ext_resource type="PackedScene" uid="uid://cudp4v2d65pm8" path="res://scenes/activates/activator.tscn" id="3_koioy"]
 [ext_resource type="PackedScene" uid="uid://cei62be2swy2j" path="res://scenes/ui/task_list_ui.tscn" id="5_nl5dp"]
+[ext_resource type="PackedScene" uid="uid://0wrk2tv7g84f" path="res://scenes/enemy/father_enemy.tscn" id="6_6by5k"]
 [ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
+[ext_resource type="PackedScene" uid="uid://b2jk2rmwy6xgt" path="res://scenes/enemyai/enemy_ai.tscn" id="7_vlixy"]
+[ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
-position = Vector2(166, -81)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(2232, 1694)
+position = Vector2(2371, 1758)
 task_id = "water_plants"
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(2233, 802)
+position = Vector2(2372, 866)
 task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(903, 739)
+position = Vector2(1042, 803)
 task_id = "do_homework"
 
 [node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1595, 1196)
+position = Vector2(1734, 1260)
 
 [node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(493, 932)
+position = Vector2(632, 996)
 task_id = "hang_laundry"
 
 [node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(758, 1699)
+position = Vector2(897, 1763)
 task_id = "cleanup_tv"
 
 [node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(953, 410)
+position = Vector2(1092, 474)
 task_id = "cleanup_toys"
 
 [node name="Player" parent="map" instance=ExtResource("2_qq51q")]
 unique_name_in_owner = true
-position = Vector2(1661, 1950)
-metadata/_edit_group_ = true
+y_sort_enabled = true
+position = Vector2(700, 1207)
 
 [node name="Camera2D" parent="map/Player" instance=ExtResource("6_ixnqm")]
+zoom = Vector2(0.7, 0.7)
+
+[node name="PatrolPoint4" parent="map/Player" instance=ExtResource("8_16nb4")]
+position = Vector2(0, -2)
+dialogue_text = "локтарогар"
+point_name = "фывфывфывфвы"
+action_type = 1
+
+[node name="FatherEnemy" parent="map" instance=ExtResource("6_6by5k")]
+position = Vector2(2324, 1942)
+
+[node name="AiController" parent="map" node_paths=PackedStringArray("character") instance=ExtResource("7_vlixy")]
+character = NodePath("../FatherEnemy")
+target_nodes = Array[NodePath]([NodePath("../Player/PatrolPoint4"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3")])
+
+[node name="PatrolPoint" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(993, 1787)
+dialogue_text = "ну и времена пошли"
+point_name = "телевизор"
+action_type = 1
+
+[node name="PatrolPoint2" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(2019, 861)
+dialogue_text = "где моё пиво"
+point_name = "холодильник"
+action_type = 1
+
+[node name="PatrolPoint3" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(1466, 1500)
+dialogue_text = "бла бла бла длинный диалог вот так вот да офиге за честь и отвагу ненавижу глубцов уууубьюююю "
+point_name = "хзтест"
+action_type = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -53,8 +87,9 @@ metadata/_edit_group_ = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = 0.0
-offset_right = 300.0
-offset_bottom = 400.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
