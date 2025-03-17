@@ -83,6 +83,7 @@ expand_mode = 2
 stretch_mode = 6
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -95,3 +96,4 @@ grow_vertical = 2
 libraries = {
 "": SubResource("AnimationLibrary_4a52v")
 }
+autoplay = "intro"

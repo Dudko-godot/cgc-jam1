@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://0wrk2tv7g84f"]
 
-[ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="1_kfqee"]
 [ext_resource type="PackedScene" uid="uid://8m3tx7r2t5kc" path="res://scenes/enemy/navigation_component.tscn" id="2_10wx8"]
+[ext_resource type="PackedScene" uid="uid://btqah868eaq7y" path="res://scenes/characters/final_scenes/father/father_visuals.tscn" id="2_nro3i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6jq5e"]
 radius = 25.1794
@@ -13,15 +13,11 @@ radius = 156.029
 collision_layer = 2
 collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.866068, 0.177394, 0.316028, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_kfqee")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6jq5e")
 
 [node name="Babble" type="Control" parent="."]
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
@@ -52,3 +48,9 @@ vertical_alignment = 1
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_25uqy")
+
+[node name="FatherVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("2_nro3i")]
+scale = Vector2(0.75, 0.75)
+body = NodePath("..")
+maximum_velocity = 200.0
+determine_direction_from_velocity = true

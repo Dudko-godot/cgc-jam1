@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=11 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://b2jk2rmwy6xgt" path="res://scenes/enemyai/enemy_ai.tscn" id="7_vlixy"]
 [ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
+[ext_resource type="PackedScene" uid="uid://bafdoulov3xnb" path="res://scenes/vingette/vingette.tscn" id="9_vgy2t"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
@@ -84,6 +85,8 @@ position = Vector2(1092, 474)
 task_id = "cleanup_toys"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vingette" parent="CanvasLayer" instance=ExtResource("9_vgy2t")]
 
 [node name="TaskListUi" parent="CanvasLayer" instance=ExtResource("5_nl5dp")]
 anchors_preset = 0

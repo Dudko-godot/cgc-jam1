@@ -737,7 +737,7 @@ _data = {
 "disappear_to_game": SubResource("Animation_2xnfw")
 }
 
-[node name="DefeatScreen" type="Control"]
+[node name="DefeatScreen" type="Control" node_paths=PackedStringArray("lose_prompt")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -746,6 +746,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_h6t6u")
+lose_prompt = NodePath("AnimatedTextPrompt")
 
 [node name="Artboard1Copy" type="Sprite2D" parent="."]
 visible = false

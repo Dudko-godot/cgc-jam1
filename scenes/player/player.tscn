@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bddbyx2k1888e"]
+[gd_scene load_steps=4 format=3 uid="uid://bddbyx2k1888e"]
 
-[ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="1_63i4t"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_saung"]
 [ext_resource type="PackedScene" uid="uid://dx6rouy4tgcj3" path="res://scenes/characters/final_scenes/child/child_visuals.tscn" id="4_fig81"]
-[ext_resource type="PackedScene" uid="uid://btqah868eaq7y" path="res://scenes/characters/final_scenes/father/father_visuals.tscn" id="4_pjmss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_neaeu"]
 radius = 16.2788
@@ -11,24 +9,12 @@ radius = 16.2788
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_saung")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_63i4t")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_neaeu")
 
 [node name="ChildVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("4_fig81")]
-visible = false
 position = Vector2(0, 1)
 scale = Vector2(0.55, 0.55)
-body = NodePath("..")
-maximum_velocity = 300.0
-determine_direction_from_velocity = true
-
-[node name="FatherVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("4_pjmss")]
-scale = Vector2(0.6, 0.6)
 body = NodePath("..")
 maximum_velocity = 300.0
 determine_direction_from_velocity = true
