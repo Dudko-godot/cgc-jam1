@@ -18,7 +18,7 @@ var is_fully_watered: bool = false  # Флаг полного полива
 # Узлы
 @onready var progress_bar: ProgressBar = $WaterProgressBar if has_node("WaterProgressBar") else null
 @onready var water_label: Label = $WaterLabel if has_node("WaterLabel") else null
-@onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
+#@onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
 
 # Стили для прогресс-бара
 var bg_style: StyleBoxFlat = null
@@ -82,10 +82,10 @@ func set_required_water(value: float) -> void:
 		progress_bar.max_value = required_water
 	update_water_label()
 
-# Устанавливает спрайт растения
-func set_sprite(sprite_path: String) -> void:
-	if sprite and ResourceLoader.exists(sprite_path):
-		sprite.texture = load(sprite_path)
+## Устанавливает спрайт растения
+#func set_sprite(sprite_path: String) -> void:
+	#if sprite and ResourceLoader.exists(sprite_path):
+		#sprite.texture = load(sprite_path)
 
 # Добавляет воду к растению
 func add_water(amount: float) -> void:

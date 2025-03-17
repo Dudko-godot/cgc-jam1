@@ -1,26 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3dankgimqthf"]
+[gd_scene load_steps=15 format=3 uid="uid://b3dankgimqthf"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plant.gd" id="1_yvnqm"]
 [ext_resource type="Texture2D" uid="uid://ddjwaj2paffst" path="res://scenes/mini-games/plants/plant_00.png" id="2_tys01"]
+[ext_resource type="Script" path="res://scenes/mini-games/plants/plant_sprites.gd" id="3_6kfu7"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="3_m44wc"]
+[ext_resource type="Texture2D" uid="uid://cq3ovxnc1ptws" path="res://scenes/mini-games/plants/plant_01.png" id="4_8hgom"]
+[ext_resource type="Texture2D" uid="uid://b4g28ejh1u0vh" path="res://scenes/mini-games/plants/plant_02.png" id="5_yb6t7"]
+[ext_resource type="Texture2D" uid="uid://d3lwtqxygiu6x" path="res://scenes/mini-games/plants/plant_03.png" id="6_ekmct"]
+[ext_resource type="Texture2D" uid="uid://b1hfoo7r4xlw6" path="res://scenes/mini-games/plants/plant_05.png" id="7_vm621"]
+[ext_resource type="Texture2D" uid="uid://btr0twwxul3gp" path="res://scenes/mini-games/plants/plant_06.png" id="8_m2oj2"]
+[ext_resource type="Texture2D" uid="uid://dewwostbbldo8" path="res://scenes/mini-games/plants/plant_07.png" id="9_1vso8"]
+[ext_resource type="Texture2D" uid="uid://ly6majny48ul" path="res://scenes/mini-games/plants/plant_08.png" id="10_tqlvf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyej8"]
 radius = 19.0
 height = 72.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l55xt"]
-radius = 42.107
+radius = 52.2398
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbs01"]
+bg_color = Color(0.207307, 0.211654, 0.518251, 1)
 
 [node name="Plant" type="StaticBody2D"]
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("1_yvnqm")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_tys01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 13)
@@ -32,6 +37,7 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_l55xt")
 
 [node name="WaterProgressBar" type="ProgressBar" parent="."]
@@ -46,9 +52,52 @@ show_percentage = false
 
 [node name="WaterLabel" type="Label" parent="."]
 offset_left = -89.0
-offset_top = 50.0
+offset_top = 54.0
 offset_right = 91.0
-offset_bottom = 76.0
+offset_bottom = 82.0
 theme = ExtResource("3_m44wc")
 text = "Вода: 5/10"
 horizontal_alignment = 1
+
+[node name="PlantSprites" type="Node2D" parent="."]
+script = ExtResource("3_6kfu7")
+
+[node name="plant_00" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(-4, -23)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_tys01")
+
+[node name="plant_01" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(4, -29)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_8hgom")
+
+[node name="plant_02" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(0, 7.08384)
+scale = Vector2(1.03911, 1.03911)
+texture = ExtResource("5_yb6t7")
+
+[node name="plant_03" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(-2, -22)
+scale = Vector2(1.5151, 1.5151)
+texture = ExtResource("6_ekmct")
+
+[node name="plant_04" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(-6, -23.35)
+scale = Vector2(1.37076, 1.37076)
+texture = ExtResource("7_vm621")
+
+[node name="plant_05" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(4, -8)
+scale = Vector2(1.01729, 1.01729)
+texture = ExtResource("8_m2oj2")
+
+[node name="plant_06" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(0, -0.662862)
+scale = Vector2(1.31634, 1.31634)
+texture = ExtResource("9_1vso8")
+
+[node name="plant_07" type="Sprite2D" parent="PlantSprites"]
+position = Vector2(7.73498, 5.99623)
+scale = Vector2(1.07308, 1.07308)
+texture = ExtResource("10_tqlvf")

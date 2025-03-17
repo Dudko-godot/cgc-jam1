@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		_on_navigation_agent_velocity_computed(new_velocity)
 
+
 func _on_navigation_agent_velocity_computed(safe_velocity: Vector2) -> void:
 	if get_parent() is CharacterBody2D:
 		var parent = get_parent() as CharacterBody2D
