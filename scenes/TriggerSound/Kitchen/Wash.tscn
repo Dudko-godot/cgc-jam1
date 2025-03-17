@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbjjp6xlil6ch"]
 
-[ext_resource type="AudioStream" uid="uid://cs7vnekwpv1js" path="res://Audio/Sound/WaterWash.ogg" id="1_61qxg"]
+[ext_resource type="AudioStream" uid="uid://cs7vnekwpv1js" path="res://audio/sound/waterwash.ogg" id="1_61qxg"]
 [ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="2_vimwq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofjx8"]

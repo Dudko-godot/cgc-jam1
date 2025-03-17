@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxx" path="res://scenes/mini-games/laundry/laundry_basket.tscn" id="2_basket"]
 [ext_resource type="PackedScene" uid="uid://cnygytn81heti" path="res://scenes/mini-games/laundry/clothesline.tscn" id="3_line"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="4_mjq3s"]
-[ext_resource type="AudioStream" uid="uid://jipjyyqmmnn" path="res://Audio/Sound/mahBel'ya.ogg" id="5_kdfci"]
+[ext_resource type="AudioStream" uid="uid://jipjyyqmmnn" path="res://audio/sound/mahbel'ya.ogg" id="5_kdfci"]
 
 [node name="laundry" type="Control"]
 layout_mode = 3

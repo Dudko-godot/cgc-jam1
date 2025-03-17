@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bvabf0yjqxjm1" path="res://scenes/mini-games/plants/watering_can.tscn" id="3_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c35iv2kfu2pfm" path="res://scenes/mini-games/plants/water_tap.tscn" id="4_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c5i12kp5cq4pa" path="res://scenes/mini-games/plants/water_level_ui.tscn" id="5_ixnqm"]
-[ext_resource type="AudioStream" uid="uid://dya4qcls1dn2l" path="res://Audio/Sound/naborLeiki.ogg" id="6_pj1hg"]
-[ext_resource type="AudioStream" uid="uid://ml4ir0b7urod" path="res://Audio/Sound/ForPlant.ogg" id="7_y82r7"]
+[ext_resource type="AudioStream" uid="uid://dya4qcls1dn2l" path="res://audio/sound/naborleiki.ogg" id="6_pj1hg"]
+[ext_resource type="AudioStream" uid="uid://ml4ir0b7urod" path="res://audio/sound/forplant.ogg" id="7_y82r7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_585oo"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)

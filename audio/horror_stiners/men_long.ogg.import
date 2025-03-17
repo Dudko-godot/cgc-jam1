@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c60y7cic303t"
-path="res://.godot/imported/men_long.ogg-6286d496a2ab1c6403efa0ab966062c1.oggvorbisstr"
+path="res://.godot/imported/men_long.ogg-5f63408c6d38921dc002ba8407f3a1d6.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/horror_stiners/men_long.ogg"
-dest_files=["res://.godot/imported/men_long.ogg-6286d496a2ab1c6403efa0ab966062c1.oggvorbisstr"]
+source_file="res://audio/horror_stiners/men_long.ogg"
+dest_files=["res://.godot/imported/men_long.ogg-5f63408c6d38921dc002ba8407f3a1d6.oggvorbisstr"]
 
 [params]
 
