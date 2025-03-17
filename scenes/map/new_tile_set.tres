@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=67 format=3 uid="uid://eopr0cokwqxc"]
+[gd_resource type="TileSet" load_steps=68 format=3 uid="uid://eopr0cokwqxc"]
 
 [ext_resource type="Texture2D" uid="uid://br0d7yny8ckwh" path="res://denis_test/texturex4.png" id="1_itish"]
 
@@ -206,6 +206,8 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(64, 64, -64, 64, -64, 38.4, 12.8, 38.4, 12.8, -25.6, -64, -25.6, -64, -64, 64, -64)])
 agent_radius = 0.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u05o7"]
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fx11g"]
 vertices = PackedVector2Array(64, 12.7969, 64, 64, -64, 64, -64, 12.7969, -51.2031, 0, 51.2031, 0)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
@@ -371,7 +373,7 @@ texture_region_size = Vector2i(128, 128)
 2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6g6sh")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6g6sh")
+3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u05o7")
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6g6sh")

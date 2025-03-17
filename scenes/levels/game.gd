@@ -16,7 +16,7 @@ func _ready():
 	# Генерируем случайный набор задач
 	if has_node("/root/GameTasks"):
 		var game_tasks = get_node("/root/GameTasks")
-		game_tasks.generate_random_tasks(3)  # Активируем случайные задачи
+		game_tasks.generate_random_tasks(4)  # Активируем случайные задачи
 
 func _on_minigame_started(_minigame_name):
 	# Отключаем управление игроком во время мини-игры
@@ -60,3 +60,9 @@ func check_victory_condition():
 			# Загружаем сцену победы динамически
 			var victory_scene = load(VICTORY_SCREEN)
 			get_tree().change_scene_to_packed(victory_scene)
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if MiniGameManager.is_minigame_active():
+			MiniGameManager._on_minigame_cancelled()
+		

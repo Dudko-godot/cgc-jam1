@@ -223,7 +223,7 @@
 [ext_resource type="Texture2D" uid="uid://cvmberetmh1gn" path="res://visuals/menus/main_menu/title_frames/!main_00210.png" id="160_dah6m"]
 [ext_resource type="Script" path="res://scenes/main_menu/title_sprite.gd" id="220_x508l"]
 [ext_resource type="AudioStream" uid="uid://c60y7cic303t" path="res://audio/horror_stiners/men_long.ogg" id="221_i1g1a"]
-[ext_resource type="AudioStream" uid="uid://bmnfoo22s2f04" path="res://audio/music/begin2.ogg" id="222_y7oqx"]
+[ext_resource type="AudioStream" uid="uid://db6tkoijahy15" path="res://audio/music/begin2.ogg" id="222_y7oqx"]
 
 [sub_resource type="Animation" id="Animation_unoiv"]
 length = 0.001

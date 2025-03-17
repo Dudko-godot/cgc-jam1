@@ -41,17 +41,6 @@ func _on_clothes_hung():
 	current_score += 1
 	
 	if current_score >= required_score:
-		emit_signal("game_completed")
+		game_completed.emit
 	elif not $BasketArea/LaundryBasket.is_empty():
 		current_unit = null  # Очищаем ссылку на текущий предмет
-
-func _on_cancel_pressed():
-	if current_unit:
-		$BasketArea/LaundryBasket.item_removed()  # Сбрасываем флаг при отмене
-	emit_signal("game_cancelled")
-
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		if current_unit:
-			$BasketArea/LaundryBasket.item_removed()  # Сбрасываем флаг при отмене
-		emit_signal("game_cancelled") 

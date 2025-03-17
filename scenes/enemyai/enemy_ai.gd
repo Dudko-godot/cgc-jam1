@@ -149,3 +149,4 @@ func _proceed_to_next_target() -> void:
 
 func _on_timer_timeout() -> void:
 	allow_detection = true
+	_proceed_to_next_target()

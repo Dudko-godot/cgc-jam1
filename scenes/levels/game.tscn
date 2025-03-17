@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=13 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
@@ -9,15 +9,19 @@
 [ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://b2jk2rmwy6xgt" path="res://scenes/enemyai/enemy_ai.tscn" id="7_vlixy"]
 [ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
-[ext_resource type="PackedScene" uid="uid://cag8n58iwesw" path="res://scenes/TriggerSound/BathRoom/Clock.tscn" id="10_qqq13"]
+[ext_resource type="Texture2D" uid="uid://cj2re6jsn6bky" path="res://visuals/minigames/toys/toys_on_map.png" id="9_ih2pa"]
+[ext_resource type="AudioStream" uid="uid://dmvw2a1lh0pfr" path="res://audio/music/housemusicfinal.ogg" id="10_7080l"]
+
+[sub_resource type="GDScript" id="GDScript_48jmk"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
+position = Vector2(-68, -48)
 
 [node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(2371, 1758)
+position = Vector2(2254, 2173)
 task_id = "water_plants"
 
 [node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
@@ -25,14 +29,14 @@ position = Vector2(2372, 866)
 task_id = "wash_dishes"
 
 [node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1042, 803)
+position = Vector2(1061, 791)
 task_id = "do_homework"
 
 [node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1734, 1260)
+position = Vector2(1799, 1181)
 
 [node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(632, 996)
+position = Vector2(333, 943)
 task_id = "hang_laundry"
 
 [node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
@@ -40,7 +44,7 @@ position = Vector2(897, 1763)
 task_id = "cleanup_tv"
 
 [node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
-position = Vector2(1092, 474)
+position = Vector2(1227, 406)
 task_id = "cleanup_toys"
 
 [node name="Player" parent="map" instance=ExtResource("2_qq51q")]
@@ -61,43 +65,55 @@ position = Vector2(2324, 1942)
 
 [node name="AiController" parent="map" node_paths=PackedStringArray("character") instance=ExtResource("7_vlixy")]
 character = NodePath("../FatherEnemy")
-target_nodes = Array[NodePath]([NodePath("../Player/PatrolPointPlayer"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3"), NodePath("../PatrolPoint4"), NodePath("../PatrolPoint5"), NodePath("../PatrolPoint6")])
+target_nodes = Array[NodePath]([NodePath("../Player/PatrolPointPlayer"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4"), NodePath("../Point5"), NodePath("../Point6")])
 
-[node name="PatrolPoint" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point1" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(999, 1739)
 dialogue_text = "ну и времена пошли конечно!"
 point_name = "телевизор"
 action_type = 1
 
-[node name="PatrolPoint2" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point2" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(1980, 867)
 dialogue_text = "где моё пиво???"
 point_name = "холодильник"
 action_type = 1
 
-[node name="PatrolPoint3" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point3" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(1661, 1977)
 dialogue_text = "Ох и надоело мне всё!"
 point_name = "хзтест"
 action_type = 1
 
-[node name="PatrolPoint4" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point4" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(2422, 2218)
 dialogue_text = "Вот в моё то время!"
 point_name = "хзтест"
 action_type = 1
 
-[node name="PatrolPoint5" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point5" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(420, 1110)
 dialogue_text = "НУ КАК ТАК???"
 point_name = "хзтест"
 action_type = 1
 
-[node name="PatrolPoint6" parent="map" instance=ExtResource("8_16nb4")]
+[node name="Point6" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(1451, 783)
 dialogue_text = "Ты где, щенок?"
 point_name = "хзтест"
 action_type = 1
+
+[node name="ToysOnMap" type="Sprite2D" parent="map"]
+position = Vector2(1221, 383)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("9_ih2pa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="map"]
+stream = ExtResource("10_7080l")
+volume_db = -10.0
+autoplay = true
+parameters/looping = false
+script = SubResource("GDScript_48jmk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -111,7 +127,3 @@ offset_right = 320.0
 offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="StaticBody2D" parent="Node2D" instance=ExtResource("10_qqq13")]

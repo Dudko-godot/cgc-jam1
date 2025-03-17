@@ -22,8 +22,8 @@ var upright_force: float = 1.5  # Сила выравнивания
 # ======== ПАРАМЕТРЫ ЛЕЙКИ И ПОЛИВА ========
 var max_water: float = 10.0
 var current_water: float = 0.0
-var watering_rate: float = 2.5  # Скорость полива
-var filling_rate: float = 2.0 # Cкорость наполнения
+var watering_rate: float = 3.5  # Скорость полива
+var filling_rate: float = 3.5 # Cкорость наполнения
 var is_watering: bool = false
 var current_plant: Node2D = null
 var is_near_tap: bool = false
