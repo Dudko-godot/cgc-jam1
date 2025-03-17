@@ -8,7 +8,7 @@ class_name DirectionComponentVisibility extends DirectionComponent
 signal hide
 signal show
 
-var is_visible : bool = false : set = _set_is_visible
+var is_visible : bool : set = _set_is_visible
 
 func _set_is_visible(is_visible_ : bool) -> void:
 	if is_visible == is_visible_ : return
@@ -30,7 +30,18 @@ func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
 func _attach_actor_signals(actor_ : Node2D = actor) -> void:
 	hide.connect(actor_.hide)
 	show.connect(actor_.show)
-	
+	super(actor_)
+
+
+func _force_emit() -> void:
+	_on_direction_changed.call_deferred(visuals.direction)
+		
+	if is_visible:
+		show.emit()
+	else:
+		hide.emit()
+
+
 	
 #func attach_visuals(visuals_ : CharacterVisuals) -> void:
 	#super(visuals_)

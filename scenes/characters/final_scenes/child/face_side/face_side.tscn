@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://drn86h4k4i4jf"]
+
+[ext_resource type="Texture2D" uid="uid://dm6hrrn121g5w" path="res://visuals/reference/demo_child_poses.png" id="2_r4h1i"]
+[ext_resource type="PackedScene" uid="uid://dnyjweiam6ts7" path="res://scenes/characters/final_scenes/child/eyes/eye.tscn" id="6_28l73"]
+
+[sub_resource type="Gradient" id="Gradient_eq023"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.684058, 0.698551)
+colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a5sbv"]
+gradient = SubResource("Gradient_eq023")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nql3t"]
+gradient = SubResource("Gradient_eq023")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="FaceSide" type="Sprite2D"]
+
+[node name="DemoChildPoses" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(234, 24)
+texture = ExtResource("2_r4h1i")
+metadata/_edit_lock_ = true
+
+[node name="HeadSpriteReference" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.843137, 0.701961, 1)
+clip_children = 2
+scale = Vector2(0.921875, 0.921875)
+texture = SubResource("GradientTexture2D_a5sbv")
+metadata/_edit_lock_ = true
+
+[node name="Blushes" type="Sprite2D" parent="."]
+modulate = Color(1, 0.51, 0.584, 0.5)
+position = Vector2(-21.87, 45.24)
+scale = Vector2(0.65625, 0.65625)
+
+[node name="BlushL" type="Sprite2D" parent="Blushes"]
+scale = Vector2(0.8, 0.8)
+texture = SubResource("GradientTexture2D_nql3t")
+
+[node name="DemoChildPoses2" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.15)
+position = Vector2(-55, 24)
+texture = ExtResource("2_r4h1i")
+
+[node name="EyeL" parent="." instance=ExtResource("6_28l73")]
+position = Vector2(-41, 27)

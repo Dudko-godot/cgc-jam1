@@ -31,3 +31,8 @@ func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
 
 func _attach_actor_signals(actor_ : Node2D = actor) -> void:
 	position_changed.connect(actor_.set_position)
+	super(actor_)
+
+func _force_emit() -> void:
+	_on_direction_changed.call_deferred(visuals.direction)
+	position_changed.emit(position)

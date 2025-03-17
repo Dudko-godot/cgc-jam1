@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi4xpha2hispm"]
+[gd_scene load_steps=9 format=3 uid="uid://bi4xpha2hispm"]
 
 [ext_resource type="Texture2D" uid="uid://b8ngv1nuobi4e" path="res://visuals/character_pngs/child/propeller.png" id="1_r7ghf"]
 [ext_resource type="Texture2D" uid="uid://c4fbj7lj505j7" path="res://visuals/character_pngs/child/propeller_top.png" id="2_s2k4j"]
@@ -40,12 +40,70 @@ _data = {
 "spin": SubResource("Animation_dkp1a")
 }
 
+[sub_resource type="Animation" id="Animation_q5do8"]
+resource_name = "pristine_squash"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Squish/Pristine:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.9, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Squish/Pristine:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_228u1"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Squish/Pristine:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Squish/Pristine:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_taxm6"]
+_data = {
+"RESET": SubResource("Animation_228u1"),
+"pristine_squash": SubResource("Animation_q5do8")
+}
+
 [node name="Propeller" type="Node2D"]
 
 [node name="Squish" type="Node2D" parent="."]
 scale = Vector2(1, 0.45)
 
 [node name="Pristine" type="Node2D" parent="Squish"]
+scale = Vector2(0.8, 1.2)
 
 [node name="LeafA" type="Sprite2D" parent="Squish/Pristine"]
 texture = ExtResource("1_r7ghf")
@@ -57,7 +115,8 @@ scale = Vector2(1, -1)
 texture = ExtResource("1_r7ghf")
 offset = Vector2(31, 0)
 
-[node name="Center" type="Sprite2D" parent="Squish/Pristine"]
+[node name="Center" type="Sprite2D" parent="Squish"]
+scale = Vector2(0.9, 1.2)
 texture = ExtResource("2_s2k4j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -65,3 +124,10 @@ libraries = {
 "": SubResource("AnimationLibrary_u51ed")
 }
 autoplay = "spin"
+
+[node name="PristineSquash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_taxm6")
+}
+autoplay = "pristine_squash"
+speed_scale = 0.35

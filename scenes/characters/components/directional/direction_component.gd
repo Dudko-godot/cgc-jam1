@@ -21,4 +21,8 @@ func attach_actor(actor_ : Node2D, attach_signals : bool = true) -> void:
 	_attach_actor_signals(actor)
 
 func _attach_actor_signals(_actor : Node2D) -> void:
+	_force_emit()
+
+
+func _force_emit() -> void:
 	pass

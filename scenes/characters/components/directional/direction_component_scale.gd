@@ -33,3 +33,9 @@ func _on_direction_changed(direction_ : CharacterVisuals.DIRECTION) -> void:
 
 func _attach_actor_signals(actor_ : Node2D = actor) -> void:
 	scale_changed.connect(actor_.set_scale)
+	super(actor_)
+
+
+func _force_emit() -> void:
+	_on_direction_changed.call_deferred(visuals.direction)
+	scale_changed.emit(scale)

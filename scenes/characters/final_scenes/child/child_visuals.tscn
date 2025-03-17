@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dx6rouy4tgcj3"]
+[gd_scene load_steps=32 format=3 uid="uid://dx6rouy4tgcj3"]
 
 [ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_u5w2x"]
 [ext_resource type="Script" path="res://scenes/characters/phase_component.gd" id="2_12lok"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/characters/components/directional/direction_component_visibility.gd" id="7_3a6rt"]
 [ext_resource type="PackedScene" uid="uid://bo8b2fw36r185" path="res://scenes/characters/final_scenes/child/face_front/face_front.tscn" id="7_am4ki"]
 [ext_resource type="Texture2D" uid="uid://fqoatj2u0xvo" path="res://visuals/character_pngs/child/hair_back.png" id="7_jp6bc"]
+[ext_resource type="PackedScene" uid="uid://drn86h4k4i4jf" path="res://scenes/characters/final_scenes/child/face_side/face_side.tscn" id="8_s6o7t"]
 [ext_resource type="Texture2D" uid="uid://c1nw4qul41ahd" path="res://visuals/character_pngs/child/hair_side.png" id="9_nc0je"]
 [ext_resource type="Texture2D" uid="uid://5qo1ckqqgysf" path="res://visuals/character_pngs/child/cap_main.png" id="10_fknwb"]
 [ext_resource type="Script" path="res://scenes/characters/components/directional/direction_component_scale.gd" id="11_ckb4v"]
@@ -32,6 +33,17 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="Resource" id="Resource_kibsy"]
 script = ExtResource("7_3a6rt")
 visibility_flags = 2
+
+[sub_resource type="Resource" id="Resource_rkll0"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 12
+
+[sub_resource type="Resource" id="Resource_tmp4w"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, 1)
+left = Vector2(1, 1)
+right = Vector2(-1, 1)
 
 [sub_resource type="Resource" id="Resource_4njlq"]
 script = ExtResource("7_3a6rt")
@@ -113,11 +125,19 @@ offset = Vector2(0, -52.27)
 
 [node name="FaceFront" parent="Head/HeadSprite" node_paths=PackedStringArray("character_visuals") instance=ExtResource("7_am4ki")]
 visible = false
-position = Vector2(0, -51.61)
+position = Vector2(0, -52)
 character_visuals = NodePath("../../..")
 direction_component_visibility = SubResource("Resource_kibsy")
 
+[node name="FaceSide" parent="Head/HeadSprite" node_paths=PackedStringArray("character_visuals") instance=ExtResource("8_s6o7t")]
+position = Vector2(0, -52)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../..")
+direction_component_visibility = SubResource("Resource_rkll0")
+direction_component_scale = SubResource("Resource_tmp4w")
+
 [node name="Ears" type="Sprite2D" parent="Head" node_paths=PackedStringArray("character_visuals")]
+visible = false
 position = Vector2(0, -35)
 script = ExtResource("6_x2dt3")
 character_visuals = NodePath("../..")
