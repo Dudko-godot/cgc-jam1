@@ -49,3 +49,5 @@ theme_override_constants/margin_bottom = 3
 layout_mode = 2
 texture = SubResource("GradientTexture2D_vcksq")
 expand_mode = 1
+
+[node name="WashSound" type="AudioStreamPlayer" parent="."]

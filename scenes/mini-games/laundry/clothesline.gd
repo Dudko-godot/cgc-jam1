@@ -26,6 +26,7 @@ func _ready():
 		slot.add_child(marker)
 	
 	# Перемещаем контейнер со слотами ниже веревки
+	
 	$ClothesSlots.position.y += 60
 	
 	print("Clothesline: Created ", SLOTS_COUNT, " slots with increased spacing")  # Отладочная информация

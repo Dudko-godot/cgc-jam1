@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://btub3usyym7tn"]
+[gd_scene load_steps=11 format=3 uid="uid://btub3usyym7tn"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/cleanup_toys.gd" id="1_8p4ky"]
-[ext_resource type="Texture2D" uid="uid://diyivhpk3xqlv" path="res://scenes/mini-games/cleanup_toys/test_box.png" id="2_3k4nt"]
+[ext_resource type="Texture2D" uid="uid://cv4er4g6tpytd" path="res://visuals/minigames/toys/basket.png" id="2_uwdlk"]
+[ext_resource type="AudioStream" uid="uid://blcymocit5wub" path="res://Audio/Sound/toy1.ogg" id="3_60br2"]
+[ext_resource type="AudioStream" uid="uid://bmruu0dkybudy" path="res://Audio/Sound/toy2.ogg" id="4_kq2ii"]
+[ext_resource type="AudioStream" uid="uid://ct78l3po2tqee" path="res://Audio/Sound/toy3.ogg" id="5_4qdhf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)
+bg_color = Color(0.341176, 0.494118, 0.615686, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -18,7 +21,13 @@ size = Vector2(20, 600)
 size = Vector2(20, 800)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(217, 75)
+size = Vector2(241, 119)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o48kv"]
+streams_count = 3
+stream_0/stream = ExtResource("3_60br2")
+stream_1/stream = ExtResource("4_kq2ii")
+stream_2/stream = ExtResource("5_4qdhf")
 
 [node name="cleanup_toys" type="Control"]
 layout_mode = 3
@@ -73,9 +82,14 @@ collision_mask = 16
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
-position = Vector2(0.5, 0.5)
+position = Vector2(-0.5, 22.5)
 shape = SubResource("RectangleShape2D_1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket"]
-scale = Vector2(1.5, 0.75)
-texture = ExtResource("2_3k4nt")
+position = Vector2(-1, 22)
+scale = Vector2(0.157694, 0.122999)
+texture = ExtResource("2_uwdlk")
+
+[node name="Environment" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_o48kv")
+bus = &"Sound"

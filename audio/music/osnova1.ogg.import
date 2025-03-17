@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://djycr7j46ed5a"
+uid="uid://c01cagk78r36w"
 path="res://.godot/imported/osnova1.ogg-a275ac27c58f157576cd4712e64b8714.oggvorbisstr"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/osnova1.ogg-a275ac27c58f157576cd4712e64b8714.
 
 [params]
 
-loop=true
-loop_offset=0.0
-bpm=100.0
+loop=false
+loop_offset=0
+bpm=0
 beat_count=0
 bar_beats=4

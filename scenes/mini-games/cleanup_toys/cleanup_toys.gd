@@ -19,6 +19,7 @@ const SPAWN_AREA = {
 }
 
 # Переменные состояния игры
+
 var toys_collected = 0
 var time_remaining = GAME_DURATION
 
@@ -29,7 +30,9 @@ func _ready():
 	setup_game()
 	# Подключаем сигналы корзины
 	basket.body_entered.connect(_on_basket_body_entered)
-
+	
+	
+	
 func _process(delta):
 	if time_remaining > 0:
 		time_remaining -= delta
@@ -69,3 +72,4 @@ func _on_basket_body_entered(body: Node2D):
 	if body.is_in_group("toy"):
 		_on_toy_collected()
 		body.queue_free() # Удаляем игрушку после попадания в корзину 
+		$Environment.play()

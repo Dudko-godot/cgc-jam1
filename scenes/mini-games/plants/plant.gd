@@ -89,6 +89,7 @@ func set_sprite(sprite_path: String) -> void:
 
 # Добавляет воду к растению
 func add_water(amount: float) -> void:
+	
 	if is_fully_watered:
 		return
 	
@@ -128,6 +129,7 @@ func _on_water_area_body_exited(body: Node2D) -> void:
 
 # Обработчик входа носика лейки в зону полива
 func _on_water_area_area_entered(area: Area2D) -> void:
+	$"../../ForPlant".play()
 	if area.get_parent().is_in_group("watering_can") and area.name == "SpoutCollider":
 		watering_in_progress = true
 		if area.get_parent().has_method("start_watering"):
@@ -135,6 +137,7 @@ func _on_water_area_area_entered(area: Area2D) -> void:
 
 # Обработчик выхода носика лейки из зоны полива
 func _on_water_area_area_exited(area: Area2D) -> void:
+	$"../../ForPlant".stop()
 	if area.get_parent().is_in_group("watering_can") and area.name == "SpoutCollider":
 		watering_in_progress = false
 		if area.get_parent().has_method("stop_watering"):
