@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b2kuyrwrnggsm"]
+
+[ext_resource type="FontFile" uid="uid://bns8aapyejggj" path="res://visuals/fonts/ShantellSans/ShantellSans-Medium.ttf" id="1_t5toj"]
+
+[resource]
+font = ExtResource("1_t5toj")
+font_size = 20
+shadow_color = Color(0.172549, 0.117647, 0.184314, 1)
+shadow_offset = Vector2(0, 2)

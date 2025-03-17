@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://duucg5refao0j"]
+[gd_scene load_steps=6 format=3 uid="uid://duucg5refao0j"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/homework/homework.gd" id="1_2k4u3"]
 [ext_resource type="Theme" uid="uid://c2y31y2mrk3a1" path="res://scenes/mini-games/homework/homework_theme.tres" id="2_eu32f"]
+[ext_resource type="Texture2D" uid="uid://dyso3usdmgr1e" path="res://visuals/minigames/homework/sheet_main.png" id="3_bld02"]
+[ext_resource type="Texture2D" uid="uid://dlx3wi8t22c7t" path="res://visuals/minigames/homework/sheet_bot.png" id="4_f6kp1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8p2x"]
 bg_color = Color(0.988235, 0.92549, 0.823529, 1)
@@ -30,7 +32,160 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2k4u3")
 
+[node name="PaperTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -326.0
+offset_right = 311.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0349066
+texture = ExtResource("3_bld02")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Title" type="Label" parent="PaperTexture"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -377.5
+offset_top = 63.0
+offset_right = 378.5
+offset_bottom = 117.0
+grow_horizontal = 2
+theme = ExtResource("2_eu32f")
+theme_override_colors/font_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_font_sizes/font_size = 24
+text = "Математика"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PaperTexture"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -377.5
+offset_top = 117.0
+offset_right = 378.5
+offset_bottom = 400.0
+grow_horizontal = 2
+theme = ExtResource("2_eu32f")
+theme_override_constants/separation = 24
+
+[node name="SolvedProblems" type="VBoxContainer" parent="PaperTexture/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Control" type="Control" parent="PaperTexture/VBoxContainer/SolvedProblems"]
+visible = false
+custom_minimum_size = Vector2(0, 28.67)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PaperTexture/VBoxContainer/SolvedProblems"]
+visible = false
+layout_mode = 2
+text = "asdfasdf"
+horizontal_alignment = 1
+
+[node name="CurrentProblem" type="Label" parent="PaperTexture/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_eu32f")
+theme_override_font_sizes/font_size = 32
+text = "5 + 3 = ?"
+horizontal_alignment = 1
+
+[node name="WrongContainer" type="Control" parent="PaperTexture"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -112.0
+offset_right = -85.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="WrongAnswerLabel" type="RichTextLabel" parent="PaperTexture/WrongContainer"]
+visible = false
+custom_minimum_size = Vector2(450, 46)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -50.0
+offset_right = 225.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_eu32f")
+theme_override_colors/default_color = Color(1, 0.34902, 0.34902, 1)
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center] [pulse freq=1.8 color=#ffffff40 ease=-2.0] Неправильный ответ!"
+
+[node name="AnswerTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 99.0
+offset_right = 304.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.020944
+texture = ExtResource("4_f6kp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="AnswerTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 59
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 39
+theme_override_constants/margin_bottom = 102
+
+[node name="AnswerOptions" type="HBoxContainer" parent="AnswerTexture/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Panel" type="Panel" parent="AnswerTexture/MarginContainer"]
+visible = false
+layout_mode = 2
+
 [node name="Paper" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,39 +204,3 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Paper/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Title" type="Label" parent="Paper/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_eu32f")
-theme_override_colors/font_color = Color(0.172549, 0.117647, 0.184314, 1)
-theme_override_font_sizes/font_size = 24
-text = "Математика"
-horizontal_alignment = 1
-
-[node name="SolvedProblems" type="VBoxContainer" parent="Paper/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="CurrentProblem" type="Label" parent="Paper/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_eu32f")
-theme_override_font_sizes/font_size = 32
-text = "5 + 3 = ?"
-horizontal_alignment = 1
-
-[node name="AnswerOptions" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -120.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-alignment = 1
