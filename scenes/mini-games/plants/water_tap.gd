@@ -27,6 +27,7 @@ func setup_water_area() -> void:
 # Обработчик входа лейки в зону крана
 func _on_water_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("watering_can"):
+		$"../NaborWasser".play()
 		is_watering_can_near = true
 		current_watering_can = body
 		
@@ -38,6 +39,7 @@ func _on_water_area_body_entered(body: Node2D) -> void:
 func _on_water_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("watering_can") and body == current_watering_can:
 		is_watering_can_near = false
+		$"../NaborWasser".stop()
 		
 		# Сообщаем лейке, что она больше не рядом с краном
 		if body.has_method("set_near_tap"):

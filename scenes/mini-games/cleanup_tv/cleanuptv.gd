@@ -79,6 +79,7 @@ func _on_dust_input_event(_viewport, event, _shape_idx, dust_area, dust_sprite):
 		dust_area.set_meta("clicks", clicks)
 		
 		if clicks >= CLICKS_TO_CLEAN:
+			$DustSound.play()
 			dust_area.queue_free()
 			dust_pieces.erase(dust_area)
 			remaining_dust -= 1

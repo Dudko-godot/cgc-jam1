@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=11 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
@@ -9,11 +9,39 @@
 [ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://b2jk2rmwy6xgt" path="res://scenes/enemyai/enemy_ai.tscn" id="7_vlixy"]
 [ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
+[ext_resource type="PackedScene" uid="uid://cag8n58iwesw" path="res://scenes/TriggerSound/BathRoom/Clock.tscn" id="10_qqq13"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
+
+[node name="SimpleInteractable4" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(2371, 1758)
+task_id = "water_plants"
+
+[node name="SimpleInteractable5" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(2372, 866)
+task_id = "wash_dishes"
+
+[node name="SimpleInteractable6" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(1042, 803)
+task_id = "do_homework"
+
+[node name="SimpleInteractable" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(1734, 1260)
+
+[node name="SimpleInteractable7" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(632, 996)
+task_id = "hang_laundry"
+
+[node name="SimpleInteractable2" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(897, 1763)
+task_id = "cleanup_tv"
+
+[node name="SimpleInteractable3" parent="map" instance=ExtResource("3_koioy")]
+position = Vector2(1092, 474)
+task_id = "cleanup_toys"
 
 [node name="Player" parent="map" instance=ExtResource("2_qq51q")]
 unique_name_in_owner = true
@@ -23,65 +51,53 @@ position = Vector2(700, 1207)
 [node name="Camera2D" parent="map/Player" instance=ExtResource("6_ixnqm")]
 zoom = Vector2(0.7, 0.7)
 
-[node name="PatrolPoint4" parent="map/Player" instance=ExtResource("8_16nb4")]
+[node name="PatrolPointPlayer" parent="map/Player" instance=ExtResource("8_16nb4")]
 position = Vector2(0, -2)
 dialogue_text = "локтарогар"
 point_name = "фывфывфывфвы"
-action_type = 1
 
 [node name="FatherEnemy" parent="map" instance=ExtResource("6_6by5k")]
 position = Vector2(2324, 1942)
 
 [node name="AiController" parent="map" node_paths=PackedStringArray("character") instance=ExtResource("7_vlixy")]
 character = NodePath("../FatherEnemy")
-target_nodes = Array[NodePath]([NodePath("../Player/PatrolPoint4"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3")])
+target_nodes = Array[NodePath]([NodePath("../Player/PatrolPointPlayer"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3"), NodePath("../PatrolPoint4"), NodePath("../PatrolPoint5"), NodePath("../PatrolPoint6")])
 
 [node name="PatrolPoint" parent="map" instance=ExtResource("8_16nb4")]
-position = Vector2(993, 1787)
-dialogue_text = "ну и времена пошли"
+position = Vector2(999, 1739)
+dialogue_text = "ну и времена пошли конечно!"
 point_name = "телевизор"
 action_type = 1
 
 [node name="PatrolPoint2" parent="map" instance=ExtResource("8_16nb4")]
-position = Vector2(2019, 861)
-dialogue_text = "где моё пиво"
+position = Vector2(1980, 867)
+dialogue_text = "где моё пиво???"
 point_name = "холодильник"
 action_type = 1
 
 [node name="PatrolPoint3" parent="map" instance=ExtResource("8_16nb4")]
-position = Vector2(1466, 1500)
-dialogue_text = "бла бла бла длинный диалог вот так вот да офиге за честь и отвагу ненавижу глубцов уууубьюююю "
+position = Vector2(1661, 1977)
+dialogue_text = "Ох и надоело мне всё!"
 point_name = "хзтест"
 action_type = 1
 
-[node name="interactables" type="Node2D" parent="."]
+[node name="PatrolPoint4" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(2422, 2218)
+dialogue_text = "Вот в моё то время!"
+point_name = "хзтест"
+action_type = 1
 
-[node name="SimpleInteractable4" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(2371, 1758)
-task_id = "water_plants"
+[node name="PatrolPoint5" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(420, 1110)
+dialogue_text = "НУ КАК ТАК???"
+point_name = "хзтест"
+action_type = 1
 
-[node name="SimpleInteractable5" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(2372, 866)
-task_id = "wash_dishes"
-
-[node name="SimpleInteractable6" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(1042, 803)
-task_id = "do_homework"
-
-[node name="SimpleInteractable" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(1734, 1260)
-
-[node name="SimpleInteractable7" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(632, 996)
-task_id = "hang_laundry"
-
-[node name="SimpleInteractable2" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(897, 1763)
-task_id = "cleanup_tv"
-
-[node name="SimpleInteractable3" parent="interactables" instance=ExtResource("3_koioy")]
-position = Vector2(1092, 474)
-task_id = "cleanup_toys"
+[node name="PatrolPoint6" parent="map" instance=ExtResource("8_16nb4")]
+position = Vector2(1451, 783)
+dialogue_text = "Ты где, щенок?"
+point_name = "хзтест"
+action_type = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,3 +111,7 @@ offset_right = 320.0
 offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Node2D" instance=ExtResource("10_qqq13")]

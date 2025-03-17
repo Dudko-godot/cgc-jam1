@@ -754,6 +754,7 @@ scale = Vector2(0.66713, 0.664815)
 texture = ExtResource("1_sylr0")
 
 [node name="ButtonTryAgain" parent="." instance=ExtResource("1_mduyo")]
+visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 1
 anchors_preset = 6
@@ -769,6 +770,7 @@ text = "Попробовать
 снова"
 
 [node name="ButtonExit" parent="." instance=ExtResource("1_mduyo")]
+visible = false
 custom_minimum_size = Vector2(220, 85)
 layout_mode = 1
 anchors_preset = 4

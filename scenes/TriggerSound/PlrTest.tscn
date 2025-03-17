@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://co1tjenpu7hei"]
+
+[ext_resource type="Script" path="res://scenes/TriggerSound/plr_test.gd" id="1_afxns"]
+[ext_resource type="Texture2D" uid="uid://btoee8lpwxkyu" path="res://icon.svg" id="1_c3mvt"]
+[ext_resource type="PackedScene" uid="uid://f7bakop6gnte" path="res://scenes/TriggerSound/camera_plr.tscn" id="2_fcps0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpui8"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_afxns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.336623, 0.336623)
+texture = ExtResource("1_c3mvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cpui8")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_fcps0")]
+scale = Vector2(0.336623, 0.336623)

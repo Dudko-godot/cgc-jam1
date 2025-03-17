@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmexgjdgk1sp1"]
+
+[ext_resource type="Texture2D" uid="uid://btoee8lpwxkyu" path="res://icon.svg" id="2_diu08"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofjx8"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(791, 340)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -11.358
+autoplay = true
+max_distance = 300.0
+bus = &"Sound"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_diu08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_ofjx8")
