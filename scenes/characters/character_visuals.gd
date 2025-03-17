@@ -44,7 +44,10 @@ func _physics_process(_delta : float) -> void:
 	
 	_determine_speed()
 	_determine_direction()
-
+	
+	#
+#func _determine_acceleration() -> void:
+	#body.velocity
 
 func _determine_speed() -> void:
 	if body.velocity.length() < MINIMUM_VELOCITY:

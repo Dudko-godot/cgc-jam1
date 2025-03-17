@@ -55,6 +55,11 @@ func _fetch_phase() -> float:
 	
 	if delay_frames == 0 : return tracker.phase
 	
+	#if delay > 0:
+		#return tracker.phase + delay
+	#else:
+		#return 0.0
+	
 	if delay_frames < tracker.buffer_length_frames: return tracker.buffer[-delay_frames]
 	
 	return 0.0

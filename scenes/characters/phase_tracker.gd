@@ -8,6 +8,9 @@ class_name PhaseTracker extends Node
 @export_range(0.0, 100.0) var raw_speed_reset_margin : float = 15.0
 @export_range(0.01, 10.0, 0.01) var speed_multiplier : float = 12.0
 
+@export var is_inverted : bool = false
+@export var offset : float = 0.0
+
 const RAW_CLAMP : float = 2.0#2 * PI
 const PHASE_FRACTION : int = 10000
 const BUFFER_SIZE_SECONDS : int = 3
@@ -33,9 +36,16 @@ func _set_phase(value_ : float) -> void:
 
 
 func _set_raw(value_ : float) -> void:
+	var current_offset : float = offset * visuals.relative_speed
+	
 	raw = value_
+	
 	#phase = -1.0 + triangle_wave(raw / PHASE_FRACTION, 8.0, 2.0)
-	phase = sin(raw / PHASE_FRACTION)
+	phase = sin(raw / PHASE_FRACTION - current_offset)
+	if is_inverted:
+		phase =- phase
+	
+	
 #	raw = wrap(value_, 0, RAW_CLAMP)
 	#phase = -1.0 + wrap(raw , 0.0, 2.0)
 	#phase = 
