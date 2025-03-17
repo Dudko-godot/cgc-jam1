@@ -45,21 +45,23 @@ task_id = "cleanup_toys"
 [node name="Player" parent="map" instance=ExtResource("2_qq51q")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(847, 1204)
+position = Vector2(700, 1207)
 
 [node name="Camera2D" parent="map/Player" instance=ExtResource("6_ixnqm")]
 zoom = Vector2(0.7, 0.7)
 
 [node name="PatrolPoint4" parent="map/Player" instance=ExtResource("8_16nb4")]
-position = Vector2(0, 1)
+position = Vector2(0, -2)
 dialogue_text = "локтарогар"
+point_name = "фывфывфывфвы"
+action_type = 1
 
 [node name="FatherEnemy" parent="map" instance=ExtResource("6_6by5k")]
 position = Vector2(2324, 1942)
 
 [node name="AiController" parent="map" node_paths=PackedStringArray("character") instance=ExtResource("7_vlixy")]
 character = NodePath("../FatherEnemy")
-target_nodes = Array[NodePath]([NodePath("../Player/PatrolPoint4"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3"), NodePath("")])
+target_nodes = Array[NodePath]([NodePath("../Player/PatrolPoint4"), NodePath("../PatrolPoint"), NodePath("../PatrolPoint2"), NodePath("../PatrolPoint3")])
 
 [node name="PatrolPoint" parent="map" instance=ExtResource("8_16nb4")]
 position = Vector2(993, 1787)
