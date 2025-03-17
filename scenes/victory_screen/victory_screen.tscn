@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://i68t5br48l8m"]
+[gd_scene load_steps=89 format=3 uid="uid://i68t5br48l8m"]
 
 [ext_resource type="Shader" path="res://visuals/shaders/shine.gdshader" id="1_5omks"]
 [ext_resource type="Script" path="res://scenes/victory_screen/victory_screen.gd" id="1_qa2k1"]
@@ -344,36 +344,6 @@ height = 32
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="Animation" id="Animation_g1xjv"]
-resource_name = "disappear"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FullDarkener:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.450625, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_go_to_main_menu"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_km883"]
 length = 0.001
 tracks/0/type = "value"
@@ -416,11 +386,72 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_g1xjv"]
+resource_name = "disappear"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullDarkener:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_go_to_main_menu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1yvg5"]
+resource_name = "disappear_to_game"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullDarkener:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_go_again"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hua4f"]
 _data = {
 "RESET": SubResource("Animation_km883"),
 "appear": SubResource("Animation_swrhp"),
-"disappear": SubResource("Animation_g1xjv")
+"disappear": SubResource("Animation_g1xjv"),
+"disappear_to_game": SubResource("Animation_1yvg5")
 }
 
 [node name="VictoryScreen" type="Control"]
@@ -606,4 +637,5 @@ libraries = {
 }
 autoplay = "appear"
 
+[connection signal="pressed" from="ButtonTryAgain" to="." method="_on_button_again_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_button_main_menu_pressed"]
