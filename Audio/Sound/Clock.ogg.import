@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://yrc4hj678ccg"
-path="res://.godot/imported/Clock.ogg-d4e5c4cd8e34bf4d78b2eb7f045927c2.oggvorbisstr"
+path="res://.godot/imported/Clock.ogg-6833cc14991d68addc618b9840ab899a.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/Clock.ogg"
-dest_files=["res://.godot/imported/Clock.ogg-d4e5c4cd8e34bf4d78b2eb7f045927c2.oggvorbisstr"]
+source_file="res://audio/Sound/Clock.ogg"
+dest_files=["res://.godot/imported/Clock.ogg-6833cc14991d68addc618b9840ab899a.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ch7w4k2f0n3df"
-path="res://.godot/imported/OpenTheBook.ogg-e6003de5294d6fce82518e48c02b7eba.oggvorbisstr"
+path="res://.godot/imported/OpenTheBook.ogg-87567ba0593a8c9ccd951f11aee81207.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/OpenTheBook.ogg"
-dest_files=["res://.godot/imported/OpenTheBook.ogg-e6003de5294d6fce82518e48c02b7eba.oggvorbisstr"]
+source_file="res://audio/Sound/OpenTheBook.ogg"
+dest_files=["res://.godot/imported/OpenTheBook.ogg-87567ba0593a8c9ccd951f11aee81207.oggvorbisstr"]
 
 [params]
 

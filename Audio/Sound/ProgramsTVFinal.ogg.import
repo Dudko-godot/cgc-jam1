@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b3h8jx3et330x"
-path="res://.godot/imported/ProgramsTVFinal.ogg-d4a41febec41a31e3202bc5bfe6b16f4.oggvorbisstr"
+path="res://.godot/imported/ProgramsTVFinal.ogg-563c9175072477ba25dd38826eeb1b02.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/ProgramsTVFinal.ogg"
-dest_files=["res://.godot/imported/ProgramsTVFinal.ogg-d4a41febec41a31e3202bc5bfe6b16f4.oggvorbisstr"]
+source_file="res://audio/Sound/ProgramsTVFinal.ogg"
+dest_files=["res://.godot/imported/ProgramsTVFinal.ogg-563c9175072477ba25dd38826eeb1b02.oggvorbisstr"]
 
 [params]
 

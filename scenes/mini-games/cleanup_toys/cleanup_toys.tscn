@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/cleanup_toys.gd" id="1_8p4ky"]
 [ext_resource type="Texture2D" uid="uid://cv4er4g6tpytd" path="res://visuals/minigames/toys/basket.png" id="2_uwdlk"]
-[ext_resource type="AudioStream" uid="uid://blcymocit5wub" path="res://Audio/Sound/toy1.ogg" id="3_60br2"]
-[ext_resource type="AudioStream" uid="uid://bmruu0dkybudy" path="res://Audio/Sound/toy2.ogg" id="4_kq2ii"]
-[ext_resource type="AudioStream" uid="uid://ct78l3po2tqee" path="res://Audio/Sound/toy3.ogg" id="5_4qdhf"]
+[ext_resource type="AudioStream" uid="uid://blcymocit5wub" path="res://audio/Sound/toy1.ogg" id="3_60br2"]
+[ext_resource type="AudioStream" uid="uid://bmruu0dkybudy" path="res://audio/Sound/toy2.ogg" id="4_kq2ii"]
+[ext_resource type="AudioStream" uid="uid://ct78l3po2tqee" path="res://audio/Sound/toy3.ogg" id="5_4qdhf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.341176, 0.494118, 0.615686, 1)
@@ -92,4 +92,3 @@ texture = ExtResource("2_uwdlk")
 
 [node name="Environment" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_o48kv")
-bus = &"Sound"

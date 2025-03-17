@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dvhnei611cird"
-path="res://.godot/imported/NextPageForBook.ogg-261661df59efa5048b458167b96219c0.oggvorbisstr"
+path="res://.godot/imported/NextPageForBook.ogg-c65d00421c3a61db2e31a5327ef71ff3.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/NextPageForBook.ogg"
-dest_files=["res://.godot/imported/NextPageForBook.ogg-261661df59efa5048b458167b96219c0.oggvorbisstr"]
+source_file="res://audio/Sound/NextPageForBook.ogg"
+dest_files=["res://.godot/imported/NextPageForBook.ogg-c65d00421c3a61db2e31a5327ef71ff3.oggvorbisstr"]
 
 [params]
 

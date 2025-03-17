@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cwvqodgm8oswa"
-path="res://.godot/imported/PilTelek.ogg-8ebcf8f6a91ce2bfbd2d7078358ec223.oggvorbisstr"
+path="res://.godot/imported/PilTelek.ogg-9665c734bcd560050b1a56b7ed09d61c.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/PilTelek.ogg"
-dest_files=["res://.godot/imported/PilTelek.ogg-8ebcf8f6a91ce2bfbd2d7078358ec223.oggvorbisstr"]
+source_file="res://audio/Sound/PilTelek.ogg"
+dest_files=["res://.godot/imported/PilTelek.ogg-9665c734bcd560050b1a56b7ed09d61c.oggvorbisstr"]
 
 [params]
 

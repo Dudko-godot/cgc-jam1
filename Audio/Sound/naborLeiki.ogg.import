@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dya4qcls1dn2l"
-path="res://.godot/imported/naborLeiki.ogg-3846b412a55527e41f8b4ff199aa8684.oggvorbisstr"
+path="res://.godot/imported/naborLeiki.ogg-fe76c094f9138ad8c6a767f9eff7a84d.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/naborLeiki.ogg"
-dest_files=["res://.godot/imported/naborLeiki.ogg-3846b412a55527e41f8b4ff199aa8684.oggvorbisstr"]
+source_file="res://audio/Sound/naborLeiki.ogg"
+dest_files=["res://.godot/imported/naborLeiki.ogg-fe76c094f9138ad8c6a767f9eff7a84d.oggvorbisstr"]
 
 [params]
 

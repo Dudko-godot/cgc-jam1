@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://wkmumh3uym2w"
-path="res://.godot/imported/leto-letnyaya-atmosfera-27661.ogg-26e33c4863935253663435aae3a4d504.oggvorbisstr"
+path="res://.godot/imported/leto-letnyaya-atmosfera-27661.ogg-0c6801e763c828d16fc678e43f41ef74.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/leto-letnyaya-atmosfera-27661.ogg"
-dest_files=["res://.godot/imported/leto-letnyaya-atmosfera-27661.ogg-26e33c4863935253663435aae3a4d504.oggvorbisstr"]
+source_file="res://audio/Sound/leto-letnyaya-atmosfera-27661.ogg"
+dest_files=["res://.godot/imported/leto-letnyaya-atmosfera-27661.ogg-0c6801e763c828d16fc678e43f41ef74.oggvorbisstr"]
 
 [params]
 

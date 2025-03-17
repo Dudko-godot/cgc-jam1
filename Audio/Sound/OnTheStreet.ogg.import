@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d4nfuap50dyy"
-path="res://.godot/imported/OnTheStreet.ogg-459fc6d9f9b092f1f172cddfb899f043.oggvorbisstr"
+path="res://.godot/imported/OnTheStreet.ogg-97778a66a2339c5cacb2c1d3acd46d0b.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/OnTheStreet.ogg"
-dest_files=["res://.godot/imported/OnTheStreet.ogg-459fc6d9f9b092f1f172cddfb899f043.oggvorbisstr"]
+source_file="res://audio/Sound/OnTheStreet.ogg"
+dest_files=["res://.godot/imported/OnTheStreet.ogg-97778a66a2339c5cacb2c1d3acd46d0b.oggvorbisstr"]
 
 [params]
 

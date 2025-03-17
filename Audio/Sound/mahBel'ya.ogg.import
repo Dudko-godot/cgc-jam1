@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://jipjyyqmmnn"
-path="res://.godot/imported/mahBel'ya.ogg-0ab2d57e2fecc5aebcba080956e4bdf2.oggvorbisstr"
+path="res://.godot/imported/mahBel'ya.ogg-1a570484223bcab6953c1f7dbfcf3305.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/mahBel'ya.ogg"
-dest_files=["res://.godot/imported/mahBel'ya.ogg-0ab2d57e2fecc5aebcba080956e4bdf2.oggvorbisstr"]
+source_file="res://audio/Sound/mahBel'ya.ogg"
+dest_files=["res://.godot/imported/mahBel'ya.ogg-1a570484223bcab6953c1f7dbfcf3305.oggvorbisstr"]
 
 [params]
 

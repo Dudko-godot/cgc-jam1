@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ml4ir0b7urod"
-path="res://.godot/imported/ForPlant.ogg-1b52c4c3c6433cbc2d3c1418d16fe40a.oggvorbisstr"
+path="res://.godot/imported/ForPlant.ogg-9435d06165e3b153e1e168d292ad9022.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/ForPlant.ogg"
-dest_files=["res://.godot/imported/ForPlant.ogg-1b52c4c3c6433cbc2d3c1418d16fe40a.oggvorbisstr"]
+source_file="res://audio/Sound/ForPlant.ogg"
+dest_files=["res://.godot/imported/ForPlant.ogg-9435d06165e3b153e1e168d292ad9022.oggvorbisstr"]
 
 [params]
 

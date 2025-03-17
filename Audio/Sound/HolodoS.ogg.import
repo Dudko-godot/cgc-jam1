@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://rqo7kb7iy7u6"
-path="res://.godot/imported/HolodoS.ogg-8c2b4d6f7f7bea952852713eb910427b.oggvorbisstr"
+path="res://.godot/imported/HolodoS.ogg-7f7b9d2dc9d3d973788754ee9f54d97e.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/Sound/HolodoS.ogg"
-dest_files=["res://.godot/imported/HolodoS.ogg-8c2b4d6f7f7bea952852713eb910427b.oggvorbisstr"]
+source_file="res://audio/Sound/HolodoS.ogg"
+dest_files=["res://.godot/imported/HolodoS.ogg-7f7b9d2dc9d3d973788754ee9f54d97e.oggvorbisstr"]
 
 [params]
 

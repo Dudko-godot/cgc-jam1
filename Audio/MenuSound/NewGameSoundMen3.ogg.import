@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bsrfhld57yjoj"
-path="res://.godot/imported/NewGameSoundMen3.ogg-cf0f0c6f2b0376b76de36ffe71824903.oggvorbisstr"
+path="res://.godot/imported/NewGameSoundMen3.ogg-d68354a71d3605fb9f5d22c8b05914e6.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/MenuSound/NewGameSoundMen3.ogg"
-dest_files=["res://.godot/imported/NewGameSoundMen3.ogg-cf0f0c6f2b0376b76de36ffe71824903.oggvorbisstr"]
+source_file="res://audio/MenuSound/NewGameSoundMen3.ogg"
+dest_files=["res://.godot/imported/NewGameSoundMen3.ogg-d68354a71d3605fb9f5d22c8b05914e6.oggvorbisstr"]
 
 [params]
 
