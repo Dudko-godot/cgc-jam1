@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0rryeea1gkhy"]
+[gd_scene load_steps=11 format=3 uid="uid://b0rryeea1gkhy"]
 
 [ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_u2st1"]
 [ext_resource type="PackedScene" uid="uid://b7tfr2tgwu4cb" path="res://scenes/map/map.tscn" id="1_vrxxs"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vyq6sl7wsi37" path="res://scenes/ui/camera_2d.tscn" id="6_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://b2jk2rmwy6xgt" path="res://scenes/enemyai/enemy_ai.tscn" id="7_vlixy"]
 [ext_resource type="PackedScene" uid="uid://bshgojyt4hoc1" path="res://scenes/enemyai/patrol_point/patrol_point.tscn" id="8_16nb4"]
+[ext_resource type="PackedScene" uid="uid://cag8n58iwesw" path="res://scenes/TriggerSound/BathRoom/Clock.tscn" id="10_qqq13"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_u2st1")
@@ -93,3 +94,7 @@ offset_right = 320.0
 offset_bottom = 420.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Node2D" instance=ExtResource("10_qqq13")]
