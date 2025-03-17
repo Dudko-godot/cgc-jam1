@@ -2021,6 +2021,7 @@ color = Color(0.141176, 0.0941176, 0.14902, 1)
 
 [node name="Stinger" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("221_i1g1a")
+volume_db = -30.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("222_y7oqx")
