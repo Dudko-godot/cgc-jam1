@@ -39,7 +39,7 @@ func start_washing():
 	if washing_position:
 		reparent(washing_position)
 		# Устанавливаем размер для центральной позиции
-		custom_minimum_size = Vector2(96, 96)  # Делаем тарелку немного больше при мытье
+		custom_minimum_size = Vector2(180, 180)  # Делаем тарелку немного больше при мытье
 
 func wash():
 	clicks += 1
@@ -55,7 +55,7 @@ func finish_washing():
 	clicks = 0
 	is_clean = true
 	
-	custom_minimum_size = Vector2(64, 64)
+	custom_minimum_size = Vector2(164, 164)
 	
 	var clean_container = get_parent().get_parent().get_node("CleanPlatesContainer")
 	if clean_container:

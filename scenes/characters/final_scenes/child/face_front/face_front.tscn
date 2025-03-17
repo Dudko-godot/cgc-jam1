@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo8b2fw36r185"]
+[gd_scene load_steps=9 format=3 uid="uid://bo8b2fw36r185"]
 
 [ext_resource type="Script" path="res://scenes/characters/cool_sprite_2d/cool_sprite_2d.gd" id="1_54qj1"]
-[ext_resource type="Texture2D" uid="uid://dm6hrrn121g5w" path="res://visuals/reference/demo_child_poses.png" id="1_gjucj"]
 [ext_resource type="Texture2D" uid="uid://c30aoosoybiut" path="res://visuals/character_pngs/child/mouth_default.png" id="3_gsynm"]
 [ext_resource type="Texture2D" uid="uid://l6xqvqnudpfa" path="res://visuals/character_pngs/child/hair_front.png" id="3_x55th"]
 [ext_resource type="Script" path="res://scenes/characters/final_scenes/child/face_front/eyes.gd" id="4_balgi"]
@@ -27,12 +26,6 @@ fill_from = Vector2(0.5, 0.5)
 [node name="FaceFront" type="Sprite2D"]
 script = ExtResource("1_54qj1")
 
-[node name="DemoChildPoses" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(234, 24)
-texture = ExtResource("1_gjucj")
-metadata/_edit_lock_ = true
-
 [node name="HeadSpriteReference" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color(1, 0.843137, 0.701961, 1)
@@ -55,12 +48,6 @@ texture = SubResource("GradientTexture2D_nql3t")
 position = Vector2(48, 0)
 scale = Vector2(0.8, 0.8)
 texture = SubResource("GradientTexture2D_nql3t")
-
-[node name="DemoChildPoses2" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.15)
-position = Vector2(234, 24)
-texture = ExtResource("1_gjucj")
-metadata/_edit_lock_ = true
 
 [node name="Hair" type="Sprite2D" parent="."]
 position = Vector2(29, -37)
