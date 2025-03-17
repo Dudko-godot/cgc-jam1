@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://djycr7j46ed5a"
-path="res://.godot/imported/osnova1.ogg-ff5bba8cf6d5382d9dd26cd0e6aa2754.oggvorbisstr"
+path="res://.godot/imported/osnova1.ogg-a275ac27c58f157576cd4712e64b8714.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/music/osnova1.ogg"
-dest_files=["res://.godot/imported/osnova1.ogg-ff5bba8cf6d5382d9dd26cd0e6aa2754.oggvorbisstr"]
+source_file="res://Audio/Music/osnova1.ogg"
+dest_files=["res://.godot/imported/osnova1.ogg-a275ac27c58f157576cd4712e64b8714.oggvorbisstr"]
 
 [params]
 
