@@ -8,7 +8,7 @@ class_name PhaseTracker extends Node
 @export_range(0.0, 100.0) var raw_speed_reset_margin : float = 15.0
 @export_range(0.01, 10.0, 0.01) var speed_multiplier : float = 12.0
 
-const RAW_CLAMP : float = 2 * PI
+const RAW_CLAMP : float = 2.0#2 * PI
 const PHASE_FRACTION : int = 10000
 const BUFFER_SIZE_SECONDS : int = 3
 
@@ -34,8 +34,12 @@ func _set_phase(value_ : float) -> void:
 
 func _set_raw(value_ : float) -> void:
 	raw = value_
-#	raw = wrap(value_, 0, RAW_CLAMP)
+	#phase = -1.0 + triangle_wave(raw / PHASE_FRACTION, 8.0, 2.0)
 	phase = sin(raw / PHASE_FRACTION)
+#	raw = wrap(value_, 0, RAW_CLAMP)
+	#phase = -1.0 + wrap(raw , 0.0, 2.0)
+	#phase = 
+	#phase = sin(raw / PHASE_FRACTION)
 
 
 func _set_raw_speed(value_ : float) -> void:
@@ -80,3 +84,14 @@ func _interpolate_phase_reset(delta_ : float) -> void:
 func _prepare_buffer() -> void:
 	buffer_length_frames = BUFFER_SIZE_SECONDS * Engine.max_fps
 	buffer.resize(buffer_length_frames)
+	
+	
+	
+func triangle_wave(t : float, p : float, amplitude : float) -> float:
+	# Normalize time t to the range of [0, 1] based on the period
+	var normalized_time = fmod(t, p) / p
+		# Map the normalized time to a triangle wave
+	if normalized_time < 0.5:
+		return normalized_time * 2 * amplitude  # Rising part
+	else:
+		return (1.0 - normalized_time) * 2 * amplitude  # Falling part

@@ -28,25 +28,33 @@ func calculate(phase_ : float) -> Vector2:
 
 
 func _calculate_up(phase_ : float) -> Vector2:
-	if not up : return default
+	if not up :
+		value = default
+		return default
 	value = up.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_down(phase_ : float) -> Vector2:
-	if not down : return default
+	if not down :
+		value = default
+		return default
 	value = down.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_left(phase_ : float) -> Vector2:
-	if not left : return default
+	if not left :
+		value = default
+		return default
 	value = left.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_right(phase_ : float) -> Vector2:
-	if not right : return default
+	if not right :
+		value = default
+		return default
 	value = right.interpolate(default, phase_)
 	return value
 
@@ -59,3 +67,5 @@ func _attach_actor_signals(_actor : Node2D) -> void:
 		PhaseComponent.PROPERTY.POSITION:
 			value_changed.connect(_invoke_callable_soften.bind(actor.set_position))
 			#value_changed.connect(actor.set_position)
+			
+			

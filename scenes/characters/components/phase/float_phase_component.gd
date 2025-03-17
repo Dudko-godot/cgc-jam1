@@ -11,7 +11,7 @@ var value : float = 0.0 : set = _set_value
 
 
 func _set_value(value_ : float) -> void:
-	if value == value_ : return
+	#if value == value_ : return
 	value = value_
 	
 	value_changed.emit(value)
@@ -28,25 +28,33 @@ func calculate(phase_ : float) -> float:
 
 
 func _calculate_up(phase_ : float) -> float:
-	if not up : return default
+	if not up :
+		value = default
+		return default
 	value = up.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_down(phase_ : float) -> float:
-	if not down : return default
+	if not down :
+		value = default
+		return default
 	value = down.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_left(phase_ : float) -> float:
-	if not left : return default
+	if not left :
+		value = default
+		return default
 	value = left.interpolate(default, phase_)
 	return value
 	
 	
 func _calculate_right(phase_ : float) -> float:
-	if not right : return default
+	if not right :
+		value = default
+		return default
 	value = right.interpolate(default, phase_)
 	return value
 

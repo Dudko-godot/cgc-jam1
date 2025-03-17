@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dx6rouy4tgcj3"]
+[gd_scene load_steps=58 format=3 uid="uid://dx6rouy4tgcj3"]
 
 [ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_u5w2x"]
 [ext_resource type="Script" path="res://scenes/characters/phase_tracker.gd" id="2_12lok"]
@@ -22,20 +22,55 @@
 [ext_resource type="Texture2D" uid="uid://5rxlqu8s02bu" path="res://visuals/character_pngs/child/cap_hood_front_near.png" id="13_8mete"]
 [ext_resource type="Texture2D" uid="uid://dc05brju1xy65" path="res://visuals/character_pngs/child/cap_hood_side.png" id="16_lmwc2"]
 
+[sub_resource type="Resource" id="Resource_gph2r"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 12
+
+[sub_resource type="Resource" id="Resource_jb5hr"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, 1)
+left = Vector2(1, 1)
+right = Vector2(-1, 1)
+
+[sub_resource type="Resource" id="Resource_umu8s"]
+script = ExtResource("10_i7vqc")
+positive_maximim = -0.7
+negative_maximum = 0.7
+
+[sub_resource type="Resource" id="Resource_q474x"]
+script = ExtResource("9_nw52m")
+up = SubResource("Resource_umu8s")
+delay = 0.0
+is_directional = false
+default_property = 1
+
+[sub_resource type="Gradient" id="Gradient_mpwl7"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.684058, 0.698551)
+colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iw8wo"]
+gradient = SubResource("Gradient_mpwl7")
+width = 40
+height = 40
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="Resource" id="Resource_ki4tf"]
 script = ExtResource("7_omjji")
-positive_maximim = Vector2(0, -24)
-negative_maximum = Vector2(0, -32)
+positive_maximim = Vector2(0, -22)
+negative_maximum = Vector2(0, -34)
 
 [sub_resource type="Resource" id="Resource_pie5g"]
 script = ExtResource("7_omjji")
-positive_maximim = Vector2(0, -24)
-negative_maximum = Vector2(0, -32)
+positive_maximim = Vector2(0, -22)
+negative_maximum = Vector2(0, -34)
 
 [sub_resource type="Resource" id="Resource_iretn"]
 script = ExtResource("7_omjji")
-positive_maximim = Vector2(0, -32)
-negative_maximum = Vector2(0, -24)
+positive_maximim = Vector2(0, -34)
+negative_maximum = Vector2(0, -22)
 
 [sub_resource type="Resource" id="Resource_10g2s"]
 script = ExtResource("7_6foj5")
@@ -46,6 +81,11 @@ delay = 0.0
 is_directional = false
 default_property = 0
 
+[sub_resource type="Resource" id="Resource_blepr"]
+script = ExtResource("10_i7vqc")
+positive_maximim = 0.1
+negative_maximum = -0.2
+
 [sub_resource type="Resource" id="Resource_vlh4y"]
 script = ExtResource("10_i7vqc")
 positive_maximim = -0.2
@@ -53,7 +93,7 @@ negative_maximum = 0.1
 
 [sub_resource type="Resource" id="Resource_h5g4a"]
 script = ExtResource("9_nw52m")
-left = SubResource("Resource_vlh4y")
+left = SubResource("Resource_blepr")
 right = SubResource("Resource_vlh4y")
 delay = 0.0
 is_directional = true
@@ -61,26 +101,32 @@ default_property = 1
 
 [sub_resource type="Resource" id="Resource_tfue0"]
 script = ExtResource("7_omjji")
-positive_maximim = Vector2(0, -68)
-negative_maximum = Vector2(0, -63)
+positive_maximim = Vector2(0, -66)
+negative_maximum = Vector2(0, -64)
 
 [sub_resource type="Resource" id="Resource_ojp0b"]
 script = ExtResource("7_6foj5")
 up = SubResource("Resource_tfue0")
-delay = 0.05
+delay = 0.03
 is_directional = false
 default_property = 0
 
+[sub_resource type="Resource" id="Resource_montu"]
+script = ExtResource("10_i7vqc")
+positive_maximim = 0.15
+negative_maximum = -0.05
+
 [sub_resource type="Resource" id="Resource_laepf"]
 script = ExtResource("10_i7vqc")
-positive_maximim = -0.15
-negative_maximum = 0.1
+positive_maximim = -0.05
+negative_maximum = 0.15
 
 [sub_resource type="Resource" id="Resource_7puq0"]
 script = ExtResource("9_nw52m")
-up = SubResource("Resource_laepf")
+left = SubResource("Resource_montu")
+right = SubResource("Resource_laepf")
 delay = 0.1
-is_directional = false
+is_directional = true
 default_property = 1
 
 [sub_resource type="Gradient" id="Gradient_68bnh"]
@@ -156,6 +202,29 @@ down = Vector2(1, 1)
 left = Vector2(1, 1)
 right = Vector2(-1, 1)
 
+[sub_resource type="Resource" id="Resource_eyr84"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 12
+
+[sub_resource type="Resource" id="Resource_3cr6e"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, 1)
+left = Vector2(1, 1)
+right = Vector2(-1, 1)
+
+[sub_resource type="Resource" id="Resource_4v5xh"]
+script = ExtResource("10_i7vqc")
+positive_maximim = 0.7
+negative_maximum = -0.7
+
+[sub_resource type="Resource" id="Resource_weahp"]
+script = ExtResource("9_nw52m")
+up = SubResource("Resource_4v5xh")
+delay = 0.0
+is_directional = false
+default_property = 1
+
 [node name="ChildVisuals" type="Node2D"]
 script = ExtResource("1_u5w2x")
 maximum_velocity = 100.0
@@ -170,6 +239,25 @@ visible = false
 position = Vector2(233, -117)
 texture = ExtResource("3_kjpux")
 metadata/_edit_lock_ = true
+
+[node name="SideHandBack" type="Sprite2D" parent="." node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+modulate = Color(1, 0.843137, 0.701961, 1)
+position = Vector2(0, -94)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("..")
+phase_tracker = NodePath("../PhaseComponent")
+direction_component_visibility = SubResource("Resource_gph2r")
+direction_component_scale = SubResource("Resource_jb5hr")
+
+[node name="ShoulderFront" type="Sprite2D" parent="SideHandBack" node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../..")
+phase_tracker = NodePath("../../PhaseComponent")
+rotation_component_position = SubResource("Resource_q474x")
+
+[node name="HandFront" type="Sprite2D" parent="SideHandBack/ShoulderFront"]
+position = Vector2(0, 60)
+texture = SubResource("GradientTexture2D_iw8wo")
 
 [node name="Legs" type="Sprite2D" parent="."]
 texture = ExtResource("4_2rmvk")
@@ -293,8 +381,26 @@ script = ExtResource("6_x2dt3")
 character_visuals = NodePath("../../../../..")
 
 [node name="DemoChildPoses2" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.25)
 position = Vector2(233, -117)
 texture = ExtResource("3_kjpux")
 metadata/_edit_lock_ = true
+
+[node name="SideHandFront" type="Sprite2D" parent="." node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+modulate = Color(1, 0.843137, 0.701961, 1)
+position = Vector2(0, -94)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("..")
+phase_tracker = NodePath("../PhaseComponent")
+direction_component_visibility = SubResource("Resource_eyr84")
+direction_component_scale = SubResource("Resource_3cr6e")
+
+[node name="ShoulderFront" type="Sprite2D" parent="SideHandFront" node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../..")
+phase_tracker = NodePath("../../PhaseComponent")
+rotation_component_position = SubResource("Resource_weahp")
+
+[node name="HandFront" type="Sprite2D" parent="SideHandFront/ShoulderFront"]
+position = Vector2(0, 60)
+texture = SubResource("GradientTexture2D_iw8wo")

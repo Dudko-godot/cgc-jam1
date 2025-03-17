@@ -47,7 +47,7 @@ func attach_actor(actor_ : Node2D, attach_signals : bool = true) -> void:
 
 func _determine_delay() -> void:
 	delay_frames = floor(delay * Engine.max_fps)
-	print('Delay in frames is ' + str(delay_frames))
+	#print('Delay in frames is ' + str(delay_frames))
 
 
 func _fetch_phase() -> float:
@@ -122,7 +122,9 @@ func _calculate_right(_phase : float) -> Variant:
 
 ## As in call the function below
 func _invoke_callable_soften(value_ : Variant, callable_ : Callable) -> void:
+	#if value_ == default: print('def value called')
 	callable_.call(interpolated_for_relative_speed(value_))
 
 func interpolated_for_relative_speed(value_ : Variant) -> Variant:
+	#return smoothstep()
 	return lerp(default, value_, visuals.relative_speed)
