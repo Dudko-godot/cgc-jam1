@@ -1,4 +1,4 @@
-class_name PhaseComponent extends Node
+class_name PhaseTracker extends Node
 
 @export_group('External References')
 @export var visuals : CharacterVisuals
@@ -12,7 +12,15 @@ const RAW_CLAMP : float = 2 * PI
 var raw_speed : float = 0.0 : set = _set_raw_speed
 var raw : float = 0.0 : set = _set_raw
 
-var phase : float = 0.0
+var phase : float = 0.0 : set = _set_phase
+
+signal phase_changed(phase_ : float)
+
+func _set_phase(value_ : float) -> void:
+	if phase == value_ : return
+	phase = value_
+	
+	phase_changed.emit(phase)
 
 
 func _set_raw(value_ : float) -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_f38ko"]
 [ext_resource type="Script" path="res://scenes/characters/misc/display_label.gd" id="2_1wdjq"]
-[ext_resource type="Script" path="res://scenes/characters/phase_component.gd" id="2_1xkju"]
+[ext_resource type="Script" path="res://scenes/characters/phase_tracker.gd" id="2_1xkju"]
 
 [node name="CharacterVisuals" type="Node2D"]
 script = ExtResource("1_f38ko")
