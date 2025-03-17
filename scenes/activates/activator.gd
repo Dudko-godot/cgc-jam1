@@ -1,11 +1,13 @@
 extends Area2D
 
+# Стилевая корректировка от Frexitsch
+const INTERACTABLE_PROMPT_LABEL_SETTINGS = preload('res://visuals/label_settings/interactable_prompt_label_settings.tres')
+
 # Экспортируемые переменные
 @export var task_id: String = "test_game"
-
 # Переменные состояния
 var player_in_range = false
-var label = null
+var label : Label = null
 var task_data = {}
 
 func _ready():
@@ -15,6 +17,7 @@ func _ready():
 	# Создаем метку для подсказки
 	label = Label.new()
 	label.visible = false
+	label.label_settings = INTERACTABLE_PROMPT_LABEL_SETTINGS
 	add_child(label)
 	
 	# Подключаем сигналы

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="VectorPhaseComponent" load_steps=7 format=3 uid="uid://sv4exwr88w3w"]
+
+[ext_resource type="Script" path="res://scenes/characters/components/tuple/vector_tuple.gd" id="1_0vp1b"]
+[ext_resource type="Script" path="res://scenes/characters/components/phase/vector_phase_component.gd" id="1_wcody"]
+
+[sub_resource type="Resource" id="Resource_hwv8v"]
+script = ExtResource("1_0vp1b")
+positive_maximim = Vector2(0, 0)
+negative_maximum = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_qpwxl"]
+script = ExtResource("1_0vp1b")
+positive_maximim = Vector2(0, 0)
+negative_maximum = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_3pvc5"]
+script = ExtResource("1_0vp1b")
+positive_maximim = Vector2(0, 0)
+negative_maximum = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_oy8b2"]
+script = ExtResource("1_0vp1b")
+positive_maximim = Vector2(0, 0)
+negative_maximum = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_wcody")
+up = SubResource("Resource_oy8b2")
+down = SubResource("Resource_hwv8v")
+left = SubResource("Resource_qpwxl")
+right = SubResource("Resource_3pvc5")
+is_directional = false
+default_property_name = &""

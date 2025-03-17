@@ -1,0 +1,270 @@
+[gd_scene load_steps=40 format=3 uid="uid://dx6rouy4tgcj3"]
+
+[ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_u5w2x"]
+[ext_resource type="Script" path="res://scenes/characters/phase_tracker.gd" id="2_12lok"]
+[ext_resource type="Texture2D" uid="uid://dm6hrrn121g5w" path="res://visuals/reference/demo_child_poses.png" id="3_kjpux"]
+[ext_resource type="Texture2D" uid="uid://b57n1kjnn72tc" path="res://visuals/character_pngs/child/legs.png" id="4_2rmvk"]
+[ext_resource type="Texture2D" uid="uid://ce4wm4y5qqtpb" path="res://visuals/character_pngs/child/body.png" id="5_i4roq"]
+[ext_resource type="Script" path="res://scenes/characters/cool_sprite_2d/cool_sprite_2d.gd" id="6_x2dt3"]
+[ext_resource type="Script" path="res://scenes/characters/components/directional/direction_component_visibility.gd" id="7_3a6rt"]
+[ext_resource type="Script" path="res://scenes/characters/components/phase/vector_phase_component.gd" id="7_6foj5"]
+[ext_resource type="PackedScene" uid="uid://bo8b2fw36r185" path="res://scenes/characters/final_scenes/child/face_front/face_front.tscn" id="7_am4ki"]
+[ext_resource type="Texture2D" uid="uid://fqoatj2u0xvo" path="res://visuals/character_pngs/child/hair_back.png" id="7_jp6bc"]
+[ext_resource type="Script" path="res://scenes/characters/components/tuple/vector_tuple.gd" id="7_omjji"]
+[ext_resource type="PackedScene" uid="uid://drn86h4k4i4jf" path="res://scenes/characters/final_scenes/child/face_side/face_side.tscn" id="8_s6o7t"]
+[ext_resource type="Texture2D" uid="uid://c1nw4qul41ahd" path="res://visuals/character_pngs/child/hair_side.png" id="9_nc0je"]
+[ext_resource type="Texture2D" uid="uid://5qo1ckqqgysf" path="res://visuals/character_pngs/child/cap_main.png" id="10_fknwb"]
+[ext_resource type="Script" path="res://scenes/characters/components/directional/direction_component_scale.gd" id="11_ckb4v"]
+[ext_resource type="PackedScene" uid="uid://bi4xpha2hispm" path="res://scenes/characters/final_scenes/child/propeller/propeller.tscn" id="11_lnyyy"]
+[ext_resource type="Texture2D" uid="uid://brrm2ke7hn1t5" path="res://visuals/character_pngs/child/cap_hood_front_distant.png" id="12_kjogc"]
+[ext_resource type="Texture2D" uid="uid://5rxlqu8s02bu" path="res://visuals/character_pngs/child/cap_hood_front_near.png" id="13_8mete"]
+[ext_resource type="Texture2D" uid="uid://dc05brju1xy65" path="res://visuals/character_pngs/child/cap_hood_side.png" id="16_lmwc2"]
+
+[sub_resource type="Resource" id="Resource_ki4tf"]
+script = ExtResource("7_omjji")
+positive_maximim = Vector2(0, -24)
+negative_maximum = Vector2(0, -32)
+
+[sub_resource type="Resource" id="Resource_pie5g"]
+script = ExtResource("7_omjji")
+positive_maximim = Vector2(0, -24)
+negative_maximum = Vector2(0, -32)
+
+[sub_resource type="Resource" id="Resource_iretn"]
+script = ExtResource("7_omjji")
+positive_maximim = Vector2(0, -32)
+negative_maximum = Vector2(0, -24)
+
+[sub_resource type="Resource" id="Resource_10g2s"]
+script = ExtResource("7_6foj5")
+up = SubResource("Resource_iretn")
+left = SubResource("Resource_ki4tf")
+right = SubResource("Resource_pie5g")
+delay = 1.0
+is_directional = null
+default_property = null
+
+[sub_resource type="Resource" id="Resource_tfue0"]
+script = ExtResource("7_omjji")
+positive_maximim = Vector2(0, -70)
+negative_maximum = Vector2(0, -64)
+
+[sub_resource type="Resource" id="Resource_ojp0b"]
+script = ExtResource("7_6foj5")
+up = SubResource("Resource_tfue0")
+delay = null
+is_directional = null
+default_property = null
+
+[sub_resource type="Gradient" id="Gradient_68bnh"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.684058, 0.698551)
+colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4de67"]
+gradient = SubResource("Gradient_68bnh")
+width = 118
+height = 118
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Resource" id="Resource_kibsy"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 2
+
+[sub_resource type="Resource" id="Resource_rkll0"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 12
+
+[sub_resource type="Resource" id="Resource_tmp4w"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, 1)
+left = Vector2(1, 1)
+right = Vector2(-1, 1)
+
+[sub_resource type="Resource" id="Resource_4njlq"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 3
+
+[sub_resource type="Gradient" id="Gradient_eq023"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.684058, 0.698551)
+colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_merkn"]
+gradient = SubResource("Gradient_eq023")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Resource" id="Resource_tcahk"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 1
+
+[sub_resource type="Resource" id="Resource_48v0p"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, -1)
+left = Vector2(-1, 1)
+right = Vector2(1, 1)
+
+[sub_resource type="Resource" id="Resource_lcqg0"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 2
+
+[sub_resource type="Resource" id="Resource_615iw"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 2
+
+[sub_resource type="Resource" id="Resource_lfkr1"]
+script = ExtResource("7_3a6rt")
+visibility_flags = 12
+
+[sub_resource type="Resource" id="Resource_7k771"]
+script = ExtResource("11_ckb4v")
+up = Vector2(1, 1)
+down = Vector2(1, 1)
+left = Vector2(1, 1)
+right = Vector2(-1, 1)
+
+[node name="ChildVisuals" type="Node2D"]
+script = ExtResource("1_u5w2x")
+
+[node name="PhaseComponent" type="Node" parent="." node_paths=PackedStringArray("visuals")]
+script = ExtResource("2_12lok")
+visuals = NodePath("..")
+speed_multiplier = 5.0
+
+[node name="DemoChildPoses" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(233, -117)
+texture = ExtResource("3_kjpux")
+metadata/_edit_lock_ = true
+
+[node name="Legs" type="Sprite2D" parent="."]
+texture = ExtResource("4_2rmvk")
+offset = Vector2(0, -27)
+
+[node name="Body" type="Sprite2D" parent="." node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+position = Vector2(0, -28)
+texture = ExtResource("5_i4roq")
+offset = Vector2(0, -33)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("..")
+phase_tracker = NodePath("../PhaseComponent")
+phase_component_position = SubResource("Resource_10g2s")
+
+[node name="Head" type="Sprite2D" parent="Body" node_paths=PackedStringArray("character_visuals", "phase_tracker")]
+position = Vector2(0, -67)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../..")
+phase_tracker = NodePath("../../PhaseComponent")
+phase_component_position = SubResource("Resource_ojp0b")
+
+[node name="HeadSprite" type="Sprite2D" parent="Body/Head"]
+self_modulate = Color(1, 0.843137, 0.701961, 1)
+clip_children = 2
+position = Vector2(0, 4.91)
+texture = SubResource("GradientTexture2D_4de67")
+offset = Vector2(0, -52.27)
+
+[node name="FaceFront" parent="Body/Head/HeadSprite" node_paths=PackedStringArray("character_visuals") instance=ExtResource("7_am4ki")]
+visible = false
+position = Vector2(0, -52)
+character_visuals = NodePath("../../../..")
+direction_component_visibility = SubResource("Resource_kibsy")
+
+[node name="FaceSide" parent="Body/Head/HeadSprite" node_paths=PackedStringArray("character_visuals") instance=ExtResource("8_s6o7t")]
+position = Vector2(0, -52)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../..")
+direction_component_visibility = SubResource("Resource_rkll0")
+direction_component_scale = SubResource("Resource_tmp4w")
+
+[node name="Ears" type="Sprite2D" parent="Body/Head" node_paths=PackedStringArray("character_visuals")]
+visible = false
+position = Vector2(0, -35)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../..")
+direction_component_visibility = SubResource("Resource_4njlq")
+
+[node name="EarL" type="Sprite2D" parent="Body/Head/Ears"]
+modulate = Color(1, 0.843137, 0.701961, 1)
+position = Vector2(-55, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = SubResource("GradientTexture2D_merkn")
+
+[node name="EarR" type="Sprite2D" parent="Body/Head/Ears"]
+modulate = Color(1, 0.843137, 0.701961, 1)
+position = Vector2(57, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = SubResource("GradientTexture2D_merkn")
+
+[node name="HairBack" type="Sprite2D" parent="Body/Head" node_paths=PackedStringArray("character_visuals")]
+visible = false
+position = Vector2(0, -42.09)
+texture = ExtResource("7_jp6bc")
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../..")
+direction_component_visibility = SubResource("Resource_tcahk")
+
+[node name="Cap" type="Sprite2D" parent="Body/Head"]
+position = Vector2(0, -64.09)
+texture = ExtResource("10_fknwb")
+offset = Vector2(0, -28)
+
+[node name="PropellerWrapper" type="Sprite2D" parent="Body/Head/Cap" node_paths=PackedStringArray("character_visuals")]
+position = Vector2(0, -54)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../..")
+direction_component_scale = SubResource("Resource_48v0p")
+
+[node name="Propeller" parent="Body/Head/Cap/PropellerWrapper" instance=ExtResource("11_lnyyy")]
+
+[node name="FrontHoodFar" type="Sprite2D" parent="Body/Head/Cap" node_paths=PackedStringArray("character_visuals")]
+visible = false
+show_behind_parent = true
+position = Vector2(0, -9)
+texture = ExtResource("12_kjogc")
+offset = Vector2(0, 10)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../..")
+direction_component_visibility = SubResource("Resource_lcqg0")
+
+[node name="FrontHoodNear" type="Sprite2D" parent="Body/Head/Cap" node_paths=PackedStringArray("character_visuals")]
+visible = false
+position = Vector2(0, 11)
+texture = ExtResource("13_8mete")
+offset = Vector2(0, -10.5)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../..")
+direction_component_visibility = SubResource("Resource_615iw")
+
+[node name="CapSideWrapper" type="Sprite2D" parent="Body/Head/Cap" node_paths=PackedStringArray("character_visuals")]
+show_behind_parent = true
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../..")
+direction_component_visibility = SubResource("Resource_lfkr1")
+direction_component_scale = SubResource("Resource_7k771")
+
+[node name="HairSide" type="Sprite2D" parent="Body/Head/Cap/CapSideWrapper" node_paths=PackedStringArray("character_visuals")]
+position = Vector2(8, 23)
+texture = ExtResource("9_nc0je")
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../../..")
+
+[node name="CapHoodSide" type="Sprite2D" parent="Body/Head/Cap/CapSideWrapper" node_paths=PackedStringArray("character_visuals")]
+position = Vector2(52, -19)
+texture = ExtResource("16_lmwc2")
+offset = Vector2(-69, 14)
+script = ExtResource("6_x2dt3")
+character_visuals = NodePath("../../../../..")
+
+[node name="DemoChildPoses2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.25)
+position = Vector2(233, -117)
+texture = ExtResource("3_kjpux")
+metadata/_edit_lock_ = true
