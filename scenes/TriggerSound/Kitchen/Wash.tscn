@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjjp6xlil6ch"]
+
+[ext_resource type="AudioStream" uid="uid://cs7vnekwpv1js" path="res://audio/sound/waterwash.ogg" id="1_61qxg"]
+[ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="2_vimwq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofjx8"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(791, 340)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_61qxg")
+volume_db = -25.0
+autoplay = true
+max_distance = 200.0
+bus = &"Sound"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vimwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_ofjx8")

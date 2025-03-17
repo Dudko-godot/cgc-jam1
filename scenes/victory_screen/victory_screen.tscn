@@ -581,6 +581,7 @@ texture = SubResource("GradientTexture2D_e8bo1")
 expand_mode = 1
 
 [node name="ButtonTryAgain" parent="." instance=ExtResource("67_7fjea")]
+visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 1
 anchors_preset = 6
@@ -596,6 +597,7 @@ text = "Попробовать
 снова"
 
 [node name="ButtonExit" parent="." instance=ExtResource("67_7fjea")]
+visible = false
 custom_minimum_size = Vector2(220, 85)
 layout_mode = 1
 anchors_preset = 4

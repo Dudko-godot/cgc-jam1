@@ -7,6 +7,9 @@ signal game_cancelled
 @onready var current_problem = %CurrentProblem
 @onready var answer_options = %AnswerOptions
 @onready var homework_theme = preload("res://scenes/mini-games/homework/homework_theme.tres")
+const OPEN_THE_BOOK = preload("res://audio/sound/openthebook.ogg")
+const NEXT_PAGE_FOR_BOOK = preload("res://audio/sound/nextpageforbook.ogg")
+const CLOSE_THE_BOOK = preload("res://audio/sound/closethebook.ogg")
 @onready var wrong_answer_label: RichTextLabel = $PaperTexture/WrongContainer/WrongAnswerLabel
 
 const COMPLETE_MATH_EQUATION_SETTINGS = preload('res://visuals/label_settings/complete_math_equation_settings.tres')
@@ -35,6 +38,8 @@ func _ready() -> void:
 	create_answer_buttons()
 
 func update_display() -> void:
+	$HWSound.stream = NEXT_PAGE_FOR_BOOK
+	$HWSound.play()
 	current_problem.text = homework_manager.current_problem.text
 	
 	for child in solved_problems.get_children():
@@ -91,4 +96,6 @@ func _on_wrong_answer_timer_timeout() -> void:
 
 
 func _on_homework_completed() -> void:
+	$HWSound.stream = CLOSE_THE_BOOK
+	$HWSound.play()
 	game_completed.emit() 

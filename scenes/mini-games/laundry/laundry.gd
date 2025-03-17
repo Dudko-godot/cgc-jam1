@@ -36,8 +36,10 @@ func _on_clothes_taken(clothes_type: String):
 	current_unit.hung_on_line.connect(_on_clothes_hung)
 
 func _on_clothes_hung():
+	$"Bel'e".play()
 	$BasketArea/LaundryBasket.item_hung()  # Сообщаем корзине, что предмет повешен
 	current_score += 1
+	
 	if current_score >= required_score:
 		emit_signal("game_completed")
 	elif not $BasketArea/LaundryBasket.is_empty():
