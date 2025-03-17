@@ -37,7 +37,7 @@ corner_radius_bottom_left = 3
 
 [resource]
 default_font = ExtResource("1_6st1x")
-Button/colors/font_color = Color(0.478431, 0.231373, 0.305882, 1)
+Button/colors/font_color = Color(0.301961, 0.168627, 0.266667, 1)
 Button/colors/font_disabled_color = Color(0.569, 0.263, 0.318, 0.5)
 Button/colors/font_focus_color = Color(0.301961, 0.168627, 0.266667, 1)
 Button/colors/font_hover_color = Color(0.301961, 0.168627, 0.266667, 1)
