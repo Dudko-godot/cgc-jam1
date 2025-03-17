@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bddbyx2k1888e"]
+[gd_scene load_steps=5 format=3 uid="uid://bddbyx2k1888e"]
 
 [ext_resource type="Texture2D" uid="uid://p0jpjoro5cqu" path="res://icon.svg" id="1_63i4t"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_saung"]
-[ext_resource type="PackedScene" uid="uid://dydtxrpup3lyw" path="res://scenes/characters/character_visuals.tscn" id="3_1sfaa"]
 [ext_resource type="PackedScene" uid="uid://dx6rouy4tgcj3" path="res://scenes/characters/final_scenes/child/child_visuals.tscn" id="4_fig81"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_neaeu"]
@@ -19,11 +18,8 @@ texture = ExtResource("1_63i4t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_neaeu")
 
-[node name="CharacterVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_1sfaa")]
-visible = false
-body = NodePath("..")
-
 [node name="ChildVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("4_fig81")]
 position = Vector2(0, 1)
 scale = Vector2(0.55, 0.55)
 body = NodePath("..")
+maximum_velocity = 300.0

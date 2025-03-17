@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dx6rouy4tgcj3"]
+[gd_scene load_steps=40 format=3 uid="uid://dx6rouy4tgcj3"]
 
 [ext_resource type="Script" path="res://scenes/characters/character_visuals.gd" id="1_u5w2x"]
 [ext_resource type="Script" path="res://scenes/characters/phase_tracker.gd" id="2_12lok"]
@@ -13,9 +13,7 @@
 [ext_resource type="Script" path="res://scenes/characters/components/tuple/vector_tuple.gd" id="7_omjji"]
 [ext_resource type="PackedScene" uid="uid://drn86h4k4i4jf" path="res://scenes/characters/final_scenes/child/face_side/face_side.tscn" id="8_s6o7t"]
 [ext_resource type="Texture2D" uid="uid://c1nw4qul41ahd" path="res://visuals/character_pngs/child/hair_side.png" id="9_nc0je"]
-[ext_resource type="Script" path="res://scenes/characters/components/phase/float_phase_component.gd" id="9_nw52m"]
 [ext_resource type="Texture2D" uid="uid://5qo1ckqqgysf" path="res://visuals/character_pngs/child/cap_main.png" id="10_fknwb"]
-[ext_resource type="Script" path="res://scenes/characters/components/tuple/float_tuple.gd" id="10_i7vqc"]
 [ext_resource type="Script" path="res://scenes/characters/components/directional/direction_component_scale.gd" id="11_ckb4v"]
 [ext_resource type="PackedScene" uid="uid://bi4xpha2hispm" path="res://scenes/characters/final_scenes/child/propeller/propeller.tscn" id="11_lnyyy"]
 [ext_resource type="Texture2D" uid="uid://brrm2ke7hn1t5" path="res://visuals/character_pngs/child/cap_hood_front_distant.png" id="12_kjogc"]
@@ -42,46 +40,21 @@ script = ExtResource("7_6foj5")
 up = SubResource("Resource_iretn")
 left = SubResource("Resource_ki4tf")
 right = SubResource("Resource_pie5g")
-delay = 0.0
-is_directional = false
-default_property = 0
-
-[sub_resource type="Resource" id="Resource_vlh4y"]
-script = ExtResource("10_i7vqc")
-positive_maximim = -0.2
-negative_maximum = 0.1
-
-[sub_resource type="Resource" id="Resource_h5g4a"]
-script = ExtResource("9_nw52m")
-left = SubResource("Resource_vlh4y")
-right = SubResource("Resource_vlh4y")
-delay = 0.0
-is_directional = true
-default_property = 1
+delay = 1.0
+is_directional = null
+default_property = null
 
 [sub_resource type="Resource" id="Resource_tfue0"]
 script = ExtResource("7_omjji")
-positive_maximim = Vector2(0, -68)
-negative_maximum = Vector2(0, -63)
+positive_maximim = Vector2(0, -70)
+negative_maximum = Vector2(0, -64)
 
 [sub_resource type="Resource" id="Resource_ojp0b"]
 script = ExtResource("7_6foj5")
 up = SubResource("Resource_tfue0")
-delay = 0.05
-is_directional = false
-default_property = 0
-
-[sub_resource type="Resource" id="Resource_laepf"]
-script = ExtResource("10_i7vqc")
-positive_maximim = -0.15
-negative_maximum = 0.1
-
-[sub_resource type="Resource" id="Resource_7puq0"]
-script = ExtResource("9_nw52m")
-up = SubResource("Resource_laepf")
-delay = 0.1
-is_directional = false
-default_property = 1
+delay = null
+is_directional = null
+default_property = null
 
 [sub_resource type="Gradient" id="Gradient_68bnh"]
 interpolation_mode = 2
@@ -158,7 +131,6 @@ right = Vector2(-1, 1)
 
 [node name="ChildVisuals" type="Node2D"]
 script = ExtResource("1_u5w2x")
-maximum_velocity = 100.0
 
 [node name="PhaseComponent" type="Node" parent="." node_paths=PackedStringArray("visuals")]
 script = ExtResource("2_12lok")
@@ -183,15 +155,13 @@ script = ExtResource("6_x2dt3")
 character_visuals = NodePath("..")
 phase_tracker = NodePath("../PhaseComponent")
 phase_component_position = SubResource("Resource_10g2s")
-rotation_component_position = SubResource("Resource_h5g4a")
 
 [node name="Head" type="Sprite2D" parent="Body" node_paths=PackedStringArray("character_visuals", "phase_tracker")]
-position = Vector2(0, -65)
+position = Vector2(0, -67)
 script = ExtResource("6_x2dt3")
 character_visuals = NodePath("../..")
 phase_tracker = NodePath("../../PhaseComponent")
 phase_component_position = SubResource("Resource_ojp0b")
-rotation_component_position = SubResource("Resource_7puq0")
 
 [node name="HeadSprite" type="Sprite2D" parent="Body/Head"]
 self_modulate = Color(1, 0.843137, 0.701961, 1)
