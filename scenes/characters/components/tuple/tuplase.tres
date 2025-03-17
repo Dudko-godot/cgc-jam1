@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VectorTuple" load_steps=2 format=3 uid="uid://6u7a8xjx0d1p"]
+
+[ext_resource type="Script" path="res://scenes/characters/components/tuple/vector_tuple.gd" id="1_tshf4"]
+
+[resource]
+script = ExtResource("1_tshf4")
+positive_maximim = Vector2(0, 0)
+negative_maximum = Vector2(0, 0)

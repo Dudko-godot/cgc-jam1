@@ -13,6 +13,7 @@ config_version=5
 config/name="cgc-jam1"
 run/main_scene="res://scenes/levels/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+run/max_fps=144
 config/icon="res://icon_happy.png"
 
 [autoload]
@@ -27,6 +28,14 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
 mouse_cursor/custom_image="res://visuals/ui/cursor/cursorHand_grey.png"
+
+[file_customization]
+
+folder_colors={
+"res://scenes/characters/character_visuals/": "purple",
+"res://scenes/characters/components/": "orange",
+"res://scenes/characters/cool_sprite_2d/": "blue"
+}
 
 [input]
 

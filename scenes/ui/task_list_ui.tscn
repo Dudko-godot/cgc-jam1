@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cei62be2swy2j"]
+[gd_scene load_steps=4 format=3 uid="uid://cei62be2swy2j"]
 
 [ext_resource type="Script" path="res://scenes/ui/task_list_ui.gd" id="1_b3djv"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_tveu3"]
+[ext_resource type="Script" path="res://scenes/ui/tween_component.gd" id="3_va37o"]
 
 [node name="TaskListUi" type="Control"]
 custom_minimum_size = Vector2(300, 400)
@@ -9,6 +10,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -47,3 +50,7 @@ text = "Название задачи"
 custom_minimum_size = Vector2(230, 30)
 layout_mode = 2
 text = "Описание задачи"
+
+[node name="TweenComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_va37o")
+actor = NodePath("..")
