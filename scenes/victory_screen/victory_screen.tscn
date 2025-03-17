@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=3 uid="uid://i68t5br48l8m"]
+
+[ext_resource type="Shader" path="res://visuals/shaders/shine.gdshader" id="1_5omks"]
+[ext_resource type="Texture2D" uid="uid://domurmutpjvlw" path="res://visuals/particles/confetti_01.png" id="2_t7h8a"]
+[ext_resource type="Texture2D" uid="uid://e5i23gr165bq" path="res://visuals/particles/confetti_02.png" id="3_msfra"]
+[ext_resource type="Texture2D" uid="uid://b6ycif2bm7xpy" path="res://visuals/particles/confetti_03.png" id="4_7yrdq"]
+[ext_resource type="Texture2D" uid="uid://cibyj638y2rkg" path="res://visuals/particles/confetti_04.png" id="5_5xa0m"]
+
+[sub_resource type="Gradient" id="Gradient_c0v64"]
+interpolation_mode = 2
+colors = PackedColorArray(0.2961, 0.54096, 0.63, 1, 0.345098, 0.615686, 0.678431, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j7iyg"]
+gradient = SubResource("Gradient_c0v64")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.431624)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ghs5"]
+shader = ExtResource("1_5omks")
+shader_parameter/shine_num = 8.0
+shader_parameter/rotation_speed = 3.0
+shader_parameter/light_magnitude = 2.0
+shader_parameter/filter_distence = 1.0
+shader_parameter/filter_magnitude = 1.0
+shader_parameter/filter_minv = 0.63
+shader_parameter/cut_inner_radius = 0.1
+shader_parameter/color = Color(0.4428, 0.788567, 0.82, 1)
+shader_parameter/NOISE_speed = Vector2(0, 0)
+shader_parameter/NOISE_magnitude = 0.0
+
+[sub_resource type="Gradient" id="Gradient_s65nx"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.214168, 0.431631, 0.75453, 0.924217)
+colors = PackedColorArray(0.484138, 0.367676, 0.783705, 1, 0.33, 0.419333, 1, 1, 0.666667, 0.843137, 0.588235, 1, 0.952941, 0.278431, 0.352941, 1, 0.988235, 0.92549, 0.823529, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qp2a4"]
+gradient = SubResource("Gradient_s65nx")
+width = 16
+
+[sub_resource type="Curve" id="Curve_tgpxl"]
+_data = [Vector2(0, 0), 0.0, 27.8032, 0, 0, Vector2(0.151181, 0.69189), 0.0, 0.0, 0, 0, Vector2(0.675591, 0.680754), -1.17861, -1.17861, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5pon0"]
+curve = SubResource("Curve_tgpxl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rflly"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1280, 400, 500)
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 446.05
+gravity = Vector3(0, 420, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 18.47
+radial_accel_min = -3.18
+radial_accel_max = -2.23517e-06
+damping_max = 5.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_5pon0")
+color_initial_ramp = SubResource("GradientTexture1D_qp2a4")
+turbulence_enabled = true
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_j7iyg")
+
+[node name="Shine" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8ghs5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+offset_top = -4.0
+offset_right = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(640, 112)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_rflly")
+texture = ExtResource("2_t7h8a")
+lifetime = 3.0
+preprocess = 1.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(640, 112)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_rflly")
+texture = ExtResource("3_msfra")
+lifetime = 3.0
+preprocess = 1.0
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+position = Vector2(640, 112)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_rflly")
+texture = ExtResource("4_7yrdq")
+lifetime = 3.0
+preprocess = 1.0
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
+position = Vector2(640, 112)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_rflly")
+texture = ExtResource("5_5xa0m")
+lifetime = 3.0
+preprocess = 1.0
