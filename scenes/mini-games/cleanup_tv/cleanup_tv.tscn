@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_tv/cleanuptv.gd" id="1_wkt2i"]
 [ext_resource type="Texture2D" uid="uid://bs0psawdomv8j" path="res://scenes/mini-games/cleanup_tv/tv.png" id="2_3k4yd"]
-[ext_resource type="AudioStream" uid="uid://cwvqodgm8oswa" path="res://Audio/Sound/PilTelek.ogg" id="3_m17rm"]
+[ext_resource type="AudioStream" uid="uid://cwvqodgm8oswa" path="res://audio/sound/piltelek.ogg" id="3_m17rm"]
 
 [node name="cleanup_tv" type="Control"]
 layout_mode = 3

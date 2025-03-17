@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cag8n58iwesw"]
 
-[ext_resource type="AudioStream" uid="uid://yrc4hj678ccg" path="res://Audio/Sound/Clock.ogg" id="1_i53t6"]
+[ext_resource type="AudioStream" uid="uid://yrc4hj678ccg" path="res://audio/sound/clock.ogg" id="1_i53t6"]
 [ext_resource type="Texture2D" uid="uid://btoee8lpwxkyu" path="res://icon.svg" id="2_r280l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofjx8"]
