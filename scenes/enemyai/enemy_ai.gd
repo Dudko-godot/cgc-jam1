@@ -33,7 +33,6 @@ func _ready():
 	
 	# Проверяем наличие целей и сохраняем ссылку на точку игрока
 	if resolved_targets.is_empty():
-		push_error("Цели не заданы!")
 		return
 	
 	player_point = resolved_targets[0]  # Первый элемент - точка следования за игроком

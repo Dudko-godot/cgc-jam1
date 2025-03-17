@@ -62,6 +62,6 @@ func _calculate_right(phase_ : float) -> float:
 func _attach_actor_signals(_actor : Node2D) -> void:
 	match default_property:
 		PhaseComponent.PROPERTY.ROTATION:
-			value_changed.connect(_invoke_callable_soften.bind(actor.set_rotation))
+в			value_changed.connect(_invoke_callable_soften.bind(actor.set_rotation))
 			#value_changed.connect(actor.set_rotation)
 	#value_changed.connect()

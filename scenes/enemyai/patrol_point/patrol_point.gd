@@ -7,6 +7,8 @@ extends Node2D
 @export var min_action_duration: float = 1.0  # Минимальная длительность действия
 @export var max_action_duration: float = 3.0  # Максимальная длительность действия
 
+const GAME_OVER = preload('res://scenes/defeat_screen/defeat_screen.tscn')
+
 signal action_finished
 
 @onready var action_timer: Timer = $ActionTimer
@@ -27,9 +29,10 @@ func _ready():
 
 func trigger_action(character: Node2D) -> void:
 	if action_type == 0: # None
+		get_tree().change_scene_to_packed(GAME_OVER)
 		action_finished.emit()
 		return
-		
+	
 	# Устанавливаем случайную длительность действия
 	action_timer.wait_time = rng.randf_range(min_action_duration, max_action_duration)
 	
