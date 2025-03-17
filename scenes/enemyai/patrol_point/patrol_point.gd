@@ -1,5 +1,7 @@
 extends Node2D
 
+const DEFEAT = preload('res://scenes/defeat_screen/defeat_screen.tscn')
+
 @export var dialogue_text: String = ""
 @export var point_name: String = ""
 @export_enum("None", "Talk", "Watch", "Drink") var action_type: int = 0
@@ -27,6 +29,7 @@ func _ready():
 
 func trigger_action(character: Node2D) -> void:
 	if action_type == 0: # None
+		get_tree().change_scene_to_packed(DEFEAT)
 		action_finished.emit()
 		return
 		

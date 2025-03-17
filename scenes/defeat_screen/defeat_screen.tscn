@@ -657,6 +657,21 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Animation" id="Animation_mgdow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullDarkener:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_q7opl"]
 resource_name = "disappear"
 tracks/0/type = "value"
@@ -684,21 +699,6 @@ tracks/1/keys = {
 "args": [],
 "method": &"_go_to_main_menu"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_mgdow"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FullDarkener:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_2xnfw"]
@@ -754,6 +754,7 @@ scale = Vector2(0.66713, 0.664815)
 texture = ExtResource("1_sylr0")
 
 [node name="ButtonTryAgain" parent="." instance=ExtResource("1_mduyo")]
+visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 1
 anchors_preset = 6
@@ -769,6 +770,7 @@ text = "Попробовать
 снова"
 
 [node name="ButtonExit" parent="." instance=ExtResource("1_mduyo")]
+visible = false
 custom_minimum_size = Vector2(220, 85)
 layout_mode = 1
 anchors_preset = 4
