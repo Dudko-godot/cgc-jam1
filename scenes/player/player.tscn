@@ -28,6 +28,7 @@ maximum_velocity = 300.0
 determine_direction_from_velocity = true
 
 [node name="FatherVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("4_pjmss")]
+scale = Vector2(0.6, 0.6)
 body = NodePath("..")
 maximum_velocity = 300.0
 determine_direction_from_velocity = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chhlkeibcpnsy"]
+[gd_scene load_steps=8 format=3 uid="uid://chhlkeibcpnsy"]
 
 [ext_resource type="Script" path="res://scenes/characters/cool_sprite_2d/cool_sprite_2d.gd" id="1_ch4bn"]
 [ext_resource type="Texture2D" uid="uid://bmeu3layf3rqk" path="res://visuals/character_pngs/father/head_side.png" id="2_7lyit"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btgfcbdxkjpqb" path="res://visuals/character_pngs/father/beard_side.png" id="4_8kmmb"]
 [ext_resource type="PackedScene" uid="uid://tx2mlqtypqoo" path="res://scenes/characters/final_scenes/father/eye/eye_father.tscn" id="5_lq0n4"]
 [ext_resource type="Texture2D" uid="uid://bqf3i6lwrf187" path="res://visuals/character_pngs/father/mouth_surprised.png" id="6_qh8bu"]
+[ext_resource type="Script" path="res://scenes/characters/final_scenes/father/face_front/eye_star_provider.gd" id="7_3yp21"]
 
 [node name="FaceFront" type="Sprite2D"]
 script = ExtResource("1_ch4bn")
@@ -37,6 +38,7 @@ end_cap_mode = 2
 antialiased = true
 
 [node name="EyeR" parent="." instance=ExtResource("5_lq0n4")]
+z_index = 3
 position = Vector2(-20, 25)
 
 [node name="BrowR" type="Line2D" parent="EyeR"]
@@ -51,3 +53,8 @@ antialiased = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-39, 38)
 texture = ExtResource("6_qh8bu")
+
+[node name="EyeStarProvider" type="Node" parent="." node_paths=PackedStringArray("sprite", "eye")]
+script = ExtResource("7_3yp21")
+sprite = NodePath("..")
+eye = NodePath("../EyeR")
