@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0f3urcl6hjqt"
-path="res://.godot/imported/plant2.png-8ac3c8e4b01ab91b672c21af2234686d.ctex"
+uid="uid://btr0twwxul3gp"
+path="res://.godot/imported/plant_06.png-3496018f8f2a04540c9629470623b992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mini-games/plants/plant2.png"
-dest_files=["res://.godot/imported/plant2.png-8ac3c8e4b01ab91b672c21af2234686d.ctex"]
+source_file="res://scenes/mini-games/plants/plant_06.png"
+dest_files=["res://.godot/imported/plant_06.png-3496018f8f2a04540c9629470623b992.ctex"]
 
 [params]
 

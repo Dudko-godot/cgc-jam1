@@ -41,8 +41,8 @@ func _initialize_plants() -> void:
 
 # Устанавливает случайный спрайт для растения
 func randomize_plant_sprite(plant: Node2D) -> void:
-	var sprite_index: int = randi() % 11 + 1
-	var texture_path: String = "res://scenes/mini-games/plants/plant%d.png" % sprite_index
+	var sprite_index: int = randi() % 8
+	var texture_path: String = "res://scenes/mini-games/plants/plant_0%d.png" % sprite_index
 	
 	if plant.has_method("set_sprite"):
 		plant.set_sprite(texture_path)

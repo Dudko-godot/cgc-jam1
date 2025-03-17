@@ -1,8 +1,8 @@
 extends Control
 
 # Ссылки на ноды
-@onready var task_container = $TaskContainer
-@onready var task_item_template = $TaskItemTemplate
+@onready var task_container = %TaskContainer
+@onready var task_item_template = %TaskItemTemplate
 
 func _ready():
 	# Скрываем шаблон
