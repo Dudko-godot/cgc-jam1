@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dga8m22glww5o"]
+[gd_scene load_steps=6 format=3 uid="uid://dga8m22glww5o"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/laundry/laundry.gd" id="1_laundry"]
 [ext_resource type="PackedScene" uid="uid://bxxx" path="res://scenes/mini-games/laundry/laundry_basket.tscn" id="2_basket"]
 [ext_resource type="PackedScene" uid="uid://cnygytn81heti" path="res://scenes/mini-games/laundry/clothesline.tscn" id="3_line"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="4_mjq3s"]
+[ext_resource type="AudioStream" uid="uid://jipjyyqmmnn" path="res://Audio/Sound/mahBel'ya.ogg" id="5_kdfci"]
 
 [node name="laundry" type="Control"]
 layout_mode = 3
@@ -53,3 +54,7 @@ grow_horizontal = 2
 theme = ExtResource("4_mjq3s")
 text = "Развесьте белье на веревке"
 horizontal_alignment = 1
+
+[node name="Bel\'e" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kdfci")
+volume_db = 15.927

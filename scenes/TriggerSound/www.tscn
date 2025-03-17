@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://bq62lpfo85id4"]
+
+[ext_resource type="Texture2D" uid="uid://0r3vyfu51u6h" path="res://scenes/TriggerSound/zakat-sunrise-1024x576.png" id="1_cslnd"]
+[ext_resource type="Script" path="res://scenes/TriggerSound/music_background.gd" id="1_qbwpc"]
+[ext_resource type="PackedScene" uid="uid://21up44i8m4v4" path="res://scenes/TriggerSound/LivingRoom/telek.tscn" id="2_nkdbt"]
+[ext_resource type="AudioStream" uid="uid://c01cagk78r36w" path="res://Audio/Music/osnova1.ogg" id="2_qlhjw"]
+[ext_resource type="PackedScene" uid="uid://co1tjenpu7hei" path="res://scenes/TriggerSound/PlrTest.tscn" id="3_6vn0e"]
+[ext_resource type="AudioStream" uid="uid://224b4t5w3cwh" path="res://Audio/Music/end.ogg" id="3_eoomm"]
+[ext_resource type="AudioStream" uid="uid://db6tkoijahy15" path="res://Audio/Music/begin2.ogg" id="5_padxl"]
+[ext_resource type="PackedScene" uid="uid://ckqi6ropl1skw" path="res://scenes/TriggerSound/BedRoomParent/Window.tscn" id="9_dvyfn"]
+[ext_resource type="PackedScene" uid="uid://pogowju22iv6" path="res://scenes/TriggerSound/Kitchen/HOLODOS.tscn" id="9_lfwn7"]
+[ext_resource type="PackedScene" uid="uid://cag8n58iwesw" path="res://scenes/TriggerSound/BathRoom/Clock.tscn" id="10_7iwmt"]
+[ext_resource type="PackedScene" uid="uid://1w2utqhlehig" path="res://scenes/TriggerSound/WindowNearStreet(Kitch,BedR,BathR).tscn" id="11_s8cmn"]
+
+[node name="Www" type="Node"]
+
+[node name="MusicBackground" type="Node" parent="."]
+script = ExtResource("1_qbwpc")
+
+[node name="Base" type="AudioStreamPlayer" parent="MusicBackground"]
+stream = ExtResource("2_qlhjw")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="End" type="AudioStreamPlayer" parent="MusicBackground"]
+stream = ExtResource("3_eoomm")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Begin" type="AudioStreamPlayer" parent="MusicBackground"]
+stream = ExtResource("5_padxl")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 320)
+texture = ExtResource("1_cslnd")
+
+[node name="TV" parent="." instance=ExtResource("2_nkdbt")]
+position = Vector2(162, 454)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_6vn0e")]
+
+[node name="Window" parent="." instance=ExtResource("9_dvyfn")]
+position = Vector2(1017, 459)
+
+[node name="Holodos" parent="." instance=ExtResource("9_lfwn7")]
+position = Vector2(753, 136)
+
+[node name="Clock" parent="." instance=ExtResource("10_7iwmt")]
+position = Vector2(161, 112)
+
+[node name="WindowStr" parent="." instance=ExtResource("11_s8cmn")]
+position = Vector2(546, -104)
