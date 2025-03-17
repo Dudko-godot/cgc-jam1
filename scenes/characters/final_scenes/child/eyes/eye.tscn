@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scenes/characters/final_scenes/child/eyes/eye.gd" id="1_ary22"]
 [ext_resource type="Texture2D" uid="uid://dgabielvkqfuy" path="res://visuals/character_pngs/child/eyebrow.png" id="1_nonig"]
 
-[sub_resource type="Gradient" id="Gradient_fgvwe"]
+[sub_resource type="Gradient" id="Gradient_mjv1u"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.684058, 0.735484)
 colors = PackedColorArray(1, 1, 1, 1, 100, 100, 100, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_a162u"]
-gradient = SubResource("Gradient_fgvwe")
+gradient = SubResource("Gradient_mjv1u")
 width = 26
 height = 32
 fill = 1
