@@ -1,57 +1,83 @@
 extends Node
 
-var main_menu : PackedScene = preload('res://scenes/main_menu/main_menu.tscn')
-var main_game : PackedScene = preload('res://scenes/levels/game.tscn')
-var victory_screen : PackedScene = preload('res://scenes/victory_screen/victory_screen.tscn')
-var defeat_screen : PackedScene = preload('res://scenes/defeat_screen/defeat_screen.tscn')
+## Scenes to load
+@export var paths : Array[LoadInfo]
+@export var loader : LoaderThreaded
 
-@export var loader_main_menu : BackgroundLoader
-@export var loader_main_game : BackgroundLoader
-@export var loader_victory_screen : BackgroundLoader
-@export var loader_defeat_screen : BackgroundLoader
+const FLAG_NAME : String = 'SceneManager'
 
-## Managed by it, not in general
-const SCENES_TOTAL : int = 4
-var scenes_loaded : int = 4 : set = _set_scenes_loaded
-
-
-func _set_scenes_loaded(value_ : int) -> void:
-	if scenes_loaded == value_ : return
-	
-	scenes_loaded = value_
-	if scenes_loaded == SCENES_TOTAL : full_loading_complete.emit()
-
+var scenes : Dictionary = {}
+var is_everything_loaded = false
 
 signal full_loading_complete
 signal loaded_scene(parameter_name_ : String)
 
+enum SCENE {
+	MAIN_MENU,
+	MAIN_GAME,
+	VICTORY_SCREEN,
+	DEFEAT_SCREEN
+}
 
-func is_everything_loaded() -> bool:
-	if not main_menu : return false
-	if not main_game : return false
-	if not victory_screen : return false
-	if not defeat_screen : return false
-	return true
-	
 
 func _ready() -> void:
-	full_loading_complete.emit()
-	return
+	loader.queue_up_multiple(paths)
 	
-	loader_main_menu.loading_finished.connect(
-		_on_loading_finished.bind(loader_main_menu, 'main_menu'), CONNECT_ONE_SHOT)
-		
-	loader_main_game.loading_finished.connect(
-		_on_loading_finished.bind(loader_main_game, 'main_game'), CONNECT_ONE_SHOT)
-		
-	loader_victory_screen.loading_finished.connect(
-		_on_loading_finished.bind(loader_victory_screen, 'victory_screen'), CONNECT_ONE_SHOT)
-		
-	loader_defeat_screen.loading_finished.connect(
-		_on_loading_finished.bind(loader_defeat_screen, 'defeat_screen'), CONNECT_ONE_SHOT)
+	loader.loading_finished_payload.connect(_on_loaded)
+	loader.reached_flag.connect(_on_flag_reached)
+	
+	full_loading_complete.emit()
+	
+	
+func _on_flag_reached(name_ : String) -> void:
+	if not name_ == FLAG_NAME : return
+
+	loader.reached_flag.disconnect(_on_flag_reached)
+	is_everything_loaded = true
+	full_loading_complete.emit()
 
 
-func _on_loading_finished(loader_ : BackgroundLoader, parameter_name_ : String) -> void:
-	self.set(parameter_name_, loader_.target_resource as PackedScene)
-	scenes_loaded += 1
-	loaded_scene.emit(parameter_name_)
+func _on_loaded(resource_ : Resource, name_ : String) -> void:
+	if name_.is_empty():
+		print(name_)
+		return
+		
+	scenes[name_] = resource_
+
+func to_scene(scene_ : SCENE) -> void:
+	var _name : String = _name_from_enum(scene_)
+	
+	if not scenes.keys().has(_name):
+		print(_name + ' is not loaded by SceneManager as of yet')
+		return
+	
+	if not scenes[_name]:
+		print(_name + ' is null')
+		return
+		
+	get_tree().change_scene_to_packed(scenes[_name] as PackedScene)
+
+
+func _name_from_enum(scene_ : SCENE) -> String:
+	var _name : String = ''
+	
+	match scene_:
+		SCENE.MAIN_MENU:
+			_name = 'main_menu'
+		SCENE.MAIN_GAME:
+			_name = 'main_game'
+		SCENE.DEFEAT_SCREEN:
+			_name = 'defeat_screen'
+		SCENE.VICTORY_SCREEN:
+			_name = 'victory_screen'
+			
+	return _name
+
+
+	
+
+
+'res://scenes/levels/game.tscn'
+'res://scenes/defeat_screen/defeat_screen.tscn'
+'res://scenes/victory_screen/victory_screen.tscn'
+'res://scenes/main_menu/main_menu.tscn'

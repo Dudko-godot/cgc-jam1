@@ -7,11 +7,11 @@ const GAME = preload('res://scenes/levels/game.tscn')
 
 
 func _go_to_main_menu() -> void:
-	get_tree().change_scene_to_packed(SceneManager.main_menu)
+	SceneManager.to_scene(SceneManager.SCENE.MAIN_MENU)
 
 
 func _go_again() -> void:
-	get_tree().change_scene_to_packed(SceneManager.main_game)
+	SceneManager.to_scene(SceneManager.SCENE.MAIN_GAME)
 
 
 func _on_button_main_menu_pressed() -> void:
