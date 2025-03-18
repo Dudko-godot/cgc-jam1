@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dj1lc5liousgp"]
+[gd_scene load_steps=78 format=3 uid="uid://dj1lc5liousgp"]
 
 [ext_resource type="Script" path="res://scenes/defeat_screen/defeat_screen.gd" id="1_h6t6u"]
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_mduyo"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://cn5yrhkmy8r4t" path="res://visuals/menus/defeat_screen/text_prompt/belt_00058.png" id="63_k4sw8"]
 [ext_resource type="Texture2D" uid="uid://dyvtmw60o0d0j" path="res://visuals/menus/defeat_screen/text_prompt/belt_00059.png" id="64_7pfqp"]
 [ext_resource type="Script" path="res://scenes/defeat_screen/animated_text_prompt.gd" id="66_sxnjp"]
+[ext_resource type="AudioStream" uid="uid://d07dlkd2xqf08" path="res://audio/menusound/endgamesound.ogg" id="67_7qmil"]
 
 [sub_resource type="Gradient" id="Gradient_krthr"]
 offsets = PackedFloat32Array(0, 0.4, 0.6, 1)
@@ -754,7 +755,6 @@ scale = Vector2(0.66713, 0.664815)
 texture = ExtResource("1_sylr0")
 
 [node name="ButtonTryAgain" parent="." instance=ExtResource("1_mduyo")]
-visible = false
 custom_minimum_size = Vector2(200, 85)
 layout_mode = 1
 anchors_preset = 6
@@ -770,7 +770,6 @@ text = "Попробовать
 снова"
 
 [node name="ButtonExit" parent="." instance=ExtResource("1_mduyo")]
-visible = false
 custom_minimum_size = Vector2(220, 85)
 layout_mode = 1
 anchors_preset = 4
@@ -858,6 +857,11 @@ libraries = {
 "": SubResource("AnimationLibrary_reyn4")
 }
 speed_scale = 1.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("67_7qmil")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="pressed" from="ButtonTryAgain" to="." method="_on_button_again_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_button_main_menu_pressed"]

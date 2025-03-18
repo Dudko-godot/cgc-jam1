@@ -1,6 +1,7 @@
 extends Node2D
 
-const DEFEAT = preload('res://scenes/defeat_screen/defeat_screen.tscn')
+#const DEFEAT = preload('res://scenes/defeat_screen/defeat_screen.tscn')
+@export var main_game : MainGame
 
 @export var dialogue_text: String = ""
 @export var point_name: String = ""
@@ -29,8 +30,10 @@ func _ready():
 
 func trigger_action(character: Node2D) -> void:
 	if action_type == 0: # None
-		get_tree().change_scene_to_packed(DEFEAT)
-		action_finished.emit()
+		if main_game.is_game_concluded : return
+		main_game.player_defeated()
+		#get_tree().change_scene_to_packed(SceneManager.defeat_screen)
+		#action_finished.emit()
 		return
 		
 	# Устанавливаем случайную длительность действия

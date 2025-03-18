@@ -17,7 +17,7 @@ func _ready():
 	# Создаем метку для подсказки
 	label = Label.new()
 	label.visible = false
-	label.label_settings = INTERACTABLE_PROMPT_LABEL_SETTINGS
+	label.label_settings = INTERACTABLE_PROMPT_LABEL_SETTINGS.duplicate()
 	add_child(label)
 	
 	# Подключаем сигналы
@@ -90,14 +90,21 @@ func _update_visual_state():
 	# Визуальное отображение состояния
 	match state:
 		game_tasks.TaskState.ACTIVE:
-			modulate = Color(1, 1, 1, 1)
+			label.label_settings.font_color = Color(1, 1, 1, 1)
+			#modulate = Color(1, 1, 1, 1)
 		game_tasks.TaskState.COMPLETED:
-			modulate = Color(0.5, 1, 0.5, 0.7)
+			label.label_settings.font_color = Color(0.5, 1, 0.5, 0.7)
+			#modulate = Color(0.5, 1, 0.5, 0.7)
 		game_tasks.TaskState.FAILED:
-			modulate = Color(1, 0.5, 0.5, 0.7)
+			label.label_settings.font_color = Color(1, 0.5, 0.5, 0.7)
+			#modulate = Color(1, 0.5, 0.5, 0.7)
 		_:  # INACTIVE
-			modulate = Color(0.5, 0.5, 0.5, 0.5)
-	
+			label.label_settings.font_color = '#b3c6e3' #Color(0.302, 0.169, 0.267)#Color(0.345, 0.616, 0.678)
+			#modulate = Color(0.345, 0.616, 0.678) #Color(0.29, 0.337, 0.525) #'4a5686' #Color.LIGHT_BLUE #Color(0.5, 0.5, 0.5, 0.5)
+			#label.label_settings.outline_size = 16
+			#label.label_settings.outline_color = '#16263d'
+			
+			
 	_update_label()
 
 # Обновление текста подсказки

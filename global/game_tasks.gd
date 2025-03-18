@@ -55,7 +55,7 @@ var tasks = {
 	"hang_laundry": {
 		"id": "hang_laundry",
 		"title": "Развесить белье",
-		"description": "Развесьте чистое белье на веревке",
+		"description": "Развесь чистое белье на веревке",
 		"scene_path": "res://scenes/mini-games/laundry/laundry.tscn",
 		"state": TaskState.INACTIVE,
 		"prompt_text": "Нажмите E чтобы развесить белье",

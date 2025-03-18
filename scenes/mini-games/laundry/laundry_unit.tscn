@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxxx"]
+[gd_scene load_steps=2 format=3 uid="uid://dxxx"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/laundry/laundry_unit.gd" id="1_u2p4f"]
-[ext_resource type="Texture2D" path="res://assets/sprites/laundry_unit.png" id="2_k3m2l"]
 
 [node name="LaundryUnit" type="TextureRect"]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0
-texture = ExtResource("2_k3m2l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_u2p4f")
 
 [node name="Shadow" type="ColorRect" parent="."]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -25,4 +24,12 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.2) 
+color = Color(0, 0, 0, 0.2)
+
+[node name="ShadowBetter" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.48, 0.48, 0.48, 1)
+self_modulate = Color(0.2415, 0.21, 0.42, 0.513726)
+layout_mode = 1
+expand_mode = 1
+stretch_mode = 5

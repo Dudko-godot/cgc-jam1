@@ -1,4 +1,4 @@
-class_name BackgroundLoader extends Node
+class_name BGLOader extends Resource
 
 #@export var target_resource : PackedScene
 
@@ -13,9 +13,9 @@ var is_loading_finished : bool = false
 signal loading_finished
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	_start_loading()
+func _init(path_ : String) -> void:
+	path = path_
+	start_loading()
 
 
 func _process(_delta : float) -> void:
@@ -31,7 +31,7 @@ func _process(_delta : float) -> void:
 			print('Failed to load ' + path)
 		
 
-func _start_loading() -> void:
+func start_loading() -> void:
 	is_loading = true
 	ResourceLoader.load_threaded_request(path)
 
@@ -40,5 +40,5 @@ func _on_loading_finished() -> void:
 	target_resource = ResourceLoader.load_threaded_get(path)
 	is_loading = false
 	is_loading_finished = true
-	print('Loaded ' + path + ' successfully.')
+	print('Loaded ' + path + ' via RESOURCE successfully.')
 	loading_finished.emit()

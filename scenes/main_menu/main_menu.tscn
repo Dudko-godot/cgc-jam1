@@ -1,11 +1,10 @@
-[gd_scene load_steps=241 format=3 uid="uid://du02gi83mn7xr"]
+[gd_scene load_steps=240 format=3 uid="uid://du02gi83mn7xr"]
 
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_ds3f1"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_wulsb"]
 [ext_resource type="Texture2D" uid="uid://dxyt35u6weyr3" path="res://visuals/menus/main_menu/floor_texture_base.jpg" id="2_fqda6"]
 [ext_resource type="Script" path="res://scenes/main_menu/display_buttons.gd" id="2_ol78w"]
 [ext_resource type="Texture2D" uid="uid://6icb60m6xcni" path="res://visuals/menus/main_menu/floor_texture_darker.jpg" id="2_t6qa3"]
-[ext_resource type="Script" path="res://scenes/main_menu/main_scene_loader.gd" id="2_wje63"]
 [ext_resource type="Texture2D" uid="uid://mna03mbv2moq" path="res://visuals/menus/main_menu/dad_shadow_composite.png" id="3_06l5u"]
 [ext_resource type="Texture2D" uid="uid://dc533cpvxlgx3" path="res://visuals/reference/Artboard 1.png" id="3_u1j2s"]
 [ext_resource type="Texture2D" uid="uid://cgkyudyyfwchw" path="res://visuals/menus/title_static/logo_full.png" id="5_igu77"]
@@ -1822,7 +1821,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_credits", "button_exit", "darkener_animation_player", "loader")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_credits", "button_exit", "darkener_animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1835,7 +1834,6 @@ button_game_start = NodePath("Buttons/ButtonGameStart")
 button_credits = NodePath("Buttons/ButtonCredits")
 button_exit = NodePath("Buttons/ButtonExit")
 darkener_animation_player = NodePath("Darkener")
-loader = NodePath("BackgroundLoader")
 
 [node name="Appear" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1843,12 +1841,11 @@ libraries = {
 }
 autoplay = "appear"
 
-[node name="DisplayButtons" type="AnimationPlayer" parent="." node_paths=PackedStringArray("loader")]
+[node name="DisplayButtons" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5hl7l")
 }
 script = ExtResource("2_ol78w")
-loader = NodePath("../BackgroundLoader")
 
 [node name="FatherPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1866,10 +1863,6 @@ script = ExtResource("8_of7ir")
 player = NodePath("../FatherPlayer")
 delay = 1.6
 speeed = 0.8
-
-[node name="BackgroundLoader" type="Node" parent="."]
-script = ExtResource("2_wje63")
-path = "res://scenes/levels/game.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -2021,9 +2014,11 @@ color = Color(0.141176, 0.0941176, 0.14902, 1)
 
 [node name="Stinger" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("221_i1g1a")
-volume_db = -30.0
+volume_db = -15.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("222_y7oqx")
-volume_db = -10.0
+volume_db = -8.0
 autoplay = true
+bus = &"Music"
+parameters/looping = true

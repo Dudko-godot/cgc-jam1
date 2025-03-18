@@ -3,14 +3,16 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_saung"]
 [ext_resource type="PackedScene" uid="uid://dx6rouy4tgcj3" path="res://scenes/characters/final_scenes/child/child_visuals.tscn" id="4_fig81"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_neaeu"]
-radius = 16.2788
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6tbl"]
+height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_saung")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_neaeu")
+position = Vector2(0, -5)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_r6tbl")
 
 [node name="ChildVisuals" parent="." node_paths=PackedStringArray("body") instance=ExtResource("4_fig81")]
 position = Vector2(0, 1)

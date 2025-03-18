@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://balqn42brybdi" path="res://visuals/minigames/toys/toy_07.png" id="9_rkjmh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
-radius = 16.0
+radius = 19.5
 
 [node name="Toy" type="RigidBody2D" groups=["toy"]]
 collision_layer = 16
@@ -25,6 +25,7 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_1")
 
 [node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1.25, 1.25)
 script = ExtResource("3_k5hps")
 
 [node name="Toy01" type="Sprite2D" parent="Node2D"]

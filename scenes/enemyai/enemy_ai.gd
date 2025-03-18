@@ -1,4 +1,4 @@
-extends Node
+class_name EnemyAIController extends Node
 
 @export var character: CharacterBody2D
 @export var target_nodes: Array[NodePath] = []
@@ -15,6 +15,20 @@ var rng = RandomNumberGenerator.new()
 @onready var detection_timer: Timer = $Timer
 @onready var player_point: Node2D = null  # Ссылка на точку следования за игроком
 var navigation_ready: bool = false
+
+var is_actively_chasing_player : bool = true : set = _set_is_actively_chasing_player
+
+func _set_is_actively_chasing_player(value_ : bool) -> void:
+	if is_actively_chasing_player == value_ : return
+	is_actively_chasing_player = value_
+	
+	if is_actively_chasing_player:
+		began_actively_chasing_player.emit()
+	else:
+		stopped_actively_chasing_player.emit()
+
+signal began_actively_chasing_player
+signal stopped_actively_chasing_player
 
 func _ready():
 	rng.randomize()
@@ -56,6 +70,8 @@ func _ready():
 	navigation_ready = true
 
 	# Устанавливаем первую цель
+	# Станим батю ненадолго
+	await get_tree().create_timer(1.2).timeout
 	_proceed_to_next_target()
 
 func _on_player_detected(body: Node2D) -> void:
@@ -94,7 +110,9 @@ func _switch_target(new_target: Node2D) -> void:
 	# Обновляем состояние преследования согласно алгоритму
 	if new_target == player_point:  # Если цель - точка игрока
 		allow_detection = false  # Отключаем обнаружение
+		is_actively_chasing_player = true
 	else:  # Если другая точка патрулирования
+		is_actively_chasing_player = false
 		if was_chasing_player:  # Если до этого преследовали игрока
 			allow_detection = false  # Временно запрещаем обнаружение
 			detection_timer.start()  # Запускаем таймер перед следующим разрешением обнаружения

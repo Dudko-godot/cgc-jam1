@@ -35,5 +35,5 @@ func _on_pressed_exit() -> void:
 
 ## Assumes it is loaded
 func start_game() -> void:
-	get_tree().change_scene_to_packed(loader.target_resource) 
+	get_tree().change_scene_to_packed(SceneManager.main_game) 
 	#darkener_animation_player.play('darken')

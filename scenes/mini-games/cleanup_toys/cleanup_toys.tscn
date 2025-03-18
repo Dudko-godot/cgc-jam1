@@ -1,15 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://btub3usyym7tn"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/cleanup_toys.gd" id="1_8p4ky"]
-[ext_resource type="Texture2D" uid="uid://diyivhpk3xqlv" path="res://scenes/mini-games/cleanup_toys/test_box.png" id="2_3k4nt"]
+[ext_resource type="Texture2D" uid="uid://cv4er4g6tpytd" path="res://visuals/minigames/toys/basket.png" id="2_3vab0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)
+bg_color = Color(0.29, 0.337, 0.525, 0.8)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.4, 0.4, 0.4, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_vertical"]
 size = Vector2(20, 600)
@@ -18,7 +17,7 @@ size = Vector2(20, 600)
 size = Vector2(20, 800)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(217, 75)
+size = Vector2(199, 117)
 
 [node name="cleanup_toys" type="Control"]
 layout_mode = 3
@@ -67,7 +66,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_wall_horizontal")
 
 [node name="Basket" type="Area2D" parent="."]
-position = Vector2(400, 500)
+position = Vector2(400, 490)
 collision_layer = 32
 collision_mask = 16
 monitorable = false
@@ -77,5 +76,6 @@ position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket"]
-scale = Vector2(1.5, 0.75)
-texture = ExtResource("2_3k4nt")
+position = Vector2(-8.10623e-06, -0.5)
+scale = Vector2(0.142012, 0.124324)
+texture = ExtResource("2_3vab0")

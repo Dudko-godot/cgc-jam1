@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bafdoulov3xnb"]
+[gd_scene load_steps=8 format=3 uid="uid://bafdoulov3xnb"]
+
+[ext_resource type="Script" path="res://scenes/vingette/vingette.gd" id="1_ioc1a"]
 
 [sub_resource type="Gradient" id="Gradient_0kl6t"]
 interpolation_mode = 2
@@ -39,6 +41,34 @@ tracks/1/keys = {
 "values": [PackedColorArray(0.137255, 0.0901961, 0.145098, 0, 0.137255, 0.0901961, 0.145098, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_com53"]
+resource_name = "defeated"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:gradient:offsets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [PackedFloat32Array(0.4, 0.9), PackedFloat32Array(0, 0.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture:gradient:colors")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 2.14355),
+"update": 0,
+"values": [PackedColorArray(0.137255, 0.0901961, 0.145098, 0, 0.137255, 0.0901961, 0.145098, 1), PackedColorArray(0.137255, 0.0901961, 0.145098, 1, 0.137255, 0.0901961, 0.145098, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ge61c"]
 resource_name = "intro"
 tracks/0/type = "value"
@@ -69,6 +99,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4a52v"]
 _data = {
 "RESET": SubResource("Animation_u8quk"),
+"defeated": SubResource("Animation_com53"),
 "intro": SubResource("Animation_ge61c")
 }
 
@@ -81,8 +112,10 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_uqxel")
 expand_mode = 2
 stretch_mode = 6
+script = ExtResource("1_ioc1a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -95,3 +128,4 @@ grow_vertical = 2
 libraries = {
 "": SubResource("AnimationLibrary_4a52v")
 }
+autoplay = "intro"

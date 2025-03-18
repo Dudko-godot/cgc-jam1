@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsv2khgkuh5oe"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/background_loader.gd" id="1_jn5yb"]
+[ext_resource type="Script" path="res://global/scene_manager.gd" id="1_jwov7"]
+
+[node name="SceneManagerSingleton" type="Node" node_paths=PackedStringArray("loader_main_menu", "loader_main_game", "loader_victory_screen", "loader_defeat_screen")]
+script = ExtResource("1_jwov7")
+loader_main_menu = NodePath("LoaderMain")
+loader_main_game = NodePath("LoaderGame")
+loader_victory_screen = NodePath("LoaderVictory")
+loader_defeat_screen = NodePath("LoaderDefeat")
+
+[node name="LoaderMain" type="Node" parent="."]
+script = ExtResource("1_jn5yb")
+path = "res://scenes/main_menu/main_menu.tscn"
+
+[node name="LoaderGame" type="Node" parent="."]
+script = ExtResource("1_jn5yb")
+path = "res://scenes/levels/game.tscn"
+
+[node name="LoaderVictory" type="Node" parent="."]
+script = ExtResource("1_jn5yb")
+path = "res://scenes/victory_screen/victory_screen.tscn"
+
+[node name="LoaderDefeat" type="Node" parent="."]
+script = ExtResource("1_jn5yb")
+path = "res://scenes/defeat_screen/defeat_screen.tscn"

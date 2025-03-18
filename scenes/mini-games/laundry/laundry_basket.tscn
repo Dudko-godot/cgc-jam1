@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxxx"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/laundry/laundry_basket.gd" id="1_basket"]
-[ext_resource type="Texture2D" uid="uid://bc4c8ggne2pek" path="res://scenes/mini-games/laundry/test_box100.png" id="2_basket"]
+[ext_resource type="Texture2D" uid="uid://b63fdnutgccvc" path="res://visuals/minigames/laundry/laundry_pile_01.png" id="1_kcigr"]
 
 [node name="LaundryBasket" type="TextureButton"]
 custom_minimum_size = Vector2(200, 200)
 offset_right = 200.0
 offset_bottom = 200.0
-texture_normal = ExtResource("2_basket")
+texture_normal = ExtResource("1_kcigr")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("1_basket")

@@ -5,14 +5,17 @@ signal game_cancelled
 
 const DUST_COUNT = 5
 const CLICKS_TO_CLEAN = 3
-const DUST_SCALE = 6.0
-const DUST_SCALE_REDUCTION = 1
+const DUST_SCALE = 0.35
+const DUST_SCALE_REDUCTION = 0.07
 const TV_WIDTH = 400.0
 const TV_HEIGHT = 250.0
 const MIN_DUST_DISTANCE = 100.0
 
 var dust_pieces = []
 var remaining_dust = 0
+
+@export var dust_textures : Array[Texture2D] = []
+@export var animation_player : AnimationPlayer
 
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_PASS
@@ -23,12 +26,14 @@ func generate_dust():
 	remaining_dust = DUST_COUNT
 	
 	for i in range(DUST_COUNT):
+		randomize()
 		var dust_area = Area2D.new()
 		var dust_sprite = Sprite2D.new()
 		var collision = CollisionShape2D.new()
 		var shape = CircleShape2D.new()
 		
-		dust_sprite.texture = preload("res://scenes/mini-games/cleanup_tv/dust.png")
+		#dust_sprite.texture = preload("res://scenes/mini-games/cleanup_tv/dust.png")
+		dust_sprite.texture = dust_textures.pick_random()
 		dust_sprite.scale = Vector2(DUST_SCALE, DUST_SCALE)
 		
 		shape.radius = 30.0
@@ -85,7 +90,8 @@ func _on_dust_input_event(_viewport, event, _shape_idx, dust_area, dust_sprite):
 			remaining_dust -= 1
 			
 			if remaining_dust <= 0:
-				complete_game()
+				animation_player.play('finished')
+				#complete_game()
 		else:
 			var new_scale = DUST_SCALE - (DUST_SCALE_REDUCTION * clicks)
 			dust_sprite.scale = Vector2(new_scale, new_scale)

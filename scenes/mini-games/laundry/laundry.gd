@@ -8,6 +8,13 @@ var current_score = 0
 var required_score = 4  # Соответствует количеству белья в корзине
 var current_unit = null
 
+
+@onready var laundry: AudioStreamPlayer = $Laundry
+
+@export var types : Array[String] = []
+@export var textures : Array[Texture] = []
+
+
 func _ready():
 	setup_game()
 	$BasketArea/LaundryBasket.clothes_taken.connect(_on_clothes_taken)
@@ -19,14 +26,15 @@ func setup_game():
 		current_unit.queue_free()
 		current_unit = null
 
-func _on_clothes_taken(clothes_type: String):
+func _on_clothes_taken(clothes_type: String = types[current_score]):
 	if current_unit:
 		current_unit.queue_free()
 		$BasketArea/LaundryBasket.item_removed()  # Сбрасываем флаг, если предыдущий предмет удален
 	
 	current_unit = LaundryUnit.instantiate()
 	add_child(current_unit)
-	current_unit.set_clothes_type(clothes_type)
+	#current_unit.set_clothes_type(clothes_type)
+	current_unit.set_laundry_unit(textures[current_score])
 	
 	# Устанавливаем позицию над корзиной
 	var basket = $BasketArea/LaundryBasket
@@ -36,11 +44,12 @@ func _on_clothes_taken(clothes_type: String):
 	current_unit.hung_on_line.connect(_on_clothes_hung)
 
 func _on_clothes_hung():
-	$"Bel'e".play()
+	laundry.play()
 	$BasketArea/LaundryBasket.item_hung()  # Сообщаем корзине, что предмет повешен
 	current_score += 1
 	
 	if current_score >= required_score:
-		game_completed.emit
+		print('Laundry hung')
+		game_completed.emit()
 	elif not $BasketArea/LaundryBasket.is_empty():
 		current_unit = null  # Очищаем ссылку на текущий предмет

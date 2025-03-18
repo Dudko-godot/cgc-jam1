@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scenes/ui/tween_component.gd" id="3_va37o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b10km"]
+content_margin_left = 12.0
+content_margin_right = 12.0
 texture = ExtResource("3_2mf1f")
 texture_margin_left = 24.0
 texture_margin_top = 24.0
@@ -13,7 +15,7 @@ texture_margin_right = 24.0
 texture_margin_bottom = 12.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_y5nqx"]
-font_color = Color(0.301961, 0.168627, 0.266667, 1)
+font_color = Color(0.172549, 0.117647, 0.184314, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vqj7k"]
 font_size = 12
@@ -32,35 +34,32 @@ mouse_filter = 2
 theme = ExtResource("1_tveu3")
 script = ExtResource("1_b3djv")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="OffsetMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 287.0
+offset_bottom = 79.0
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="OffsetMargin"]
+self_modulate = Color(1, 1, 1, 0.8)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_b10km")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="OffsetMargin/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OffsetMargin/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="OffsetMargin/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Успеть до прихода папы:"
+text = "Чтобы папа не злился, надо:"
 label_settings = SubResource("LabelSettings_y5nqx")
 
-[node name="TaskContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TaskContainer" type="VBoxContainer" parent="OffsetMargin/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="TweenComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("3_va37o")
-actor = NodePath("..")
 
 [node name="TaskItemTemplate" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -75,6 +74,11 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 focus_mode = 0
 mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_colors/font_hover_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_colors/font_pressed_color = Color(0.172549, 0.117647, 0.184314, 1)
+theme_override_colors/font_focus_color = Color(0.172549, 0.117647, 0.184314, 1)
 theme_override_colors/font_color = Color(0.172549, 0.117647, 0.184314, 1)
 theme_override_font_sizes/font_size = 14
 text = "Название задачи"
@@ -84,3 +88,16 @@ custom_minimum_size = Vector2(230, 30)
 layout_mode = 2
 text = "Описание задачи"
 label_settings = SubResource("LabelSettings_vqj7k")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TweenComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "panel")]
+script = ExtResource("3_va37o")
+actor = NodePath("../OffsetMargin")
+panel = NodePath("../OffsetMargin/PanelContainer")
+duration = 1.0
+delay = 0.3

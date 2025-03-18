@@ -67,5 +67,3 @@ func _attach_actor_signals(_actor : Node2D) -> void:
 		PhaseComponent.PROPERTY.POSITION:
 			value_changed.connect(_invoke_callable_soften.bind(actor.set_position))
 			#value_changed.connect(actor.set_position)
-			
-			

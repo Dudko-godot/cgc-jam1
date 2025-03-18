@@ -16,6 +16,7 @@ class_name CoolSprite2D extends Sprite2D
 
 
 func _ready() -> void:
+	_replace_with_duplicates()
 	_initialize_all_existing_components()
 
 
@@ -27,7 +28,15 @@ func _initialize_all_existing_components() -> void:
 	_initialize_phase_component(phase_component_position)
 	_initialize_phase_component(rotation_component_position)
 
+
+func _replace_with_duplicates() -> void:
+	if direction_component_visibility: direction_component_visibility = direction_component_visibility.duplicate()
+	if direction_component_scale: direction_component_scale = direction_component_scale.duplicate()
+	if direction_component_position: direction_component_position = direction_component_position.duplicate()
 	
+	if phase_component_position: phase_component_position = phase_component_position.duplicate()
+	if rotation_component_position: rotation_component_position = rotation_component_position.duplicate()
+
 
 func _initialize_direction_component(component_ : DirectionComponent) -> void:
 	if not component_ : return

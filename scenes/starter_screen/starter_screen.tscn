@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc4ys7nb4c2d4"]
+[gd_scene load_steps=3 format=3 uid="uid://bc4ys7nb4c2d4"]
 
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_k7q6w"]
 [ext_resource type="Script" path="res://scenes/starter_screen/starter_screen.gd" id="2_2dmub"]
-[ext_resource type="Script" path="res://scenes/main_menu/main_scene_loader.gd" id="3_2rmcd"]
 
-[node name="StarterScreen" type="Control" node_paths=PackedStringArray("loader", "label")]
+[node name="StarterScreen" type="Control" node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,12 +12,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_k7q6w")
 script = ExtResource("2_2dmub")
-loader = NodePath("BackgroundLoader")
+main_menu_scene_name = "main_menu"
 label = NodePath("RichTextLabel")
-
-[node name="BackgroundLoader" type="Node" parent="."]
-script = ExtResource("3_2rmcd")
-path = "res://scenes/main_menu/main_menu.tscn"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 120)

@@ -1,14 +1,14 @@
 extends AnimationPlayer
 
 
-@export var loader : BackgroundLoader
+@export var loaders_manager : LoadersManager
 
 func _ready() -> void:
-	if loader.is_loading_finished:
+	if SceneManager.is_everything_loaded():
 		_show_buttons()
 		return
-		
-	loader.loading_finished.connect(_show_buttons, CONNECT_ONE_SHOT)
+
+	SceneManager.full_loading_complete.connect(_show_buttons, CONNECT_ONE_SHOT)
 
 
 func _show_buttons() -> void:
