@@ -1,6 +1,7 @@
 extends Control
 
-@export var main_menu_scene_name : String = ''
+@export var game_title : String = ''
+
 @export var fade_duration : float = 0.5
 
 @export var loader : BackgroundLoader
@@ -9,6 +10,8 @@ extends Control
 
  
 func _ready() -> void:
+	DisplayServer.window_set_title(game_title)
+	
 	if SceneManager.is_everything_loaded:
 		_on_loading_finished()
 		return

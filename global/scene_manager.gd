@@ -74,8 +74,6 @@ func _name_from_enum(scene_ : SCENE) -> String:
 	return _name
 
 
-	
-
 
 'res://scenes/levels/game.tscn'
 'res://scenes/defeat_screen/defeat_screen.tscn'

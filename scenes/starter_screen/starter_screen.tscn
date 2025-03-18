@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_k7q6w")
 script = ExtResource("2_2dmub")
-main_menu_scene_name = "main_menu"
+game_title = "Возвращение отца"
 label = NodePath("RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
