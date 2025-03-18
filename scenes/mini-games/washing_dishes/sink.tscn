@@ -144,6 +144,6 @@ mouse_filter = 2
 
 [node name="Waterwash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_eicjm")
-volume_db = -25.0
+volume_db = -24.0
 autoplay = true
-parameters/looping = false
+parameters/looping = true

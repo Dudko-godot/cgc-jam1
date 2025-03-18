@@ -351,7 +351,7 @@ texture = ExtResource("9_ih2pa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="map"]
 stream = ExtResource("10_7080l")
-volume_db = -30.0
+volume_db = -19.0
 autoplay = true
 parameters/looping = false
 script = SubResource("GDScript_48jmk")

@@ -206,3 +206,4 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="HWSound" type="AudioStreamPlayer" parent="."]
+volume_db = -17.0
