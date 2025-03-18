@@ -11,7 +11,7 @@ var loaded_current : int = 0 : set = _set_loaded_current
 
 
 func _ready() -> void:
-	if SceneManager.is_everything_loaded() : return
+	if SceneManager.is_everything_loaded : return
 	
 	_load_all()
 

@@ -75,11 +75,11 @@ func _input(event):
 
 
 func to_victory_screen() -> void:
-	get_tree().change_scene_to_packed(SceneManager.victory_screen)
+	SceneManager.to_scene(SceneManager.SCENE.VICTORY_SCREEN)
 
 
 func to_defeat_screen() -> void:
-	get_tree().change_scene_to_packed(SceneManager.defeat_screen)
+	SceneManager.to_scene(SceneManager.SCENE.DEFEAT_SCREEN)
 	
 	
 func player_defeated() -> void:

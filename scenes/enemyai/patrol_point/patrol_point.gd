@@ -32,8 +32,6 @@ func trigger_action(character: Node2D) -> void:
 	if action_type == 0: # None
 		if main_game.is_game_concluded : return
 		main_game.player_defeated()
-		#get_tree().change_scene_to_packed(SceneManager.defeat_screen)
-		#action_finished.emit()
 		return
 		
 	# Устанавливаем случайную длительность действия
