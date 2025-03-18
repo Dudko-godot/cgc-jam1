@@ -11,12 +11,17 @@ var is_clean := false
 var original_parent: Node
 var original_index: int
 
-@onready var dirty_texture = preload("res://denis_test/2.png")
-@onready var semi_clean_texture = preload("res://denis_test/1.png")
-@onready var clean_texture = preload("res://denis_test/0.png")
+const ANGLE_AMP : int = 180
+
+@onready var dirty_texture = preload('res://visuals/minigames/washing_dishes/plate_dirty.png')
+@onready var semi_clean_texture = preload('res://visuals/minigames/washing_dishes/plate_semi.png')
+@onready var clean_texture = preload('res://visuals/minigames/washing_dishes/plate_clean.png')
+@onready var extrusion: MarginContainer = $Extrusion
+
 
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	#custom_minimum_size.y = 0.5 * size.x
 	gui_input.connect(_on_gui_input)
 
 func _on_gui_input(event: InputEvent):
@@ -29,6 +34,8 @@ func _on_gui_input(event: InputEvent):
 			wash()
 
 func start_washing():
+
+	extrusion.queue_free()
 	is_washing = true
 	any_plate_washing = true
 
@@ -39,7 +46,7 @@ func start_washing():
 	if washing_position:
 		reparent(washing_position)
 		# Устанавливаем размер для центральной позиции
-		custom_minimum_size = Vector2(96, 96)  # Делаем тарелку немного больше при мытье
+		custom_minimum_size = Vector2(180, 180)  # Делаем тарелку немного больше при мытье
 
 func wash():
 	clicks += 1
@@ -55,7 +62,7 @@ func finish_washing():
 	clicks = 0
 	is_clean = true
 	
-	custom_minimum_size = Vector2(64, 64)
+	custom_minimum_size = Vector2(164, 164)
 	
 	var clean_container = get_parent().get_parent().get_node("CleanPlatesContainer")
 	if clean_container:

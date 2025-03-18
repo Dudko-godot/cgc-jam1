@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://vyq6sl7wsi37"]
+[gd_scene load_steps=2 format=3 uid="uid://vyq6sl7wsi37"]
+
+[ext_resource type="Script" path="res://scenes/ui/camera_tweened.gd" id="1_anwsq"]
 
 [node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_anwsq")

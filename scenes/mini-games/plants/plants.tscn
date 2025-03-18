@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bndxdbo54lffu"]
+[gd_scene load_steps=11 format=3 uid="uid://bndxdbo54lffu"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plants.gd" id="1_ixnqm"]
-[ext_resource type="PackedScene" uid="uid://uuutdck3rovj" path="res://scenes/mini-games/plants/plant.tscn" id="2_ixnqm"]
+[ext_resource type="PackedScene" uid="uid://b3dankgimqthf" path="res://scenes/mini-games/plants/plant.tscn" id="2_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://bvabf0yjqxjm1" path="res://scenes/mini-games/plants/watering_can.tscn" id="3_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c35iv2kfu2pfm" path="res://scenes/mini-games/plants/water_tap.tscn" id="4_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://c5i12kp5cq4pa" path="res://scenes/mini-games/plants/water_level_ui.tscn" id="5_ixnqm"]
+[ext_resource type="AudioStream" uid="uid://dya4qcls1dn2l" path="res://audio/sound/naborleiki.ogg" id="6_pj1hg"]
+[ext_resource type="AudioStream" uid="uid://ml4ir0b7urod" path="res://audio/sound/forplant.ogg" id="7_y82r7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_585oo"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)
@@ -22,78 +24,71 @@ size = Vector2(20, 800)
 
 [node name="Plants" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ixnqm")
 
-[node name="Background2" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 240.0
-offset_top = 64.0
-offset_right = -241.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 800.0
+offset_bottom = 600.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_585oo")
 
 [node name="Walls" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 16
+collision_mask = 16
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(240, 364)
+position = Vector2(0, 300)
 shape = SubResource("RectangleShape2D_c04ix")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1040, 364)
+position = Vector2(800, 300)
 shape = SubResource("RectangleShape2D_c04ix")
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(640, 64)
+position = Vector2(400, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2hsh8")
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(640, 664)
+position = Vector2(400, 600)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2hsh8")
 
 [node name="WaterTap" parent="." instance=ExtResource("4_ixnqm")]
-position = Vector2(961, 177)
+position = Vector2(718, 107)
 
 [node name="PlantsContainer" type="Node2D" parent="."]
 
 [node name="Plant1" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(350, 460)
+position = Vector2(100, 460)
 
 [node name="Plant2" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(600, 460)
+position = Vector2(350, 460)
 
 [node name="Plant3" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(850, 460)
+position = Vector2(600, 460)
 
 [node name="WateringCan" parent="." instance=ExtResource("3_ixnqm")]
-position = Vector2(612, 279)
+position = Vector2(619, 297)
 
 [node name="WaterLevelUI" parent="." instance=ExtResource("5_ixnqm")]
 layout_mode = 1
-offset_left = -997.0
-offset_top = 99.0
-offset_right = -797.0
-offset_bottom = 179.0
+offset_left = -750.0
+offset_right = -550.0
 
-[node name="CancelButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 100.0
-offset_bottom = 51.0
-text = "Отмена"
+[node name="NaborWasser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pj1hg")
 
-[connection signal="pressed" from="CancelButton" to="." method="_on_cancel_button_pressed"]
+[node name="ForPlant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y82r7")

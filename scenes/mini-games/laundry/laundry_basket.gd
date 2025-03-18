@@ -3,12 +3,13 @@ extends TextureButton
 signal clothes_taken(clothes_type: String)
 
 var fill_levels = {
-	100: preload("res://scenes/mini-games/laundry/test_box100.png"),
-	75: preload("res://scenes/mini-games/laundry/test_box75.png"),
-	50: preload("res://scenes/mini-games/laundry/test_box50.png"),
-	25: preload("res://scenes/mini-games/laundry/test_box25.png"),
-	0: preload("res://scenes/mini-games/laundry/test_box2.png")
+	100: preload('res://visuals/minigames/laundry/laundry_pile_01.png'),
+	75: preload('res://visuals/minigames/laundry/laundry_pile_02.png'),
+	50: preload('res://visuals/minigames/laundry/laundry_pile_03.png'),
+	25: preload('res://visuals/minigames/laundry/laundry_pile_04.png'),
+	0: preload('res://visuals/minigames/laundry/laundry_pile_04.png')
 }
+
 
 var current_fill = 100
 var clothes_remaining = 4  # Количество предметов белья в корзине
@@ -44,6 +45,7 @@ func update_texture():
 			closest_fill = level
 	
 	texture_normal = fill_levels[closest_fill]
+	if closest_fill == 0: hide()
 
 func is_empty() -> bool:
 	return clothes_remaining <= 0

@@ -10,6 +10,8 @@ var original_position = Vector2()
 var clothes_type: String = ""
 var is_hung = false
 
+@onready var shadow_better: TextureRect = $ShadowBetter
+
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_PASS
 	original_position = global_position
@@ -38,6 +40,10 @@ func set_clothes_type(type: String):
 	clothes_type = type
 	# Здесь можно добавить логику изменения текстуры в зависимости от типа
 
+func set_laundry_unit(texture_ : Texture2D) -> void:
+	texture = texture_
+	shadow_better.texture = texture_
+	
 func _check_if_hung():
 	if is_hung:
 		return
@@ -75,7 +81,7 @@ func _check_if_hung():
 				current_parent.remove_child(self)
 				closest_slot.add_child(self)
 				size = Vector2(100, 100)  # Устанавливаем размер
-				position = Vector2(0, -50)  # Размещаем над линией
+				position = Vector2(0, 00)  # Размещаем над линией
 				is_hung = true
 				emit_signal("hung_on_line")
 				print("LaundryUnit: Successfully hung on line")  # Отладочная информация

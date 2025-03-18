@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfo6nfhs7un"]
+[gd_scene load_steps=10 format=3 uid="uid://cfo6nfhs7un"]
 
-[ext_resource type="Texture2D" uid="uid://di40g7wv6sjmq" path="res://scenes/mini-games/cleanup_toys/test_particle.png" id="1_u4k2t"]
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/toy.gd" id="1_y6k2p"]
+[ext_resource type="Script" path="res://scenes/mini-games/cleanup_toys/node_2d.gd" id="3_k5hps"]
+[ext_resource type="Texture2D" uid="uid://d4ae40leyf6uc" path="res://visuals/minigames/toys/toy_01.png" id="4_0qgkm"]
+[ext_resource type="Texture2D" uid="uid://ddyvgrlgr3ko" path="res://visuals/minigames/toys/toy_03.png" id="5_28h8w"]
+[ext_resource type="Texture2D" uid="uid://b2i4vx3xqc5sw" path="res://visuals/minigames/toys/toy_04.png" id="6_6ui1t"]
+[ext_resource type="Texture2D" uid="uid://dxs50kw215717" path="res://visuals/minigames/toys/toy_05.png" id="7_kwlkv"]
+[ext_resource type="Texture2D" uid="uid://lp71dv36vnrn" path="res://visuals/minigames/toys/toy_06.png" id="8_rvxsn"]
+[ext_resource type="Texture2D" uid="uid://balqn42brybdi" path="res://visuals/minigames/toys/toy_07.png" id="9_rkjmh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
-radius = 16.0
+radius = 19.5
 
 [node name="Toy" type="RigidBody2D" groups=["toy"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 16
+collision_mask = 16
 mass = 0.5
 gravity_scale = 0.0
 linear_damp = 1.0
@@ -18,6 +24,41 @@ script = ExtResource("1_y6k2p")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
-texture = ExtResource("1_u4k2t")
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("3_k5hps")
+
+[node name="Toy01" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(-1.52588e-05, -3.8147e-06)
+scale = Vector2(0.111351, 0.111351)
+texture = ExtResource("4_0qgkm")
+
+[node name="Toy03" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.108824, 0.109052)
+texture = ExtResource("5_28h8w")
+
+[node name="Toy04" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(1.52588e-05, -7.62939e-06)
+scale = Vector2(0.0553265, 0.0553266)
+texture = ExtResource("6_6ui1t")
+
+[node name="Toy05" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(-1.52588e-05, -7.62939e-06)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_kwlkv")
+
+[node name="Toy06" type="Sprite2D" parent="Node2D"]
+visible = false
+scale = Vector2(0.0531162, 0.05)
+texture = ExtResource("8_rvxsn")
+
+[node name="Toy07" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(0.0711766, 0.0699282)
+texture = ExtResource("9_rkjmh")

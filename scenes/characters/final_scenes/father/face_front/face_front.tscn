@@ -1,0 +1,310 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpuy2bt4h08km"]
+
+[ext_resource type="Script" path="res://scenes/characters/cool_sprite_2d/cool_sprite_2d.gd" id="1_ebral"]
+[ext_resource type="Texture2D" uid="uid://h52rmjmm88gk" path="res://visuals/character_pngs/father/beard.png" id="4_1fdwb"]
+[ext_resource type="PackedScene" uid="uid://tx2mlqtypqoo" path="res://scenes/characters/final_scenes/father/eye/eye_father.tscn" id="5_fptdc"]
+[ext_resource type="Texture2D" uid="uid://bqf3i6lwrf187" path="res://visuals/character_pngs/father/mouth_surprised.png" id="6_kstxv"]
+[ext_resource type="Script" path="res://scenes/characters/final_scenes/father/face_front/eye_star_provider.gd" id="7_ijqw0"]
+
+[sub_resource type="Animation" id="Animation_wo8rj"]
+resource_name = "to_anger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouthSpite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeR/BrowR:points")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.435275, 1),
+"update": 0,
+"values": [PackedVector2Array(10, -42, -17, -32), PackedVector2Array(2, -42, -17, -22)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeL/BrowL:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.435275, 1),
+"update": 0,
+"values": [PackedVector2Array(-11, -42, 17, -33), PackedVector2Array(-4, -42, 17, -22)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EyeL")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_star"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EyeR")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_star"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mfbno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouthSpite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeR/BrowR:points")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(2, -42, -17, -22)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeL/BrowL:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-4, -42, 17, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_30iqh"]
+resource_name = "to_mild"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouthSpite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeR/BrowR:points")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [PackedVector2Array(2, -42, -17, -22), PackedVector2Array(10, -42, -17, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeL/BrowL:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [PackedVector2Array(-4, -42, 17, -22), PackedVector2Array(-11, -42, 17, -33)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EyeL")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide_star"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EyeR")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide_star"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fia0c"]
+resource_name = "to_anger_stars"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_star"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeR")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_star"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ujkqj"]
+resource_name = "to_mild_stars"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeL")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide_star"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeR")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide_star"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dydkb"]
+_data = {
+"RESET": SubResource("Animation_mfbno"),
+"to_anger": SubResource("Animation_wo8rj"),
+"to_anger_stars": SubResource("Animation_fia0c"),
+"to_mild": SubResource("Animation_30iqh"),
+"to_mild_stars": SubResource("Animation_ujkqj")
+}
+
+[node name="FaceFront" type="Sprite2D"]
+script = ExtResource("1_ebral")
+
+[node name="Beard" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.25)
+position = Vector2(0, 29)
+texture = ExtResource("4_1fdwb")
+
+[node name="EyeL" parent="." instance=ExtResource("5_fptdc")]
+position = Vector2(-26, 14)
+
+[node name="BrowL" type="Line2D" parent="EyeL"]
+show_behind_parent = true
+points = PackedVector2Array(-4, -42, 17, -22)
+width = 5.0
+default_color = Color(0.372549, 0.25098, 0.309804, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="EyeR" parent="." instance=ExtResource("5_fptdc")]
+position = Vector2(26, 14)
+
+[node name="BrowR" type="Line2D" parent="EyeR"]
+show_behind_parent = true
+points = PackedVector2Array(2, -42, -17, -22)
+width = 5.0
+default_color = Color(0.372549, 0.25098, 0.309804, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Mouth" type="Line2D" parent="."]
+position = Vector2(0, 48)
+points = PackedVector2Array(8, -22, 4.68702, -24, -0.12323, -25, -5.35451, -24, -8, -22)
+width = 5.0
+default_color = Color(0.372549, 0.25098, 0.309804, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="MouthSpite" type="Sprite2D" parent="."]
+position = Vector2(0, 26)
+texture = ExtResource("6_kstxv")
+
+[node name="EyeStarFetcher" type="Node" parent="." node_paths=PackedStringArray("sprite", "animation_player")]
+script = ExtResource("7_ijqw0")
+sprite = NodePath("..")
+animation_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dydkb")
+}
+speed_scale = 3.0

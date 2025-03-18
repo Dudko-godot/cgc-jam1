@@ -11,15 +11,32 @@ config_version=5
 [application]
 
 config/name="cgc-jam1"
-run/main_scene="res://scenes/levels/game.tscn"
+run/main_scene="res://scenes/starter_screen/starter_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+run/max_fps=144
+config/icon="res://icon_happy.png"
 
 [autoload]
 
 GameTasks="*res://global/game_tasks.gd"
 InputManager="*res://global/input_manager.gd"
 MiniGameManager="*res://global/mini_game_manager.gd"
+SceneManager="*res://global/scene_manager.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+mouse_cursor/custom_image="res://visuals/ui/cursor/cursorHand_grey.png"
+
+[file_customization]
+
+folder_colors={
+"res://scenes/characters/character_visuals/": "purple",
+"res://scenes/characters/components/": "orange",
+"res://scenes/characters/cool_sprite_2d/": "blue"
+}
 
 [input]
 
@@ -53,3 +70,4 @@ interact={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.137255, 0.0901961, 0.145098, 1)

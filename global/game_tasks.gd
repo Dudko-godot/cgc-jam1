@@ -55,7 +55,7 @@ var tasks = {
 	"hang_laundry": {
 		"id": "hang_laundry",
 		"title": "Развесить белье",
-		"description": "Развесьте чистое белье на веревке",
+		"description": "Развесь чистое белье на веревке",
 		"scene_path": "res://scenes/mini-games/laundry/laundry.tscn",
 		"state": TaskState.INACTIVE,
 		"prompt_text": "Нажмите E чтобы развесить белье",
@@ -170,3 +170,18 @@ func _on_minigame_completed(minigame_name: String):
 func _on_minigame_cancelled(_minigame_name: String):
 	# При отмене состояние не меняется
 	pass 
+
+# Проверка, все ли активные задачи выполнены
+func are_all_tasks_completed() -> bool:
+	var active_count = 0
+	var completed_count = 0
+	
+	# Подсчитываем количество активных и выполненных задач
+	for task_id in tasks:
+		if tasks[task_id]["state"] == TaskState.ACTIVE:
+			active_count += 1
+		elif tasks[task_id]["state"] == TaskState.COMPLETED:
+			completed_count += 1
+	
+	# Если нет активных задач и есть хотя бы одна выполненная
+	return active_count == 0 and completed_count > 0

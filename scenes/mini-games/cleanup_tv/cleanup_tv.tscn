@@ -1,9 +1,183 @@
-[gd_scene load_steps=3 format=3 uid="uid://dag1r831g2uro"]
+[gd_scene load_steps=13 format=3 uid="uid://dag1r831g2uro"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_tv/cleanuptv.gd" id="1_wkt2i"]
 [ext_resource type="Texture2D" uid="uid://bs0psawdomv8j" path="res://scenes/mini-games/cleanup_tv/tv.png" id="2_3k4yd"]
+[ext_resource type="Texture2D" uid="uid://d4i2c4io4k3pg" path="res://visuals/minigames/dust/dust_01.png" id="2_7h60l"]
+[ext_resource type="Texture2D" uid="uid://dxqo71txpik3a" path="res://visuals/minigames/dust/dust_02.png" id="3_08cyd"]
+[ext_resource type="AudioStream" uid="uid://cwvqodgm8oswa" path="res://audio/sound/piltelek.ogg" id="3_m17rm"]
+[ext_resource type="Texture2D" uid="uid://b0kd5x18l3apn" path="res://visuals/minigames/dust/dust_03.png" id="4_rakaq"]
+[ext_resource type="Texture2D" uid="uid://433xc0sy3ay1" path="res://visuals/minigames/dust/dust_04.png" id="5_ywl53"]
 
-[node name="cleanup_tv" type="Control"]
+[sub_resource type="Gradient" id="Gradient_dmy00"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.6843, 0.71843, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eyw3i"]
+gradient = SubResource("Gradient_dmy00")
+width = 128
+height = 128
+
+[sub_resource type="Animation" id="Animation_4nnv0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TV/MASK/Sparkle:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-61.4, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TV/MASK/Sparkle:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(16.2, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TV/MASK/Sparkle:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TV/MASK/Sparkle:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TV/MASK/Sparkle:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TV/MASK/Sparkle:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_j7dgf"]
+resource_name = "finished"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TV/MASK/Sparkle:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-61.4, -0.125, 0, 0.125, 0, 214.8, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TV/MASK/Sparkle:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(16.2, -0.125, 0, 0.125, 0, 16.2, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"complete_game"
+}]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TV/MASK/Sparkle:modulate:r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TV/MASK/Sparkle:modulate:g")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TV/MASK/Sparkle:modulate:b")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TV/MASK/Sparkle:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.494118, -0.25, 0, 0.133333, 0.00530511, 1, -0.155, 0, 0.13302, -0.00110215, 0.5, -0.133333, -0.000577241, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yigh1"]
+_data = {
+"RESET": SubResource("Animation_4nnv0"),
+"finished": SubResource("Animation_j7dgf")
+}
+
+[node name="cleanup_tv" type="Control" node_paths=PackedStringArray("animation_player")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,10 +192,37 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_wkt2i")
+dust_textures = Array[Texture2D]([ExtResource("2_7h60l"), ExtResource("3_08cyd"), ExtResource("4_rakaq"), ExtResource("5_ywl53")])
+animation_player = NodePath("AnimationPlayer")
 
 [node name="TV" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
 scale = Vector2(5, 5)
 texture = ExtResource("2_3k4yd")
 
+[node name="MASK" type="ColorRect" parent="TV"]
+clip_children = 1
+offset_left = -68.0
+offset_top = -36.0
+offset_right = 71.0
+offset_bottom = 28.0
+mouse_filter = 2
+color = Color(1, 0, 1, 1)
+
+[node name="Sparkle" type="Sprite2D" parent="TV/MASK"]
+self_modulate = Color(0.998, 0.94, 1, 0.8)
+position = Vector2(-61.4, 16.2)
+rotation = 0.523599
+scale = Vector2(0.658331, 1.68502)
+texture = SubResource("GradientTexture2D_eyw3i")
+
 [node name="DustContainer" type="Node2D" parent="."]
+
+[node name="DustSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m17rm")
+volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yigh1")
+}
