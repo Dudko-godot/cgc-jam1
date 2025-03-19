@@ -10,7 +10,7 @@ script = ExtResource("1_anwsq")
 
 [node name="Spinner" type="Node" parent="." node_paths=PackedStringArray("camera", "tween_component")]
 script = ExtResource("2_vdl4i")
-amplitude = 1.2
+amplitude = 0.0
 duration = 1.8
 camera = NodePath("..")
 tween_component = NodePath("../TweenComponent")

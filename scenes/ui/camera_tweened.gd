@@ -39,6 +39,6 @@ func _tween_victory() -> void:
 
 func _tween_defeat() -> void:
 	started_outro.emit()
-	_refresh_tween(Tween.EASE_IN_OUT, Tween.TRANS_CIRC)
+	_refresh_tween(Tween.EASE_IN, Tween.TRANS_CIRC)
 	tween.tween_property(self, 'zoom', Vector2(zoom_defeat, zoom_defeat), duration_defeat)
-	tween.parallel().tween_property(self, 'rotation_degrees', 65, duration_defeat)
+	tween.parallel().tween_property(self, 'rotation_degrees', 25, duration_defeat)
