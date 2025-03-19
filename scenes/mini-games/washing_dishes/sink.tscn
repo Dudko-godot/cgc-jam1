@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3b1ih0san5o1"]
+[gd_scene load_steps=11 format=3 uid="uid://b3b1ih0san5o1"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/sink.gd" id="1_4k2rg"]
 [ext_resource type="Texture2D" uid="uid://gp5vrklgktgo" path="res://visuals/minigames/washing_dishes/sink_background.png" id="2_717eb"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dim07a6dferi3" path="res://visuals/minigames/washing_dishes/water.jpg" id="3_dl401"]
 [ext_resource type="Texture2D" uid="uid://dk05mfq4q7x86" path="res://visuals/minigames/washing_dishes/sink_background_u.png" id="3_kvgyd"]
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/spinned_container.gd" id="3_ynqsw"]
-[ext_resource type="Texture2D" uid="uid://6i37knhchtgy" path="res://visuals/minigames/washing_dishes/water_noise.jpg" id="4_fgaq8"]
 [ext_resource type="Script" path="res://scenes/mini-games/washing_dishes/water.gd" id="6_8xwj1"]
 [ext_resource type="AudioStream" uid="uid://cs7vnekwpv1js" path="res://audio/sound/waterwash.ogg" id="9_eicjm"]
 
@@ -26,7 +25,6 @@ shader_parameter/amplitude = 1.2
 shader_parameter/ripple_rate = 4.0
 shader_parameter/wave_amplitude = 0.02
 shader_parameter/wave_frequency = 4.0
-shader_parameter/noise = ExtResource("4_fgaq8")
 
 [node name="Sink" type="Control"]
 layout_mode = 3

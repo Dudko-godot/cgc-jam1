@@ -4,12 +4,7 @@ class_name MainGame extends Node2D
 @export var player : Node2D
 @export var animation_player : AnimationPlayer
 
-# Экран победы
-const VICTORY_SCREEN = "res://scenes/victory_screen/victory_screen.tscn"
-
 var is_game_concluded : bool = false
-
-
 
 func _ready():
 	is_game_concluded = false
@@ -72,7 +67,6 @@ func _input(event):
 		if MiniGameManager.is_minigame_active():
 			MiniGameManager._on_minigame_cancelled()
 		
-
 
 func to_victory_screen() -> void:
 	SceneManager.to_scene(SceneManager.SCENE.VICTORY_SCREEN)

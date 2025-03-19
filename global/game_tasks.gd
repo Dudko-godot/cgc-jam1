@@ -172,6 +172,7 @@ func _on_minigame_cancelled(_minigame_name: String):
 	pass 
 
 # Проверка, все ли активные задачи выполнены
+# Frexitsch : на 19.03.25 эта функция нигде не используется
 func are_all_tasks_completed() -> bool:
 	var active_count = 0
 	var completed_count = 0

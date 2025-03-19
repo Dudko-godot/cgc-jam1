@@ -2288,6 +2288,7 @@ text = "Начать Игру"
 font_size = 32
 
 [node name="ButtonCredits" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
+visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(235, 44)
 layout_mode = 2

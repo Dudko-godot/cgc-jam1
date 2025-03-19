@@ -42,24 +42,35 @@ func _on_loaded(resource_ : Resource, name_ : String) -> void:
 		
 	scenes[name_] = resource_
 
-func to_scene(scene_ : SCENE) -> void:
-	var _name : String = _name_from_enum(scene_)
-	
-	if not scenes.keys().has(_name):
-		print(_name + ' is not loaded by SceneManager as of yet')
-		return
-	
-	if not scenes[_name]:
-		print(_name + ' is null')
-		return
-		
-	get_tree().change_scene_to_packed(scenes[_name] as PackedScene)
+
+func to_scene(scene_enum_ : SCENE) -> void:
+	var _scene : PackedScene = _get_scene_from_enum(scene_enum_)
+	if not _scene : return
+	get_tree().change_scene_to_packed(_scene)
 
 
-func _name_from_enum(scene_ : SCENE) -> String:
+## Returns pre
+func to_instantiated(scene_ : Node) -> void:
+	var _tree : SceneTree = get_tree()
+	var _current_scene : Node = _tree.current_scene
+	_tree.root.add_child(scene_)
+	
+	_tree.root.remove_child(_current_scene)
+	_current_scene.queue_free()
+
+
+func instantiate(scene_enum_ : SCENE) -> void:
+	var _scene : PackedScene = _get_scene_from_enum(scene_enum_)
+	if not _scene : return
+	Instantiator.queue_up(_scene)
+
+
+
+
+func _get_name_from_enum(scene_enum_ : SCENE) -> String:
 	var _name : String = ''
 	
-	match scene_:
+	match scene_enum_:
 		SCENE.MAIN_MENU:
 			_name = 'main_menu'
 		SCENE.MAIN_GAME:
@@ -71,15 +82,19 @@ func _name_from_enum(scene_ : SCENE) -> String:
 			
 	return _name
 
-## Returns pre
-func to_instantiated(scene_ : Node) -> void:
-	var _tree : SceneTree = get_tree()
-	var _current_scene : Node = _tree.current_scene
-	_tree.root.add_child(scene_)
-	
-	_tree.root.remove_child(_current_scene)
-	_current_scene.queue_free()
 
+func _get_scene_from_enum(scene_enum_ : SCENE) -> PackedScene:
+	var _name : String = _get_name_from_enum(scene_enum_)
+	
+	if not scenes.keys().has(_name):
+		print(_name + ' is not loaded by SceneManager as of yet')
+		return null
+	
+	if not scenes[_name]:
+		print(_name + ' is null')
+		return null
+		
+	return scenes[_name]
 
 'res://scenes/levels/game.tscn'
 'res://scenes/defeat_screen/defeat_screen.tscn'

@@ -344,8 +344,8 @@ point_name = "Детская"
 action_type = 1
 
 [node name="ToysOnMap" type="Sprite2D" parent="map"]
-position = Vector2(1221, 383)
-scale = Vector2(0.09, 0.09)
+position = Vector2(1224, 394)
+scale = Vector2(0.28, 0.28)
 texture = ExtResource("9_ih2pa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="map"]
