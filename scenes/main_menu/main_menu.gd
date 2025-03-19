@@ -23,6 +23,7 @@ func _ready() -> void:
 func _on_pressed_start() -> void:
 	is_start_requested = true
 	darkener_animation_player.play('darken')
+	SceneManager.request_instance(SceneManager.SCENE.MAIN_GAME)
 
 
 func _on_pressed_credits() -> void:
@@ -34,4 +35,4 @@ func _on_pressed_exit() -> void:
 
 ## Assumes it is loaded
 func start_game() -> void:
-	SceneManager.to_scene(SceneManager.SCENE.MAIN_GAME)
+	SceneManager.to_instantiated(SceneManager.SCENE.MAIN_GAME)

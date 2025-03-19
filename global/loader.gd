@@ -13,19 +13,20 @@ var thread : Thread = Thread.new()
 var queue : Array[LoadInfo] = []
 var current_load_info : LoadInfo = null
 
+var current_request_start_time : int = 0
+var is_output : bool = false
 
-func _start_loading(path_ : String) -> void:
-	thread.start( load.bind(path_) )
-
-
-### Thread funciton
-#func _load(path_ : String) -> Resource:
-	#return load(path_)
+func _start_loading(info_ : LoadInfoFile) -> void:
+	info_.get_started()
+	current_load_info = info_
+	
+	current_request_start_time = Time.get_ticks_usec() # unimportant, just curious
+	
+	thread.start( load.bind(info_.path) )
 
 
 func _process(_delta : float) -> void:
 	if thread.is_alive():
-		#print('Alive')
 		return
 	elif thread.is_started():
 		_collect_thread()
@@ -41,16 +42,16 @@ func _advance_queue() -> void:
 	
 	if _info is LoadInfoFile:
 		if not _info.exists():
-			print(_info.path + ' does not exist')
+			push_warning('ThreadedLoader | ' + _info.path + ' does not exist')
 			return
+			
 	## Everything else is considered a Flag
 	else: # if _info is LoadInfoFlag:
-		print('Reached a flag ' + _info.name)
+		printc('Reached a flag ' + _info.name)
 		reached_flag.emit(_info.name)
 		return
 
-	current_load_info = _info
-	_start_loading(_info.path)
+	_start_loading(_info)
 
 
 func _collect_thread() -> void:
@@ -64,10 +65,15 @@ func _collect_thread() -> void:
 	loading_finished.emit()
 	
 	if _result is Resource:
-		print('Loaded ' + _result.resource_path  + ' successfully')
+		printc('Loaded {name} successfully in {time} seconds'.format(
+			{
+				'name' : _result.resource_path,
+				'time' : str((Time.get_ticks_usec() - current_request_start_time) * 0.000001).pad_decimals(2)
+			}
+		))
 		loading_finished_payload.emit(_result, _name)
 	else:
-		print("Loaded something that wasn't a resource")
+		printc("Loaded something that wasn't a resource")
 		loading_finished_payload.emit(null, _name)
 	
 
@@ -81,3 +87,9 @@ func queue_up(path_ : LoadInfo) -> void:
 
 func queue_up_multiple(paths_ : Array[LoadInfo]) -> void:
 	queue.append_array(paths_)
+
+
+# princ_c(onditional), if output is required
+func printc(string_ : String) -> void:
+	if not is_output : return
+	print(string_)

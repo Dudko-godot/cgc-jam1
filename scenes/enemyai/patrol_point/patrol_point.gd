@@ -1,6 +1,5 @@
 extends Node2D
 
-#const DEFEAT = preload('res://scenes/defeat_screen/defeat_screen.tscn')
 @export var main_game : MainGame
 
 @export var dialogue_text: String = ""

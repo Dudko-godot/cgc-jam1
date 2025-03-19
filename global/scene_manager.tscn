@@ -8,21 +8,25 @@
 [sub_resource type="Resource" id="Resource_e1b6u"]
 script = ExtResource("4_kutiu")
 path = "res://scenes/main_menu/main_menu.tscn"
+use_resource_name = true
 name = "main_menu"
 
 [sub_resource type="Resource" id="Resource_lfa2d"]
 script = ExtResource("4_kutiu")
 path = "res://scenes/levels/game.tscn"
+use_resource_name = true
 name = "main_game"
 
 [sub_resource type="Resource" id="Resource_gbjnu"]
 script = ExtResource("4_kutiu")
 path = "res://scenes/defeat_screen/defeat_screen.tscn"
+use_resource_name = true
 name = "defeat_screen"
 
 [sub_resource type="Resource" id="Resource_ht2ae"]
 script = ExtResource("4_kutiu")
 path = "res://scenes/victory_screen/victory_screen.tscn"
+use_resource_name = true
 name = "victory_screen"
 
 [sub_resource type="Resource" id="Resource_037j2"]

@@ -58,25 +58,32 @@ func check_victory_condition():
 		
 		# Если нет активных задач и есть выполненные
 		if active_tasks.size() == 0 and completed_tasks.size() > 0:
-			is_game_concluded = true
-			print("Все задачи выполнены! Показываем экран победы.")
-			animation_player.play('victory')
+			victory_achieved()
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if MiniGameManager.is_minigame_active():
 			MiniGameManager._on_minigame_cancelled()
-		
-
-func to_victory_screen() -> void:
-	SceneManager.to_scene(SceneManager.SCENE.VICTORY_SCREEN)
 
 
-func to_defeat_screen() -> void:
-	SceneManager.to_scene(SceneManager.SCENE.DEFEAT_SCREEN)
-	
-	
+func victory_achieved() -> void:
+	is_game_concluded = true
+	animation_player.play('victory')
+	print('Все задачи выполнены!')
+	SceneManager.request_instance(SceneManager.SCENE.VICTORY_SCREEN)
+
+
 func player_defeated() -> void:
+	is_game_concluded = true
+	SceneManager.request_instance(SceneManager.SCENE.DEFEAT_SCREEN)
 	if MiniGameManager.is_minigame_active():
 		MiniGameManager.close_minigame()
 	animation_player.play('defeated')
+
+
+func to_victory_screen() -> void:
+	SceneManager.to_instantiated(SceneManager.SCENE.VICTORY_SCREEN)
+
+
+func to_defeat_screen() -> void:
+	SceneManager.to_instantiated(SceneManager.SCENE.DEFEAT_SCREEN)

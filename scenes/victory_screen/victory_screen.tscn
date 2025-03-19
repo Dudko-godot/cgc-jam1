@@ -625,7 +625,7 @@ size_flags_horizontal = 3
 mouse_filter = 1
 
 [node name="ButtonExit" parent="Interface/SideButtons/Left" instance=ExtResource("67_7fjea")]
-custom_minimum_size = Vector2(240, 85)
+custom_minimum_size = Vector2(220, 85)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -650,7 +650,7 @@ size_flags_horizontal = 3
 mouse_filter = 1
 
 [node name="ButtonTryAgain" parent="Interface/SideButtons/Top" instance=ExtResource("67_7fjea")]
-custom_minimum_size = Vector2(200, 84.88)
+custom_minimum_size = Vector2(200, 85)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
