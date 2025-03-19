@@ -33,19 +33,10 @@ func _initialize_plants() -> void:
 		
 		for i in range(plants.size()):
 			var plant: Node2D = plants[i]
-			randomize_plant_sprite(plant)
 			
 			var water_types = [2.0, 3.0, 4.0, 5.0]
 			var water_requirement: float = water_types[randi() % water_types.size()]
 			plant.set_required_water(water_requirement)
-
-# Устанавливает случайный спрайт для растения
-func randomize_plant_sprite(plant: Node2D) -> void:
-	var sprite_index: int = randi() % 8
-	var texture_path: String = "res://scenes/mini-games/plants/plant_0%d.png" % sprite_index
-	
-	if plant.has_method("set_sprite"):
-		plant.set_sprite(texture_path)
 
 # Подключает сигналы
 func _connect_signals() -> void:

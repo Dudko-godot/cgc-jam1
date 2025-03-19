@@ -90,6 +90,7 @@ func _on_player_detected(body: Node2D) -> void:
 	
 	# Сбрасываем таймер
 	detection_timer.stop()
+	detection_timer.start()
 	
 	# Переключаемся на преследование игрока
 	_switch_target(player_point)

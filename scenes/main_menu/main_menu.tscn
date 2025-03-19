@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://du02gi83mn7xr"]
+[gd_scene load_steps=239 format=3 uid="uid://du02gi83mn7xr"]
 
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_ds3f1"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_wulsb"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6icb60m6xcni" path="res://visuals/menus/main_menu/floor_texture_darker.jpg" id="2_t6qa3"]
 [ext_resource type="Texture2D" uid="uid://mna03mbv2moq" path="res://visuals/menus/main_menu/dad_shadow_composite.png" id="3_06l5u"]
 [ext_resource type="Texture2D" uid="uid://dc533cpvxlgx3" path="res://visuals/reference/Artboard 1.png" id="3_u1j2s"]
-[ext_resource type="Texture2D" uid="uid://cgkyudyyfwchw" path="res://visuals/menus/title_static/logo_full.png" id="5_igu77"]
+[ext_resource type="Script" path="res://scenes/main_menu/settings_applier.gd" id="4_t3jjv"]
 [ext_resource type="Script" path="res://scenes/main_menu/animation_manager.gd" id="8_of7ir"]
 [ext_resource type="Texture2D" uid="uid://dwn6q6141wblq" path="res://visuals/menus/main_menu/title_frames/!main_00000.png" id="9_t3bsj"]
 [ext_resource type="Texture2D" uid="uid://bubdi38sanvwy" path="res://visuals/menus/main_menu/title_frames/!main_00001.png" id="10_0dgs2"]
@@ -223,6 +223,7 @@
 [ext_resource type="Script" path="res://scenes/main_menu/title_sprite.gd" id="220_x508l"]
 [ext_resource type="AudioStream" uid="uid://c60y7cic303t" path="res://audio/horror_stiners/men_long.ogg" id="221_i1g1a"]
 [ext_resource type="AudioStream" uid="uid://db6tkoijahy15" path="res://audio/music/begin2.ogg" id="222_y7oqx"]
+[ext_resource type="Script" path="res://scenes/main_menu/control_wrapper.gd" id="224_slwxt"]
 
 [sub_resource type="Animation" id="Animation_unoiv"]
 length = 0.001
@@ -330,7 +331,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/ButtonGameStart:modulate:r")
+tracks/0/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -341,7 +342,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/ButtonGameStart:modulate:g")
+tracks/1/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -352,7 +353,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/ButtonGameStart:modulate:b")
+tracks/2/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -363,7 +364,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/ButtonGameStart:modulate:a")
+tracks/3/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -374,7 +375,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Buttons/ButtonCredits:modulate:r")
+tracks/4/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:r")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -385,7 +386,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Buttons/ButtonCredits:modulate:g")
+tracks/5/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:g")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -396,7 +397,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Buttons/ButtonCredits:modulate:b")
+tracks/6/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:b")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -407,7 +408,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Buttons/ButtonCredits:modulate:a")
+tracks/7/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -418,7 +419,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Buttons/ButtonExit:modulate:r")
+tracks/8/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:r")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -429,7 +430,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Buttons/ButtonExit:modulate:g")
+tracks/9/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:g")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -440,7 +441,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Buttons/ButtonExit:modulate:b")
+tracks/10/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:b")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -451,7 +452,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Buttons/ButtonExit:modulate:a")
+tracks/11/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:a")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -466,7 +467,7 @@ length = 0.9
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/ButtonGameStart:modulate:r")
+tracks/0/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -477,7 +478,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/ButtonGameStart:modulate:g")
+tracks/1/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -488,7 +489,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/ButtonGameStart:modulate:b")
+tracks/2/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -499,7 +500,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/ButtonGameStart:modulate:a")
+tracks/3/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -510,7 +511,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Buttons/ButtonCredits:modulate:r")
+tracks/4/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:r")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -521,7 +522,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Buttons/ButtonCredits:modulate:g")
+tracks/5/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:g")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -532,7 +533,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Buttons/ButtonCredits:modulate:b")
+tracks/6/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:b")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -543,7 +544,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Buttons/ButtonCredits:modulate:a")
+tracks/7/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -554,7 +555,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Buttons/ButtonExit:modulate:r")
+tracks/8/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:r")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -565,7 +566,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Buttons/ButtonExit:modulate:g")
+tracks/9/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:g")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -576,7 +577,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Buttons/ButtonExit:modulate:b")
+tracks/10/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:b")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -587,7 +588,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Buttons/ButtonExit:modulate:a")
+tracks/11/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:a")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -607,7 +608,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Light:polygon")
+tracks/0/path = NodePath("AspectRatioContainer/Control/Light:polygon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -619,7 +620,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Light/FatherShadow:modulate:r")
+tracks/1/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:r")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -630,7 +631,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Light/FatherShadow:modulate:g")
+tracks/2/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:g")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -641,7 +642,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Light/FatherShadow:modulate:b")
+tracks/3/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:b")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -652,7 +653,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Light/FatherShadow:modulate:a")
+tracks/4/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -663,7 +664,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Light/FatherShadow:position:x")
+tracks/5/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -674,7 +675,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Light/FatherShadow:position:y")
+tracks/6/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:y")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -685,7 +686,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Light:self_modulate:r")
+tracks/7/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:r")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -696,7 +697,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Light:self_modulate:g")
+tracks/8/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:g")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -707,7 +708,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Light:self_modulate:b")
+tracks/9/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:b")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -718,7 +719,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Light:self_modulate:a")
+tracks/10/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -729,7 +730,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Light/FatherShadow:scale:x")
+tracks/11/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:scale:x")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -740,7 +741,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Light/FatherShadow:scale:y")
+tracks/12/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:scale:y")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -751,7 +752,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Light/FatherShadow:rotation")
+tracks/13/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -766,7 +767,7 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Light:polygon")
+tracks/0/path = NodePath("AspectRatioContainer/Control/Light:polygon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -778,7 +779,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Light/FatherShadow:modulate:r")
+tracks/1/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:r")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -789,7 +790,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Light/FatherShadow:modulate:g")
+tracks/2/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:g")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -800,7 +801,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Light/FatherShadow:modulate:b")
+tracks/3/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:b")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -811,7 +812,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Light/FatherShadow:modulate:a")
+tracks/4/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -822,7 +823,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Light/FatherShadow:position:x")
+tracks/5/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -833,7 +834,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Light/FatherShadow:position:y")
+tracks/6/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:y")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -844,7 +845,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Light:self_modulate:r")
+tracks/7/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:r")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -855,7 +856,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Light:self_modulate:g")
+tracks/8/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:g")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -866,7 +867,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Light:self_modulate:b")
+tracks/9/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:b")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -877,7 +878,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Light:self_modulate:a")
+tracks/10/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -888,7 +889,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Light/FatherShadow:rotation")
+tracks/11/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -899,7 +900,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Light/FatherShadow:scale:x")
+tracks/12/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:scale:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -910,7 +911,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Light/FatherShadow:scale:y")
+tracks/13/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:scale:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -925,7 +926,7 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Light:polygon")
+tracks/0/path = NodePath("AspectRatioContainer/Control/Light:polygon")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -937,7 +938,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Light/FatherShadow:modulate:r")
+tracks/1/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:r")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -948,7 +949,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Light/FatherShadow:modulate:g")
+tracks/2/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:g")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -959,7 +960,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Light/FatherShadow:modulate:b")
+tracks/3/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:b")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -970,7 +971,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Light/FatherShadow:modulate:a")
+tracks/4/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -981,7 +982,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Light/FatherShadow:position:x")
+tracks/5/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -992,7 +993,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Light/FatherShadow:position:y")
+tracks/6/path = NodePath("AspectRatioContainer/Control/Light/FatherShadow:position:y")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1003,7 +1004,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Light:self_modulate:r")
+tracks/7/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:r")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1014,7 +1015,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Light:self_modulate:g")
+tracks/8/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:g")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1025,7 +1026,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Light:self_modulate:b")
+tracks/9/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:b")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1036,7 +1037,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Light:self_modulate:a")
+tracks/10/path = NodePath("AspectRatioContainer/Control/Light:self_modulate:a")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1109,7 +1110,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TitleSprite")
+tracks/2/path = NodePath("MarginContainer/Interface/Title/TitleSprite")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1154,15 +1155,6 @@ _data = {
 "RESET": SubResource("Animation_t4us1"),
 "darken": SubResource("Animation_v05wh")
 }
-
-[sub_resource type="Gradient" id="Gradient_r37oo"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.114833, 1)
-colors = PackedColorArray(0.141176, 0.0941176, 0.14902, 1, 0.141675, 0.0945, 0.15, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xlpkm"]
-gradient = SubResource("Gradient_r37oo")
-fill_to = Vector2(0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yogn5"]
 animations = [{
@@ -1830,9 +1822,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_wulsb")
-button_game_start = NodePath("Buttons/ButtonGameStart")
-button_credits = NodePath("Buttons/ButtonCredits")
-button_exit = NodePath("Buttons/ButtonExit")
+button_game_start = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart")
+button_credits = NodePath("MarginContainer/Interface/Buttons/ButtonCredits")
+button_exit = NodePath("MarginContainer/Interface/Buttons/ButtonExit")
 darkener_animation_player = NodePath("Darkener")
 
 [node name="Appear" type="AnimationPlayer" parent="."]
@@ -1864,6 +1856,9 @@ player = NodePath("../FatherPlayer")
 delay = 1.6
 speeed = 0.8
 
+[node name="SettingsApplier" type="Node" parent="."]
+script = ExtResource("4_t3jjv")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -1880,17 +1875,36 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_fqda6")
 
-[node name="Light" type="Polygon2D" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.77
+stretch_mode = 1
+
+[node name="Control" type="Control" parent="AspectRatioContainer" node_paths=PackedStringArray("target")]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("224_slwxt")
+target = NodePath("Light")
+vertical_alignment = 1
+horizontal_alignment = 1
+default_size = Vector2(1280, 720)
+
+[node name="Light" type="Polygon2D" parent="AspectRatioContainer/Control"]
 clip_children = 2
 color = Color(0.20779, 0.1386, 0.22, 1)
 polygon = PackedVector2Array(352, 0, 928, 0, 1024, 720, 256, 720)
 
-[node name="FLOOR" type="TextureRect" parent="Light"]
+[node name="FLOOR" type="TextureRect" parent="AspectRatioContainer/Control/Light"]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_t6qa3")
 
-[node name="FatherShadow" type="TextureRect" parent="Light"]
+[node name="FatherShadow" type="TextureRect" parent="AspectRatioContainer/Control/Light"]
 offset_left = 318.0
 offset_top = -153.0
 offset_right = 953.0
@@ -1899,18 +1913,6 @@ pivot_offset = Vector2(322, 473)
 texture = ExtResource("3_06l5u")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_group_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Light/FatherShadow"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_xlpkm")
-expand_mode = 1
 
 [node name="REF" type="TextureRect" parent="."]
 visible = false
@@ -1924,58 +1926,62 @@ grow_vertical = 2
 texture = ExtResource("3_u1j2s")
 expand_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Title" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Title"]
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 379.0
-offset_top = 68.0
-offset_right = 867.0
-offset_bottom = 290.0
-grow_horizontal = 2
-texture = ExtResource("5_igu77")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Buttons" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -16.0
-offset_right = 147.0
-offset_bottom = 256.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Interface" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Padding" type="Control" parent="MarginContainer/Interface"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Control" parent="MarginContainer/Interface"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleSprite" type="AnimatedSprite2D" parent="MarginContainer/Interface/Title" node_paths=PackedStringArray("main_menu")]
+scale = Vector2(0.69, 0.69)
+sprite_frames = SubResource("SpriteFrames_yogn5")
+animation = &"loop"
+script = ExtResource("220_x508l")
+main_menu = NodePath("../../../..")
+
+[node name="Padding_01" type="Control" parent="MarginContainer/Interface"]
+custom_minimum_size = Vector2(0, 164)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/Interface"]
+layout_mode = 2
 theme_override_constants/separation = 62
 
-[node name="ButtonGameStart" parent="Buttons" instance=ExtResource("1_ds3f1")]
+[node name="ButtonGameStart" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(204, 44)
 layout_mode = 2
 text = "Начать Игру"
 font_size = 32
 
-[node name="ButtonCredits" parent="Buttons" instance=ExtResource("1_ds3f1")]
+[node name="ButtonCredits" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(235, 44)
 layout_mode = 2
 text = "Разработчики"
 font_size = 32
 
-[node name="ButtonExit" parent="Buttons" instance=ExtResource("1_ds3f1")]
+[node name="ButtonExit" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(104, 44)
 layout_mode = 2
@@ -1992,14 +1998,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.141176, 0.0941176, 0.14902, 1)
-
-[node name="TitleSprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("main_menu")]
-position = Vector2(640, 183)
-scale = Vector2(0.69, 0.68)
-sprite_frames = SubResource("SpriteFrames_yogn5")
-animation = &"loop"
-script = ExtResource("220_x508l")
-main_menu = NodePath("..")
 
 [node name="FullDarkener" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)

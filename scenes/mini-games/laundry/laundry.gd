@@ -13,15 +13,15 @@ var current_unit = null
 
 @export var types : Array[String] = []
 @export var textures : Array[Texture] = []
-
+@export var laundry_basket : Control
 
 func _ready():
 	setup_game()
-	$BasketArea/LaundryBasket.clothes_taken.connect(_on_clothes_taken)
+	laundry_basket.clothes_taken.connect(_on_clothes_taken)
 
 func setup_game():
 	current_score = 0
-	$BasketArea/LaundryBasket.reset()
+	laundry_basket.reset()
 	if current_unit:
 		current_unit.queue_free()
 		current_unit = null
@@ -29,7 +29,7 @@ func setup_game():
 func _on_clothes_taken(clothes_type: String = types[current_score]):
 	if current_unit:
 		current_unit.queue_free()
-		$BasketArea/LaundryBasket.item_removed()  # Сбрасываем флаг, если предыдущий предмет удален
+		laundry_basket.item_removed()  # Сбрасываем флаг, если предыдущий предмет удален
 	
 	current_unit = LaundryUnit.instantiate()
 	add_child(current_unit)
@@ -37,7 +37,7 @@ func _on_clothes_taken(clothes_type: String = types[current_score]):
 	current_unit.set_laundry_unit(textures[current_score])
 	
 	# Устанавливаем позицию над корзиной
-	var basket = $BasketArea/LaundryBasket
+	var basket = laundry_basket
 	current_unit.global_position = basket.global_position - Vector2(0, 150)
 	
 	# Подключаем сигналы
@@ -45,11 +45,11 @@ func _on_clothes_taken(clothes_type: String = types[current_score]):
 
 func _on_clothes_hung():
 	laundry.play()
-	$BasketArea/LaundryBasket.item_hung()  # Сообщаем корзине, что предмет повешен
+	laundry_basket.item_hung()  # Сообщаем корзине, что предмет повешен
 	current_score += 1
 	
 	if current_score >= required_score:
-		print('Laundry hung')
+		#print('Laundry hung')
 		game_completed.emit()
-	elif not $BasketArea/LaundryBasket.is_empty():
+	elif not laundry_basket.is_empty():
 		current_unit = null  # Очищаем ссылку на текущий предмет

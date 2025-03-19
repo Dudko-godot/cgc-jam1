@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name WateringCan extends RigidBody2D
 
 signal water_level_changed(current_water: float, max_water: float)
 
@@ -47,6 +47,8 @@ var local_grab_point: Vector2 = Vector2()  # Точка захвата на ле
 
 # Визуальные элементы
 var grab_point: ColorRect = null
+
+signal clicked
 
 func _ready() -> void:
 	initialize()
@@ -212,6 +214,7 @@ func handle_mouse_input(event: InputEventMouseButton) -> void:
 		handle_mouse_release()
 
 func handle_mouse_press() -> void:
+	clicked.emit()
 	# Проверяем, кликнули ли по лейке
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	

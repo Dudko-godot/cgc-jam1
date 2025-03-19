@@ -274,7 +274,6 @@ locations = [NodePath("../SpawnLocations/Bath"), NodePath("../SpawnLocations/Liv
 onready = true
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
-position = Vector2(-68, -48)
 
 [node name="Player" parent="map" instance=ExtResource("2_qq51q")]
 unique_name_in_owner = true
@@ -363,7 +362,6 @@ position = Vector2(1977, 818)
 position = Vector2(899, 1662)
 
 [node name="interactables" type="Node2D" parent="."]
-position = Vector2(-68, -48)
 
 [node name="SimpleInteractable4" parent="interactables" instance=ExtResource("3_koioy")]
 position = Vector2(2267, 2197)
@@ -393,7 +391,6 @@ position = Vector2(1220, 413)
 task_id = "cleanup_toys"
 
 [node name="SpawnLocations" type="Node2D" parent="."]
-position = Vector2(-68, -48)
 
 [node name="Bath" type="Marker2D" parent="SpawnLocations"]
 position = Vector2(448, 1088)

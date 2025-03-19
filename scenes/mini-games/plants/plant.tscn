@@ -1,54 +1,132 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3dankgimqthf"]
+[gd_scene load_steps=16 format=3 uid="uid://b3dankgimqthf"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plant.gd" id="1_yvnqm"]
 [ext_resource type="Texture2D" uid="uid://ddjwaj2paffst" path="res://scenes/mini-games/plants/plant_00.png" id="2_tys01"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="3_m44wc"]
+[ext_resource type="Script" path="res://scenes/mini-games/plants/sprites.gd" id="3_snvlm"]
+[ext_resource type="Texture2D" uid="uid://cq3ovxnc1ptws" path="res://scenes/mini-games/plants/plant_01.png" id="4_heh2q"]
+[ext_resource type="Texture2D" uid="uid://b4g28ejh1u0vh" path="res://scenes/mini-games/plants/plant_02.png" id="5_w0mbl"]
+[ext_resource type="Texture2D" uid="uid://d3lwtqxygiu6x" path="res://scenes/mini-games/plants/plant_03.png" id="6_6a417"]
+[ext_resource type="Texture2D" uid="uid://dx3fm7fe41wnl" path="res://scenes/mini-games/plants/plant_04.png" id="7_meysn"]
+[ext_resource type="Texture2D" uid="uid://b1hfoo7r4xlw6" path="res://scenes/mini-games/plants/plant_05.png" id="8_2fcuc"]
+[ext_resource type="Texture2D" uid="uid://btr0twwxul3gp" path="res://scenes/mini-games/plants/plant_06.png" id="9_6c1x6"]
+[ext_resource type="Texture2D" uid="uid://dewwostbbldo8" path="res://scenes/mini-games/plants/plant_07.png" id="10_g82o2"]
+[ext_resource type="Texture2D" uid="uid://ly6majny48ul" path="res://scenes/mini-games/plants/plant_08.png" id="11_67lxv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyej8"]
-radius = 19.0
-height = 72.0
+radius = 27.0
+height = 86.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l55xt"]
-radius = 42.107
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yymo6"]
+radius = 46.0
+height = 122.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbs01"]
 
-[node name="Plant" type="StaticBody2D"]
+[node name="Plant" type="StaticBody2D" node_paths=PackedStringArray("progress_bar", "water_label")]
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("1_yvnqm")
+progress_bar = NodePath("Info/WaterProgressBar")
+water_label = NodePath("Info/WaterLabel")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+[node name="Sprites" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+script = ExtResource("3_snvlm")
+metadata/_edit_lock_ = true
+
+[node name="sprite_00" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-3, -48)
 texture = ExtResource("2_tys01")
 
+[node name="sprite_01" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(3.5, -52)
+texture = ExtResource("4_heh2q")
+
+[node name="sprite_02" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(0, -28)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_w0mbl")
+
+[node name="sprite_03" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-2, -54.5)
+scale = Vector2(1.155, 1.155)
+texture = ExtResource("6_6a417")
+
+[node name="sprite_04" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-4, -40.5)
+texture = ExtResource("7_meysn")
+
+[node name="sprite_05" type="Sprite2D" parent="Sprites"]
+position = Vector2(-4.5, -52.5)
+texture = ExtResource("8_2fcuc")
+
+[node name="sprite_06" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(2.5, -39)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_6c1x6")
+
+[node name="sprite_07" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, -29.5)
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("10_g82o2")
+
+[node name="sprite_08" type="Sprite2D" parent="Sprites"]
+position = Vector2(3.5, -26)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("11_67lxv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 13)
+position = Vector2(0, -43)
 shape = SubResource("CapsuleShape2D_oyej8")
+metadata/_edit_lock_ = true
 
 [node name="WaterArea" type="Area2D" parent="."]
-position = Vector2(0, -23)
+position = Vector2(0, -50)
 collision_layer = 32
 collision_mask = 32
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
-shape = SubResource("CircleShape2D_l55xt")
+position = Vector2(0, -45)
+shape = SubResource("CapsuleShape2D_yymo6")
+metadata/_edit_lock_ = true
 
-[node name="WaterProgressBar" type="ProgressBar" parent="."]
-offset_left = -45.0
-offset_top = 50.0
-offset_right = 49.0
-offset_bottom = 77.0
+[node name="Info" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -64.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 48.0
+mouse_filter = 2
+
+[node name="WaterProgressBar" type="ProgressBar" parent="Info"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_wbs01")
 max_value = 10.0
 step = 0.1
 show_percentage = false
 
-[node name="WaterLabel" type="Label" parent="."]
-offset_left = -89.0
-offset_top = 50.0
-offset_right = 91.0
-offset_bottom = 76.0
+[node name="WaterLabel" type="Label" parent="Info"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_m44wc")
 text = "Вода: 5/10"
 horizontal_alignment = 1
+vertical_alignment = 1
