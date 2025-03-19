@@ -2,7 +2,6 @@ extends Node
 
 ## Scenes to load
 @export var paths : Array[LoadInfo]
-@export var loader : LoaderThreaded
 
 const FLAG_NAME : String = 'SceneManager'
 
@@ -20,10 +19,10 @@ enum SCENE {
 
 
 func _ready() -> void:
-	loader.queue_up_multiple(paths)
+	Loader.queue_up_multiple(paths)
 	
-	loader.loading_finished_payload.connect(_on_loaded)
-	loader.reached_flag.connect(_on_flag_reached)
+	Loader.loading_finished_payload.connect(_on_loaded)
+	Loader.reached_flag.connect(_on_flag_reached)
 	
 	full_loading_complete.emit()
 	
@@ -31,7 +30,7 @@ func _ready() -> void:
 func _on_flag_reached(name_ : String) -> void:
 	if not name_ == FLAG_NAME : return
 
-	loader.reached_flag.disconnect(_on_flag_reached)
+	Loader.reached_flag.disconnect(_on_flag_reached)
 	is_everything_loaded = true
 	full_loading_complete.emit()
 
@@ -72,6 +71,14 @@ func _name_from_enum(scene_ : SCENE) -> String:
 			
 	return _name
 
+## Returns pre
+func to_instantiated(scene_ : Node) -> void:
+	var _tree : SceneTree = get_tree()
+	var _current_scene : Node = _tree.current_scene
+	_tree.root.add_child(scene_)
+	
+	_tree.root.remove_child(_current_scene)
+	_current_scene.queue_free()
 
 
 'res://scenes/levels/game.tscn'

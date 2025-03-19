@@ -5,6 +5,10 @@
 [ext_resource type="Script" path="res://scenes/load_info/load_info_flag.gd" id="3_r44hk"]
 [ext_resource type="Script" path="res://scenes/load_info/load_info_file.gd" id="4_kutiu"]
 
+[sub_resource type="Resource" id="Resource_037j2"]
+script = ExtResource("3_r44hk")
+name = "SceneManager"
+
 [sub_resource type="Resource" id="Resource_e1b6u"]
 script = ExtResource("4_kutiu")
 path = "res://scenes/main_menu/main_menu.tscn"
@@ -25,10 +29,6 @@ script = ExtResource("4_kutiu")
 path = "res://scenes/victory_screen/victory_screen.tscn"
 name = "victory_screen"
 
-[sub_resource type="Resource" id="Resource_037j2"]
-script = ExtResource("3_r44hk")
-name = "SceneManager"
-
 [node name="SceneManagerSingleton" type="Node"]
 script = ExtResource("1_jwov7")
-paths = Array[ExtResource("2_1gl4f")]([SubResource("Resource_e1b6u"), SubResource("Resource_lfa2d"), SubResource("Resource_gbjnu"), SubResource("Resource_ht2ae"), SubResource("Resource_037j2")])
+paths = Array[ExtResource("2_1gl4f")]([SubResource("Resource_037j2"), SubResource("Resource_e1b6u"), SubResource("Resource_lfa2d"), SubResource("Resource_gbjnu"), SubResource("Resource_ht2ae")])

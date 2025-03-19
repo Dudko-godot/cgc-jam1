@@ -1,4 +1,4 @@
-class_name LoaderThreaded extends Node
+extends Node
 
 ## Threaded loader
 
@@ -9,7 +9,7 @@ signal reached_flag(name_ : String)
 
 var thread : Thread = Thread.new()
 
-## FIFO, items at the end get loaded first
+## FIFO
 var queue : Array[LoadInfo] = []
 var current_load_info : LoadInfo = null
 
@@ -18,9 +18,9 @@ func _start_loading(path_ : String) -> void:
 	thread.start( load.bind(path_) )
 
 
-## Thread funciton
-func _load(path_ : String) -> Resource:
-	return load(path_)
+### Thread funciton
+#func _load(path_ : String) -> Resource:
+	#return load(path_)
 
 
 func _process(_delta : float) -> void:
@@ -37,7 +37,7 @@ func _process(_delta : float) -> void:
 func _advance_queue() -> void:
 	if queue.is_empty() : return
 	
-	var _info : LoadInfo = queue.pop_back() as LoadInfo
+	var _info : LoadInfo = queue.pop_front() as LoadInfo
 	
 	if _info is LoadInfoFile:
 		if not _info.exists():

@@ -7,7 +7,6 @@ class_name MainMenu extends Control
 @export var button_exit : Button
 @export_subgroup('Misc')
 @export var darkener_animation_player : AnimationPlayer
-@export var loader : BackgroundLoader
 
 #signal start_game_clicked
 var is_start_requested : bool = false

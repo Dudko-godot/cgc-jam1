@@ -24,6 +24,8 @@ GameTasks="*res://global/game_tasks.gd"
 InputManager="*res://global/input_manager.gd"
 MiniGameManager="*res://global/mini_game_manager.gd"
 SceneManager="*res://global/scene_manager.tscn"
+Loader="*res://global/loader.gd"
+Instantiator="*res://global/instantiator.gd"
 
 [display]
 

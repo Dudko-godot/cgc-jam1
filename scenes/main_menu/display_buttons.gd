@@ -1,8 +1,6 @@
 extends AnimationPlayer
 
 
-@export var loaders_manager : LoadersManager
-
 func _ready() -> void:
 	if SceneManager.is_everything_loaded:
 		_show_buttons()
