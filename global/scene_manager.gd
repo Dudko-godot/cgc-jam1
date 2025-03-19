@@ -10,7 +10,6 @@ var scenes : Dictionary = {}
 var is_everything_loaded = false
 
 signal full_loading_complete
-signal loaded_scene(parameter_name_ : String)
 
 enum SCENE {
 	MAIN_MENU,

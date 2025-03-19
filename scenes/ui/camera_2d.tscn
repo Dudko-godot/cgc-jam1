@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://vyq6sl7wsi37"]
+[gd_scene load_steps=4 format=3 uid="uid://vyq6sl7wsi37"]
 
 [ext_resource type="Script" path="res://scenes/ui/camera_tweened.gd" id="1_anwsq"]
+[ext_resource type="Script" path="res://scenes/ui/spinner.gd" id="2_vdl4i"]
+[ext_resource type="Script" path="res://scenes/custom_button/tween_component.gd" id="3_76xlh"]
 
 [node name="Camera2D" type="Camera2D"]
+ignore_rotation = false
 script = ExtResource("1_anwsq")
+
+[node name="Spinner" type="Node" parent="." node_paths=PackedStringArray("camera", "tween_component")]
+script = ExtResource("2_vdl4i")
+amplitude = 1.2
+duration = 1.8
+camera = NodePath("..")
+tween_component = NodePath("../TweenComponent")
+
+[node name="TweenComponent" type="Node" parent="."]
+script = ExtResource("3_76xlh")

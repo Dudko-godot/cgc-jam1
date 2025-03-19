@@ -18,8 +18,8 @@ func _ready() -> void:
 	SceneManager.full_loading_complete.connect(_on_loading_finished)
 
 
-func _process(delta: float) -> void:
-	if SceneManager.is_everything_loaded : _on_loading_finished()
+#func _process(_delta: float) -> void:
+	#if SceneManager.is_everything_loaded : _on_loading_finished()
 
 
 func _to_main_menu() -> void:

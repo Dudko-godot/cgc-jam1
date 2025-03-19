@@ -12,6 +12,7 @@ const DEFAULT_TRANS : Tween.TransitionType = Tween.TRANS_CUBIC
 @export_range(0.0, 2.0, 0.01) var duration_outro : float = 0.5
 @export_range(0.0, 2.0, 0.01) var duration_defeat : float = 0.5
 
+signal started_outro
 
 func _refresh_tween(
 					ease_ : Tween.EaseType = DEFAULT_EASE,
@@ -30,11 +31,14 @@ func _tween_intro() -> void:
 
 
 func _tween_victory() -> void:
+	started_outro.emit()
 	_refresh_tween(Tween.EASE_IN, Tween.TRANS_QUAD)
 	
 	tween.tween_property(self, 'zoom', Vector2(zoom_outro, zoom_outro), duration_outro)
 
 
 func _tween_defeat() -> void:
+	started_outro.emit()
 	_refresh_tween(Tween.EASE_IN_OUT, Tween.TRANS_CIRC)
 	tween.tween_property(self, 'zoom', Vector2(zoom_defeat, zoom_defeat), duration_defeat)
+	tween.parallel().tween_property(self, 'rotation_degrees', 65, duration_defeat)

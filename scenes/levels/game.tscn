@@ -284,7 +284,7 @@ position = Vector2(700, 1207)
 zoom = Vector2(0.7, 0.7)
 zoom_intro = 3.0
 zoom_outro = 2.5
-zoom_defeat = 1.0
+zoom_defeat = 2.0
 duration_intro = 1.6
 duration_outro = 0.8
 
