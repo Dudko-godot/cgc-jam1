@@ -6,7 +6,15 @@ class_name MainGame extends Node2D
 
 var is_game_concluded : bool = false
 
+@export var ruleset : GameRuleset = preload('res://scenes/components/game_rules/instances/default_ruleset.tres')
+
+signal ruleset_confirmed
+
+	
 func _ready():
+	if CurrentRuleset.ruleset : ruleset = CurrentRuleset.ruleset
+	ruleset_confirmed.emit()
+	
 	is_game_concluded = false
 	# Подключаемся к сигналам MiniGameManager
 	if has_node("/root/MiniGameManager"):
@@ -18,7 +26,7 @@ func _ready():
 	# Генерируем случайный набор задач
 	if has_node("/root/GameTasks"):
 		var game_tasks = get_node("/root/GameTasks")
-		game_tasks.generate_random_tasks(amount_of_tasks)  # Активируем случайные задачи
+		game_tasks.generate_random_tasks(ruleset.task_amount)  # Активируем случайные задачи
 
 func _on_minigame_started(_minigame_name):
 	# Отключаем управление игроком во время мини-игры

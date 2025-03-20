@@ -54,7 +54,7 @@ theme_override_constants/separation = 12
 
 [node name="Label" type="Label" parent="OffsetMargin/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Чтобы папа не злился, надо:"
+text = "TAKS_LIST_HEADER"
 label_settings = SubResource("LabelSettings_y5nqx")
 
 [node name="TaskContainer" type="VBoxContainer" parent="OffsetMargin/PanelContainer/MarginContainer/VBoxContainer"]
@@ -70,6 +70,7 @@ offset_right = 310.0
 offset_bottom = 85.0
 
 [node name="CheckBox" type="CheckBox" parent="TaskItemTemplate"]
+self_modulate = Color(0.172549, 0.117647, 0.184314, 1)
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 focus_mode = 0

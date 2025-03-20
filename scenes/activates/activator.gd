@@ -119,10 +119,15 @@ func _update_label():
 	
 	match state:
 		game_tasks.TaskState.ACTIVE:
-			label.text = task_data.get("prompt_text", "Нажмите E для взаимодействия")
+			label.text = '{interactable_propmt} {specific_prompt}'.format(
+				{
+					'interactable_propmt' : tr('INTERACTABLE_PROMPT'),
+					'specific_prompt' : tr(task_data.get("prompt_text", "INTERACTABLE_INSTRUCTION_DEFAULT"))
+				}
+			)
 		game_tasks.TaskState.COMPLETED:
-			label.text = "Задача выполнена"
+			label.text = "TASK_COMPLETE"
 		game_tasks.TaskState.FAILED:
-			label.text = "Задача провалена"
+			label.text = "TASK_FAILED"
 		_:  # INACTIVE
-			label.text = task_data.get("disabled_text", "Недоступно") 
+			label.text = task_data.get("disabled_text", "UNAVALIABLE") 

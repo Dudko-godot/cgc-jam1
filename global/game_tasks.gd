@@ -27,66 +27,66 @@ enum TaskState {
 var tasks = {
 	"wash_dishes": {
 		"id": "wash_dishes",
-		"title": "Помыть посуду",
-		"description": "Помой посуду в раковине",
+		"title": "TASK_NAME_DISHES",
+		"description": "TASK_DESC_DISHES",
 		"scene_path": "res://scenes/mini-games/washing_dishes/sink.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы помыть посуду",
-		"disabled_text": "Посуда уже чистая"
+		"prompt_text": "TASK_PROMPT_DISHES",
+		"disabled_text": "TASK_DISABLED_DISHES"
 	},
 	"do_homework": {
 		"id": "do_homework",
-		"title": "Сделать домашнее задание",
-		"description": "Выполни домашнее задание",
+		"title": "TASK_NAME_HOMEWORK",
+		"description": "TASK_DESC_HOMEWORK",
 		"scene_path": "res://scenes/mini-games/homework/homework.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы сделать домашнее задание",
-		"disabled_text": "Домашнее задание уже сделано"
+		"prompt_text": "TASK_PROMPT_HOMEWORK",
+		"disabled_text": "TASK_DISABLED_HOMEWORK"
 	},
 	"test_game": {
 		"id": "test_game",
-		"title": "Тестовая игра",
-		"description": "Запустить тестовую игру",
+		"title": "TASK_NAME_TEST",
+		"description": "TASK_DESC_TEST",
 		"scene_path": "res://scenes/mini-games/test_game/test_game.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы запустить тестовую игру",
-		"disabled_text": "Тестовая игра недоступна"
+		"prompt_text": "TASK_PROMPT_TEST",
+		"disabled_text": "TASK_DISABLED_TEST"
 	},
 	"hang_laundry": {
 		"id": "hang_laundry",
-		"title": "Развесить белье",
-		"description": "Развесь чистое белье на веревке",
+		"title": "TASK_NAME_LAUNDRY",
+		"description": "TASK_DESC_LAUNDRY",
 		"scene_path": "res://scenes/mini-games/laundry/laundry.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы развесить белье",
-		"disabled_text": "Корзина пуста"
+		"prompt_text": "TASK_PROMPT_LAUNDRY",
+		"disabled_text": "TASK_DISABLED_LAUNDRY"
 	},
 	"cleanup_toys": {
 		"id": "cleanup_toys",
-		"title": "Убрать игрушки",
-		"description": "Собери разбросанные игрушки в коробку",
+		"title": "TASK_NAME_TOYS",
+		"description": "TASK_DESC_TOYS",
 		"scene_path": "res://scenes/mini-games/cleanup_toys/cleanup_toys.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы убрать игрушки",
-		"disabled_text": "Игрушки уже убраны"
+		"prompt_text": "TASK_PROMPT_TOYS",
+		"disabled_text": "TASK_DISABLED_TOYS"
 	},
 	"cleanup_tv": {
 		"id": "cleanup_tv",
-		"title": "Протереть телевизор",
-		"description": "Очисти телевизор от пыли",
+		"title": "TASK_NAME_TV",
+		"description": "TASK_DESC_TV",
 		"scene_path": "res://scenes/mini-games/cleanup_tv/cleanup_tv.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы протереть телевизор",
-		"disabled_text": "Телевизор уже чистый"
+		"prompt_text": "TASK_PROMPT_TV",
+		"disabled_text": "TASK_DISABLED_TV"
 	},
 	"water_plants": {
 		"id": "water_plants",
-		"title": "Полить растения",
-		"description": "Полей все комнатные растения",
+		"title": "TASK_NAME_PLANTS",
+		"description": "TASK_DESC_PLANTS",
 		"scene_path": "res://scenes/mini-games/plants/plants.tscn",
 		"state": TaskState.INACTIVE,
-		"prompt_text": "Нажмите E чтобы полить растения",
-		"disabled_text": "Растения уже политы"
+		"prompt_text": "TASK_PROMPT_PLANTS",
+		"disabled_text": "TASK_DISABLED_PLANTS"
 	}
 	# Добавляйте новые задачи здесь
 }

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duucg5refao0j"]
+[gd_scene load_steps=7 format=3 uid="uid://duucg5refao0j"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/homework/homework.gd" id="1_2k4u3"]
 [ext_resource type="Theme" uid="uid://c2y31y2mrk3a1" path="res://scenes/mini-games/homework/homework_theme.tres" id="2_eu32f"]
 [ext_resource type="Texture2D" uid="uid://dyso3usdmgr1e" path="res://visuals/minigames/homework/sheet_main.png" id="3_bld02"]
 [ext_resource type="Texture2D" uid="uid://dlx3wi8t22c7t" path="res://visuals/minigames/homework/sheet_bot.png" id="4_f6kp1"]
+[ext_resource type="Script" path="res://scenes/mini-games/homework/wrong_answer_label.gd" id="4_g7aat"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8p2x"]
 bg_color = Color(0.988235, 0.92549, 0.823529, 1)
@@ -64,7 +65,7 @@ grow_horizontal = 2
 theme = ExtResource("2_eu32f")
 theme_override_colors/font_color = Color(0.172549, 0.117647, 0.184314, 1)
 theme_override_font_sizes/font_size = 24
-text = "Математика"
+text = "MATH"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PaperTexture"]
@@ -84,18 +85,6 @@ theme_override_constants/separation = 24
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="Control" type="Control" parent="PaperTexture/VBoxContainer/SolvedProblems"]
-visible = false
-custom_minimum_size = Vector2(0, 28.67)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="PaperTexture/VBoxContainer/SolvedProblems"]
-visible = false
-layout_mode = 2
-text = "asdfasdf"
-horizontal_alignment = 1
 
 [node name="CurrentProblem" type="Label" parent="PaperTexture/VBoxContainer"]
 unique_name_in_owner = true
@@ -141,7 +130,8 @@ theme_override_font_sizes/mono_font_size = 24
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "[center] [pulse freq=1.8 color=#ffffff40 ease=-2.0] Неправильный ответ!"
+text = "[center] [pulse freq=1.8 color=#ffffff40 ease=-2.0] {prompt}"
+script = ExtResource("4_g7aat")
 
 [node name="AnswerTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -179,10 +169,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
-
-[node name="Panel" type="Panel" parent="AnswerTexture/MarginContainer"]
-visible = false
-layout_mode = 2
 
 [node name="Paper" type="PanelContainer" parent="."]
 visible = false

@@ -8,6 +8,10 @@ const FLAG_NAME : String = 'SceneManager'
 var scenes : Dictionary = {}
 var instances : Dictionary = {}
 
+## Requesting another instance via [method request_instance] would be denied
+## if there is this at least this amount of unclaimed instances ready to go.
+const MAX_SAME_INSTANCE_AMOUNT : int = 5
+
 var is_everything_loaded = false
 
 signal full_loading_complete
@@ -91,7 +95,8 @@ func _change_scene_to_instantiated(new_scene_ : Node) -> void:
 	var _tree : SceneTree = get_tree()
 	var _current_scene : Node = _tree.current_scene
 	
-	_tree.root.add_child(new_scene_)
+	if not new_scene_.is_inside_tree():
+		_tree.root.add_child(new_scene_)
 	_tree.root.remove_child(_current_scene)
 	
 	_tree.current_scene = new_scene_
@@ -106,34 +111,69 @@ func to_scene(scene_enum_ : SCENE) -> void:
 
 
 func request_instance(scene_enum_ : SCENE) -> void:
+	var _name : String = _get_name_from_enum(scene_enum_)
+
+	if not instances.keys().has(_name):
+		push_warning('Instances of "' + _name  + '" are not kept track of by SceneManager')
+		return
+
+	var _existing_instances = instances[_name]
+
+	if _existing_instances.size() >= MAX_SAME_INSTANCE_AMOUNT :
+		push_warning('Request for a threaded instantiating of {name} denied : too many unclaimed instances'.format(
+			{
+				'name' : _get_name_from_enum(scene_enum_)
+			}
+		))
+		return
+		
 	var _scene : PackedScene = _get_scene_from_enum(scene_enum_)
 	if not _scene : return
+	
 	Instantiator.queue_up(_scene).fulfilled.connect(_on_instantiation_request_fulfilled)
 
 
 func to_instantiated(scene_enum_ : SCENE) -> void:
-	var _scene : PackedScene = _get_scene_from_enum(scene_enum_)
+	var _request : InstantiationRequest = _get_unclaimed_request(scene_enum_)
 	
+	if _request :
+		_change_scene_to_instantiated(_request.claim().node)
+		return
+	
+	var _scene : PackedScene = _get_scene_from_enum(scene_enum_)
 	if not _scene : return
 	
+	get_tree().change_scene_to_packed(_scene)
+	print('No unclaimed buffered instances of ' + _get_name_from_enum(scene_enum_) + ', using change_scene_to_packed() instead')
+	
+
+## Successfully running this claims the request
+func _get_unclaimed_request(scene_enum_ : SCENE) -> InstantiationRequest:
 	var _name : String = _get_name_from_enum(scene_enum_)
 	
-	## actually Array[InstantiationRequest] but arrays are untyped :()
-	var _request_array : Array = instances[_name]
+	if not instances.keys().has(_name) : return null
 	
-	if _request_array.is_empty():
-		# Use default method
-		get_tree().change_scene_to_packed(_scene)
-	else:
-		# Go looking for an unclaimed request
-		
-		for _index : int in range(_request_array.size()):
-			var _request : InstantiationRequest = _request_array[_index] as InstantiationRequest
-			if _request.status != InstantiationRequest.STATUS.FULFILLED: continue
-			_change_scene_to_instantiated(_request.claim())
-			_request_array.pop_at(_index)
-			return
-		# Default method if everything has been claimed already
-		get_tree().change_scene_to_packed(_scene)
-		
-	print('No unclaimed buffered instances of ' + _name + ', using change_scene_to_packed() instead')
+	var _request_array : Array = instances[_name]
+	if _request_array.is_empty(): return null
+	
+	# Go looking for an unclaimed request
+	for _index : int in range(_request_array.size()):
+		var _request : InstantiationRequest = _request_array[_index] as InstantiationRequest
+		if _request.status != InstantiationRequest.STATUS.FULFILLED: continue
+		_request_array.pop_at(_index)
+		return _request.claim()
+	return null
+
+# DEPRECATED
+## Ruleset will only be applied if the instanced request goes through correctly
+func to_main_game(ruleset_ : GameRuleset) -> void:
+	var _request : InstantiationRequest = _get_unclaimed_request(SCENE.MAIN_GAME)
+	
+	if not _request :
+		to_scene(SCENE.MAIN_MENU)
+		return
+	
+	var _main_game : MainGame = _request.node as MainGame
+	_main_game.ruleset = ruleset_
+	_change_scene_to_instantiated(_request.node)
+	

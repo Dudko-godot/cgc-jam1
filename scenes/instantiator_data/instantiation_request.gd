@@ -43,10 +43,10 @@ func get_finished(node_ : Node) -> void:
 	fulfilled.emit(self)
 
 
-func claim() -> Node:
+func claim() -> InstantiationRequest:
 	status = STATUS.CLAIMED
 	#free.call_deferred()
-	return node
+	return self
 
 
 func get_failed_to_start() -> void:

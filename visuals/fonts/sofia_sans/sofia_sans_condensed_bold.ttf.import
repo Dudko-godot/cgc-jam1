@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d32pmqchv2b5d"
-path="res://.godot/imported/ShantellSans-SemiBold.ttf-86a71557b519f653a6f594bb94193a29.fontdata"
+uid="uid://boc4n1cfyovso"
+path="res://.godot/imported/sofia_sans_condensed_bold.ttf-476f147de4ef65df47342aa0683eba10.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-SemiBold.ttf"
-dest_files=["res://.godot/imported/ShantellSans-SemiBold.ttf-86a71557b519f653a6f594bb94193a29.fontdata"]
+source_file="res://visuals/fonts/sofia_sans/sofia_sans_condensed_bold.ttf"
+dest_files=["res://.godot/imported/sofia_sans_condensed_bold.ttf-476f147de4ef65df47342aa0683eba10.fontdata"]
 
 [params]
 

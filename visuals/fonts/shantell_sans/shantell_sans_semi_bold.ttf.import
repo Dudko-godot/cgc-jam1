@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dkuxb5xwn4xqy"
-path="res://.godot/imported/ShantellSans-Light.ttf-11288ebe9b350c91b7ab9bca16a80a1d.fontdata"
+uid="uid://d32pmqchv2b5d"
+path="res://.godot/imported/shantell_sans_semi_bold.ttf-29af508b3162c6675fb291b0cd638ac9.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-Light.ttf"
-dest_files=["res://.godot/imported/ShantellSans-Light.ttf-11288ebe9b350c91b7ab9bca16a80a1d.fontdata"]
+source_file="res://visuals/fonts/shantell_sans/shantell_sans_semi_bold.ttf"
+dest_files=["res://.godot/imported/shantell_sans_semi_bold.ttf-29af508b3162c6675fb291b0cd638ac9.fontdata"]
 
 [params]
 

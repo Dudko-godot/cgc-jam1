@@ -1,6 +1,8 @@
 extends TextureRect
 
+@warning_ignore('unused_signal')
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 static var any_plate_washing := false

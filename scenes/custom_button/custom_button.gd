@@ -3,6 +3,7 @@ class_name CustomButton extends Button
 
 @export var label : Label
 @export var margin_container : MarginContainer
+@export var automatic_minimal_size : bool = true
 @export_range(8, 144, 1) var font_size : int = 36 : set = _set_font_size
 #@export_range(8, 144, 1) var font_size_hover : int = 48
 #@export_range(8, 144, 1) var font_size_hover : int = 48
@@ -48,5 +49,6 @@ func _set_font_size(size_ : int) -> void:
 
 
 func _on_container_resized(is_forced_ : bool = false) -> void:
+	if not automatic_minimal_size : return
 	if not (Engine.is_editor_hint() or is_forced_) : return
 	self.custom_minimum_size = margin_container.size

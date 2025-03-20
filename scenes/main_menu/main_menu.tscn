@@ -1,12 +1,12 @@
-[gd_scene load_steps=314 format=3 uid="uid://du02gi83mn7xr"]
+[gd_scene load_steps=315 format=3 uid="uid://du02gi83mn7xr"]
 
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_ds3f1"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_wulsb"]
 [ext_resource type="Texture2D" uid="uid://dxyt35u6weyr3" path="res://visuals/menus/main_menu/floor_texture_base.jpg" id="2_fqda6"]
+[ext_resource type="Resource" uid="uid://dff12firf0iqu" path="res://scenes/components/game_rules/instances/default_ruleset.tres" id="2_sc7u3"]
 [ext_resource type="Texture2D" uid="uid://6icb60m6xcni" path="res://visuals/menus/main_menu/floor_texture_darker.jpg" id="2_t6qa3"]
 [ext_resource type="Texture2D" uid="uid://mna03mbv2moq" path="res://visuals/menus/main_menu/dad_shadow_composite.png" id="3_06l5u"]
-[ext_resource type="Texture2D" uid="uid://dc533cpvxlgx3" path="res://visuals/reference/Artboard 1.png" id="3_u1j2s"]
-[ext_resource type="Script" path="res://scenes/main_menu/settings_applier.gd" id="4_t3jjv"]
+[ext_resource type="Resource" uid="uid://cwsrksb2jwfnf" path="res://scenes/components/game_rules/instances/relaxed_ruleset.tres" id="3_ftifa"]
 [ext_resource type="Script" path="res://scenes/main_menu/animation_manager.gd" id="8_of7ir"]
 [ext_resource type="Texture2D" uid="uid://dqlxchvhyhbio" path="res://visuals/menus/main_menu/title_frames/intro/intro000-min.png" id="10_hei80"]
 [ext_resource type="Texture2D" uid="uid://cnpqsmupntyrs" path="res://visuals/menus/main_menu/title_frames/intro/intro001-min.png" id="11_brnhn"]
@@ -281,6 +281,7 @@
 [ext_resource type="Texture2D" uid="uid://56vml1iad8sm" path="res://visuals/menus/main_menu/title_frames/outro/outro25.png" id="299_o2crl"]
 [ext_resource type="Texture2D" uid="uid://r4p2c1ck2jnv" path="res://visuals/menus/main_menu/title_frames/outro/outro26.png" id="300_bq0vf"]
 [ext_resource type="Texture2D" uid="uid://dwlff80er4uex" path="res://visuals/menus/main_menu/title_frames/outro/outro27.png" id="301_wcvwb"]
+[ext_resource type="PackedScene" uid="uid://yb5pd12662tk" path="res://scenes/settings/settings_ui.tscn" id="302_f720b"]
 [ext_resource type="Texture2D" uid="uid://ct8v8fryo7a1t" path="res://visuals/menus/main_menu/title_frames/outro/outro28.png" id="302_o40rs"]
 [ext_resource type="Texture2D" uid="uid://v3x3i8ftouch" path="res://visuals/menus/main_menu/title_frames/outro/outro29.png" id="303_ndb40"]
 [ext_resource type="Texture2D" uid="uid://di3fef25cvrvj" path="res://visuals/menus/main_menu/title_frames/outro/outro30.png" id="304_wbjl5"]
@@ -352,139 +353,50 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:r")
+tracks/4/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:r")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:g")
+tracks/5/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:g")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:b")
+tracks/6/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:b")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:a")
+tracks/7/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:r")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:g")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:b")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:a")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/12/type = "bezier"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:r")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/13/type = "bezier"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:g")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/14/type = "bezier"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:b")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/15/type = "bezier"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:a")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_v8e3j"]
 resource_name = "appear"
-length = 2.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -532,134 +444,46 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:r")
+tracks/4/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:r")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
+"times": PackedFloat32Array(0, 1)
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:g")
+tracks/5/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:g")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
+"times": PackedFloat32Array(0, 1)
 }
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:b")
+tracks/6/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:b")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
+"times": PackedFloat32Array(0, 1)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart:modulate:a")
+tracks/7/path = NodePath("MarginContainer/Interface/ButtonsNestedOpacity:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0, 0.714021, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.533333, 1.53333)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:r")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:g")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:b")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("MarginContainer/Interface/Buttons/ButtonCredits:modulate:a")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0, 0.714021, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.666667, 1.66667)
-}
-tracks/12/type = "bezier"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:r")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/13/type = "bezier"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:g")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/14/type = "bezier"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:b")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2)
-}
-tracks/15/type = "bezier"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("MarginContainer/Interface/Buttons/ButtonExit:modulate:a")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0, 0.714021, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.8, 1.8)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b6buy"]
@@ -2109,7 +1933,7 @@ animations = [{
 "speed": 60.0
 }]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_credits", "button_exit", "darkener_animation_player")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("button_game_start", "button_game_start_relaxed", "button_settings", "button_credits", "button_exit", "main_buttons", "settings_ui", "darkener_animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2118,9 +1942,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_wulsb")
-button_game_start = NodePath("MarginContainer/Interface/Buttons/ButtonGameStart")
-button_credits = NodePath("MarginContainer/Interface/Buttons/ButtonCredits")
-button_exit = NodePath("MarginContainer/Interface/Buttons/ButtonExit")
+default_ruleset = ExtResource("2_sc7u3")
+relaxed_ruleset = ExtResource("3_ftifa")
+button_game_start = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons/ButtonGameStart")
+button_game_start_relaxed = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons/ButtonGameStartRelaxed")
+button_settings = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons/ButtonSettings")
+button_credits = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons/ButtonCredits")
+button_exit = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons/ButtonExit")
+main_buttons = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/MainButtons")
+settings_ui = NodePath("MarginContainer/Interface/ButtonsNestedOpacity/SettingsUi")
 darkener_animation_player = NodePath("Darkener")
 
 [node name="Appear" type="AnimationPlayer" parent="."]
@@ -2145,9 +1975,6 @@ script = ExtResource("8_of7ir")
 player = NodePath("../FatherPlayer")
 delay = 1.6
 speeed = 0.8
-
-[node name="SettingsApplier" type="Node" parent="."]
-script = ExtResource("4_t3jjv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -2174,6 +2001,7 @@ grow_horizontal = 2
 grow_vertical = 2
 ratio = 1.77
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="AspectRatioContainer" node_paths=PackedStringArray("target")]
 layout_mode = 2
@@ -2203,18 +2031,6 @@ pivot_offset = Vector2(322, 473)
 texture = ExtResource("3_06l5u")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="REF" type="TextureRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.666667)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_u1j2s")
-expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -2253,33 +2069,59 @@ script = ExtResource("220_x508l")
 main_menu = NodePath("../../../..")
 
 [node name="Padding_01" type="Control" parent="MarginContainer/Interface"]
-custom_minimum_size = Vector2(0, 164)
+custom_minimum_size = Vector2(0, 132)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Buttons" type="VBoxContainer" parent="MarginContainer/Interface"]
+[node name="ButtonsNestedOpacity" type="MarginContainer" parent="MarginContainer/Interface"]
+layout_mode = 2
+
+[node name="MainButtons" type="VBoxContainer" parent="MarginContainer/Interface/ButtonsNestedOpacity"]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 62
+theme_override_constants/separation = 42
+alignment = 1
 
-[node name="ButtonGameStart" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
-custom_minimum_size = Vector2(204, 44)
+[node name="ButtonGameStart" parent="MarginContainer/Interface/ButtonsNestedOpacity/MainButtons" instance=ExtResource("1_ds3f1")]
+custom_minimum_size = Vector2(16, 44)
 layout_mode = 2
-text = "Начать Игру"
+text = "BEGIN_GAME"
+automatic_minimal_size = false
 font_size = 32
 
-[node name="ButtonCredits" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
+[node name="ButtonGameStartRelaxed" parent="MarginContainer/Interface/ButtonsNestedOpacity/MainButtons" instance=ExtResource("1_ds3f1")]
+custom_minimum_size = Vector2(16, 44)
+layout_mode = 2
+text = "BEGIN_GAME_NOFATHER"
+automatic_minimal_size = false
+font_size = 32
+
+[node name="ButtonSettings" parent="MarginContainer/Interface/ButtonsNestedOpacity/MainButtons" instance=ExtResource("1_ds3f1")]
+custom_minimum_size = Vector2(16, 44)
+layout_mode = 2
+text = "SETTINGS"
+automatic_minimal_size = false
+font_size = 32
+
+[node name="ButtonCredits" parent="MarginContainer/Interface/ButtonsNestedOpacity/MainButtons" instance=ExtResource("1_ds3f1")]
 visible = false
-custom_minimum_size = Vector2(235, 44)
+custom_minimum_size = Vector2(16, 44)
 layout_mode = 2
-text = "Разработчики"
+text = "CREDITS"
+automatic_minimal_size = false
 font_size = 32
 
-[node name="ButtonExit" parent="MarginContainer/Interface/Buttons" instance=ExtResource("1_ds3f1")]
-custom_minimum_size = Vector2(104, 44)
+[node name="ButtonExit" parent="MarginContainer/Interface/ButtonsNestedOpacity/MainButtons" instance=ExtResource("1_ds3f1")]
+custom_minimum_size = Vector2(16, 44)
 layout_mode = 2
-text = "Выйти"
+text = "EXIT"
+automatic_minimal_size = false
 font_size = 32
+
+[node name="SettingsUi" parent="MarginContainer/Interface/ButtonsNestedOpacity" instance=ExtResource("302_f720b")]
+visible = false
+layout_mode = 2
 
 [node name="MenuDarkener" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)

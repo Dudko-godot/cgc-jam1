@@ -296,7 +296,7 @@ autoplay = "intro"
 
 [node name="AiControllerFetcher" type="Node" parent="." node_paths=PackedStringArray("controller", "father_enemy")]
 script = ExtResource("17_2ip6b")
-controller = NodePath("../map/AiController")
+controller = NodePath("../AiController")
 father_enemy = NodePath("../map/FatherEnemy")
 
 [node name="RandomSpawnComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "locations")]
@@ -304,6 +304,11 @@ script = ExtResource("3_loiyn")
 actor = NodePath("../map/Player")
 locations = [NodePath("../SpawnLocations/Bath"), NodePath("../SpawnLocations/LivingRoom"), NodePath("../SpawnLocations/Bedroom"), NodePath("../SpawnLocations/Hall"), NodePath("../SpawnLocations/Kitchen"), NodePath("../SpawnLocations/ChildrensRoom")]
 onready = true
+
+[node name="AiController" parent="." node_paths=PackedStringArray("game", "character") instance=ExtResource("7_vlixy")]
+game = NodePath("..")
+character = NodePath("../map/FatherEnemy")
+target_nodes = Array[NodePath]([NodePath("../map/Player/PatrolPointPlayer"), NodePath("../map/Point1"), NodePath("../map/Point2"), NodePath("../map/Point3"), NodePath("../map/Point4"), NodePath("../map/Point5"), NodePath("../map/Point6")])
 
 [node name="map" parent="." instance=ExtResource("1_vrxxs")]
 
@@ -329,49 +334,45 @@ point_name = "фывфывфывфвы"
 [node name="FatherEnemy" parent="map" instance=ExtResource("6_6by5k")]
 position = Vector2(1661, 2011)
 
-[node name="AiController" parent="map" node_paths=PackedStringArray("character") instance=ExtResource("7_vlixy")]
-character = NodePath("../FatherEnemy")
-target_nodes = Array[NodePath]([NodePath("../Player/PatrolPointPlayer"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4"), NodePath("../Point5"), NodePath("../Point6")])
-
 [node name="Point1" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(999, 1739)
 main_game = NodePath("../..")
-dialogue_text = "Ну и времена нынче..."
+dialogue_text = "DAD_PHRASE_TV"
 point_name = "телевизор"
 action_type = 1
 
 [node name="Point2" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(1980, 867)
 main_game = NodePath("../..")
-dialogue_text = "Где моё пиво?!"
+dialogue_text = "DAD_PHRASE_BEER"
 point_name = "холодильник"
 action_type = 1
 
 [node name="Point3" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(1661, 1977)
 main_game = NodePath("../..")
-dialogue_text = "Ох и надоело мне всё!"
+dialogue_text = "DAD_PHRASE_ENOUGH"
 point_name = "хзтест"
 action_type = 1
 
 [node name="Point4" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(2422, 2218)
 main_game = NodePath("../..")
-dialogue_text = "Вот в моё то время!"
+dialogue_text = "DAD_PHRASE_DAYS"
 point_name = "хзтест"
 action_type = 1
 
 [node name="Point5" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(420, 1110)
 main_game = NodePath("../..")
-dialogue_text = "НУ КАК ТАК???"
+dialogue_text = "DAD_PHRASE_HOW"
 point_name = "хзтест"
 action_type = 1
 
 [node name="Point6" parent="map" node_paths=PackedStringArray("main_game") instance=ExtResource("8_16nb4")]
 position = Vector2(1456, 799)
 main_game = NodePath("../..")
-dialogue_text = "Когда-то я тоже был маленьким..."
+dialogue_text = "DAD_PHRASE_CHILDHOOD"
 point_name = "Детская"
 action_type = 1
 

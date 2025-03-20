@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b2kuyrwrnggsm"]
 
-[ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/ShantellSans/ShantellSans-SemiBold.ttf" id="1_oeqpb"]
+[ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/shantell_sans/shantell_sans_semi_bold.ttf" id="1_oeqpb"]
 
 [resource]
 font = ExtResource("1_oeqpb")

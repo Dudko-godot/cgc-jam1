@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_3uy0d"]
 [ext_resource type="Script" path="res://scenes/custom_button/custom_button.gd" id="1_o2n76"]
 [ext_resource type="Script" path="res://scenes/custom_button/hover_control.gd" id="3_0x3pk"]
-[ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/ShantellSans/ShantellSans-SemiBold.ttf" id="3_3lbs6"]
+[ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/shantell_sans/shantell_sans_semi_bold.ttf" id="3_3lbs6"]
 [ext_resource type="Script" path="res://scenes/custom_button/tween_component.gd" id="5_6kmxp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_af56o"]
@@ -15,14 +15,9 @@ font_size = 30
 
 [node name="CustomButton" type="Button" node_paths=PackedStringArray("label", "margin_container")]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(183, 41)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1048.0
-offset_bottom = -664.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(576, 85)
+offset_right = 576.0
+offset_bottom = 85.0
 focus_mode = 0
 theme = ExtResource("1_3uy0d")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_af56o")
@@ -37,20 +32,21 @@ margin_container = NodePath("MarginContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(16, 8)
 layout_mode = 2
+size_flags_vertical = 1
 text = "Sample Text"
 label_settings = SubResource("LabelSettings_l3r27")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 visible = false

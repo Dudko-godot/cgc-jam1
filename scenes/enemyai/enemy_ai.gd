@@ -1,5 +1,6 @@
 class_name EnemyAIController extends Node
 
+@export var game : MainGame
 @export var character: CharacterBody2D
 @export var target_nodes: Array[NodePath] = []
 @export_range(0, 100) var chase_player_chance: int = 30  # Шанс погнаться за игроком в процентах
@@ -31,6 +32,11 @@ signal began_actively_chasing_player
 signal stopped_actively_chasing_player
 
 func _ready():
+	# Don't do anything until we get a confirmation that the ruleset is in place
+	await game.ruleset_confirmed
+	
+	_check_existance()
+	
 	rng.randomize()
 	
 	# Находим компонент навигации
@@ -73,6 +79,13 @@ func _ready():
 	# Станим батю ненадолго
 	await get_tree().create_timer(1.2).timeout
 	_proceed_to_next_target()
+
+## Checks whether the AI is actually needed or not according to the [GameRuleset]
+func _check_existance() -> void:
+	if game.ruleset.is_father_present : return
+	
+	character.queue_free()
+	queue_free()
 
 func _on_player_detected(body: Node2D) -> void:
 	if not navigation_ready or not allow_detection:

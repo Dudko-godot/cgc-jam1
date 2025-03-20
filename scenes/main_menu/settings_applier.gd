@@ -1,5 +1,7 @@
 extends Node
 
+
+## DEPRECATED
 var is_fullscreen : bool = false
 
 func _input(event_ : InputEvent) -> void:

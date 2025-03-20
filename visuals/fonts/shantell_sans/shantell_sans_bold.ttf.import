@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bn7au70ykityc"
-path="res://.godot/imported/ShantellSans-ExtraBold.ttf-07440370b252f74323a59cf8d5e5f639.fontdata"
+uid="uid://c13hoerigi5nr"
+path="res://.godot/imported/shantell_sans_bold.ttf-5227d9d4e4a3f6e23ca29dd167956cf1.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-ExtraBold.ttf"
-dest_files=["res://.godot/imported/ShantellSans-ExtraBold.ttf-07440370b252f74323a59cf8d5e5f639.fontdata"]
+source_file="res://visuals/fonts/shantell_sans/shantell_sans_bold.ttf"
+dest_files=["res://.godot/imported/shantell_sans_bold.ttf-5227d9d4e4a3f6e23ca29dd167956cf1.fontdata"]
 
 [params]
 

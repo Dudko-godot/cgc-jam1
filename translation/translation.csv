@@ -1,0 +1,79 @@
+key,ru,en,de
+GAME_TITLE,Возвращение Отца,Return of the Father,Die Rückkehr des Vaters
+,,,
+LOADING,Загрузка,Loading,Laden
+BEGIN_GAME,Начать Игру,Start,Starten
+BEGIN_GAME_NOFATHER,Начать Игру без отца,Start without father,Onhe Vater starten
+SETTINGS,Настройки,Settings,Einstellungen
+LANGUAGE,Язык,Language,Sprache
+FULLSCREEN,Полный экран,Fullscreen,Vollbildmodus
+VOLUME,Громкость,Volume,Lautstärke
+VOLUME_MUSIC,Громкость музыки,Music Volume,Musik Lautstärke
+VOLUME_SFX,Громкость эффектов,SFX Volume,Soundeffekt Lautstärke
+EXIT,Выйти,Exit,Verlassen
+BACK_TO_MENU,Вернуться в\nглавное меню,Return\nto main menu,Zurück\nzur Hauptmenu
+TRY_AGAIN,Попробовать\nснова,Try\nagain,Erneut\nversuchen
+TASK_COMPLETE,Задание выполнено,Task complete,Aufgabe erledigt
+INTERACTABLE_PROMPT,Нажми Е чтобы,Press E to,"Drück E, um"
+INTERACTABLE_INSTRUCTION_DEFAULT,взаимодействовать,interact,zu interagieren
+DISCARD_SETTINGS,Отменить изменения,Discard changes,Änderungen verwerfen
+KEEP_SETTINGS,Сохранить изменения,Keep changes,Änderungen behalten
+RUSSIAN,Русский,Russian,Russisch
+ENGLISH,Английский,English,Englisch
+GERMAN,Немецкий,German,Deutsch
+,,,
+DEFEAT_TITLE,Вам всыпали ремня,You got your ass whooped,Du hast verloren
+VICTORY_TITLE,Победа,Victory,Sieg
+,,,
+TAKS_LIST_HEADER,"Чтобы папа не злился, надо:",To make father calm down:,Um Vater zu beruhigen:
+TASK_NAME_PLANTS,Полить растения,Water the plants,Gieße die Pflanzen
+TASK_NAME_HOMEWORK,Сделать домашнее задание,Finish your homework,Mach deine Hausaufgaben
+TASK_NAME_DISHES,Помыть посуду,Do the dishes,Mach den Abwasch
+TASK_NAME_TV,Протереть телевизор,Dust off the TV,Staub den Fernseher ab
+TASK_NAME_LAUNDRY,Развесить белье,Hand the laundry to dry,Gib die Wäsche zum Trocknen
+TASK_NAME_TOYS,Прибрать игрушки,Tidy up the toys,Räum die Spielsachen auf
+TASK_NAME_TEST,Тестовое задание,Perform the test task,Führe die Testaufgabe aus
+,,,
+TASK_DESC_PLANTS,Полей все комнатные растения,Water all plants in the bedroom,Alle Pflanzen im Schlafzimmer gießen
+TASK_DESC_HOMEWORK,Выполни домашнее задание,The notebook is on your table,Das Notizbuch liegt auf deinem Tisch
+TASK_DESC_DISHES,Помой посуду в раковине,At the sink in the kitchen,An der Spüle in der Küche
+TASK_DESC_TV,Очисти телевизор от пыли,In the living room,Er befinded sich im Wohnzimmer
+TASK_DESC_LAUNDRY,Развесь чистое белье на веревке,The basket is to the right of the bathtub,Der Korb steht rechts neben der Badewanne
+TASK_DESC_TOYS,Прибери разбросанные игрушки в коробку,Put them into a basket,Legen Sie sie in einen Korb
+TASK_DESC_TEST,Запусти тестовую игру,By the drawer in the hallway,An der Schublade im Flur
+,,,
+TASK_PROMPT_PLANTS,полить растения,water the plants,die Pflanzen zu gießen
+TASK_PROMPT_HOMEWORK,сделать домашнее задание,do homework,die Hausaufgaben zu machen
+TASK_PROMPT_DISHES,помыть посуду,do the dishes,den Abwash zu machen
+TASK_PROMPT_TV,протереть телевизор,dust the TV off,den Fernseher abzustauben
+TASK_PROMPT_LAUNDRY,развесить бельё,hang the laundry,die Wäsche zum Trocknen aufzuhängen
+TASK_PROMPT_TOYS,прибрать игрушки,tidy up the toys,die Spielsachen aufzuräumen
+TASK_PROMPT_TEST,запустить тестовое задание,perform the test task,die Testaufgabe auszuführen
+,,,
+TASK_DISABLED_PLANTS,Цветы уже политы,Plants are watered,Pflanzen werden gegossen
+TASK_DISABLED_HOMEWORK,Домашнее задание уже сделано,The homework is finished,Die Hausaufgaben sind erledigt
+TASK_DISABLED_DISHES,Посуда уже помыта,The Dishes are done,Der Abwasch is gemacht
+TASK_DISABLED_TV,Телевизор уже чистый,The TV is already clean,Der Fernseher ist bereits sauber
+TASK_DISABLED_LAUNDRY,Корзина пуста,The laundry basket looks empty,Der Wäschekorb sieht leer aus
+TASK_DISABLED_TOYS,Игрушки уже прибраны,Toys are in order,Die Spielsachen sind in Ordnung
+TASK_DISABLED_TEST,Тестовое задание готово,Test task is complete,Testaufgabe ist abgeschlossen
+,,,
+DAD_PHRASE_TV,Ну и времена нынче...,It's crazy out there nowadays...,Was für eine Zeit heutzutage.
+DAD_PHRASE_ENOUGH,Ох и надоело мне всё!,I've had enough of this!,Mir reicht es jetzt!
+DAD_PHRASE_BEER,Где моё пиво?!,I need a cold one!,Ich brauche ein Bier!
+DAD_PHRASE_DAYS,Вот в моё то время!,Back in my days!,Das war einmal!
+DAD_PHRASE_HOW,НУ КАК ТАК???,JUST HOW ON EARTH?,WIE KANN DAS SEIN?
+DAD_PHRASE_CHILDHOOD,Когда-то я тоже был маленьким...,I too was once little...,Auch ich war einmal klein...
+,,,
+,,,
+MATH,Математика,Maths,Mathe
+WRONG_ANSWER,Неправильный ответ!,Wrong answer!,Falsche Antwort!
+,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,
+WAYPOINT_NAME_,,,

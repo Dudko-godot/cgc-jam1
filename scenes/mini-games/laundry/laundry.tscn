@@ -95,6 +95,7 @@ layout_mode = 2
 texture_normal = null
 
 [node name="Instructions" type="Label" parent="MainBox"]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -102,7 +103,7 @@ offset_top = 10.0
 offset_bottom = 114.0
 grow_horizontal = 2
 theme = ExtResource("4_mjq3s")
-text = "Развесьте белье на веревке"
+text = "TASK_DESC_LAUNDRY"
 label_settings = SubResource("LabelSettings_v5hry")
 horizontal_alignment = 1
 

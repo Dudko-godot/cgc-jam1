@@ -1,6 +1,8 @@
 extends Control
 
+@warning_ignore('unused_signal')
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 @onready var plate_scene = preload("res://scenes/mini-games/washing_dishes/plate.tscn")

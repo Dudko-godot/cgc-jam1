@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dj1lc5liousgp"]
+[gd_scene load_steps=79 format=3 uid="uid://dj1lc5liousgp"]
 
 [ext_resource type="Script" path="res://scenes/defeat_screen/defeat_screen.gd" id="1_h6t6u"]
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="1_mduyo"]
@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://byauepb3aiyg0" path="res://visuals/menus/defeat_screen/text_prompt/belt_00057.png" id="62_khr51"]
 [ext_resource type="Texture2D" uid="uid://cn5yrhkmy8r4t" path="res://visuals/menus/defeat_screen/text_prompt/belt_00058.png" id="63_k4sw8"]
 [ext_resource type="Texture2D" uid="uid://dyvtmw60o0d0j" path="res://visuals/menus/defeat_screen/text_prompt/belt_00059.png" id="64_7pfqp"]
+[ext_resource type="FontFile" uid="uid://dc7x50bmudok0" path="res://visuals/fonts/garamond_eb/garamond_bold.ttf" id="64_mfe2h"]
 [ext_resource type="Script" path="res://scenes/defeat_screen/animated_text_prompt.gd" id="66_sxnjp"]
 [ext_resource type="AudioStream" uid="uid://d07dlkd2xqf08" path="res://audio/menusound/endgamesound.ogg" id="67_7qmil"]
 
@@ -777,6 +778,13 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_wiffu"]
+font = ExtResource("64_mfe2h")
+font_size = 72
+font_color = Color(0.729412, 0.145098, 0.211765, 1)
+outline_size = 2
+outline_color = Color(0.729412, 0.145098, 0.211765, 1)
+
 [node name="DefeatScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -868,6 +876,7 @@ texture = SubResource("GradientTexture2D_sejwr")
 expand_mode = 1
 
 [node name="Control" type="Control" parent="VerticalBox/Top2/TopText"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -890,6 +899,24 @@ sprite_frames = SubResource("SpriteFrames_xm33p")
 frame = 8
 frame_progress = 0.538708
 script = ExtResource("66_sxnjp")
+
+[node name="Label" type="Label" parent="VerticalBox/Top2/TopText"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.5
+offset_top = -49.5
+offset_right = 294.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEFEAT_TITLE"
+label_settings = SubResource("LabelSettings_wiffu")
+horizontal_alignment = 1
+uppercase = true
 
 [node name="Top3" type="Control" parent="VerticalBox"]
 layout_mode = 2
@@ -921,10 +948,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ButtonExit" parent="VerticalBox/Interface/Left/MarginContainer" instance=ExtResource("1_mduyo")]
-custom_minimum_size = Vector2(220, 85)
+custom_minimum_size = Vector2(370, 140)
 layout_mode = 2
-text = "Выйти в
-главное меню"
+text = "BACK_TO_MENU"
 
 [node name="Center" type="Control" parent="VerticalBox/Interface"]
 custom_minimum_size = Vector2(420, 520)
@@ -987,10 +1013,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ButtonTryAgain" parent="VerticalBox/Interface/Right/MarginContainer" instance=ExtResource("1_mduyo")]
-custom_minimum_size = Vector2(200, 85)
+custom_minimum_size = Vector2(370, 140)
 layout_mode = 2
-text = "Попробовать
-снова"
+text = "TRY_AGAIN"
 
 [node name="Bottom" type="Control" parent="VerticalBox"]
 layout_mode = 2
@@ -1012,6 +1037,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.141176, 0.0941176, 0.14902, 1)
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="VerticalBox/Interface/Left/MarginContainer/ButtonExit" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="VerticalBox/Interface/Right/MarginContainer/ButtonTryAgain" to="." method="_on_button_again_pressed"]

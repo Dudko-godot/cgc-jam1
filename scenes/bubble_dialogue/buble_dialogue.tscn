@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgjg5k78ke7e6"]
 
-[ext_resource type="FontFile" uid="uid://bqw3tapshp8ed" path="res://visuals/fonts/ShantellSans/ShantellSans-Italic.ttf" id="1_1jnvw"]
+[ext_resource type="FontFile" uid="uid://bqw3tapshp8ed" path="res://visuals/fonts/shantell_sans/shantell_sans_italic.ttf" id="1_1jnvw"]
 [ext_resource type="Script" path="res://scenes/bubble_dialogue/buble_dialogue.gd" id="1_v6kp2"]
-[ext_resource type="FontFile" uid="uid://bns8aapyejggj" path="res://visuals/fonts/ShantellSans/ShantellSans-Medium.ttf" id="3_0266q"]
+[ext_resource type="FontFile" uid="uid://bns8aapyejggj" path="res://visuals/fonts/shantell_sans/shantell_sans_medium.ttf" id="3_0266q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2mad"]
 bg_color = Color(0.988235, 0.92549, 0.823529, 1)

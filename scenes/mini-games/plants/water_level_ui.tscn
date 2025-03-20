@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5i12kp5cq4pa"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/water_level_ui.gd" id="1_ixnqm"]
-[ext_resource type="FontFile" uid="uid://bns8aapyejggj" path="res://visuals/fonts/ShantellSans/ShantellSans-Medium.ttf" id="2_axyx4"]
+[ext_resource type="FontFile" uid="uid://bns8aapyejggj" path="res://visuals/fonts/shantell_sans/shantell_sans_medium.ttf" id="2_axyx4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvnqm"]
 bg_color = Color(0, 0, 0, 0.588235)

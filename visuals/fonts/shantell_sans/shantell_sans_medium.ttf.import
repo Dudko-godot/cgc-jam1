@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bns8aapyejggj"
-path="res://.godot/imported/ShantellSans-Medium.ttf-3763b3860a2d88a917f1713449fc95ce.fontdata"
+path="res://.godot/imported/shantell_sans_medium.ttf-9d4c1a73d34857d297633010dc30e286.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-Medium.ttf"
-dest_files=["res://.godot/imported/ShantellSans-Medium.ttf-3763b3860a2d88a917f1713449fc95ce.fontdata"]
+source_file="res://visuals/fonts/shantell_sans/shantell_sans_medium.ttf"
+dest_files=["res://.godot/imported/shantell_sans_medium.ttf-9d4c1a73d34857d297633010dc30e286.fontdata"]
 
 [params]
 

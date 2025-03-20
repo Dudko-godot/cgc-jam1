@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c13hoerigi5nr"
-path="res://.godot/imported/ShantellSans-Bold.ttf-9a23d6c3bc37bd430d5c784201097fce.fontdata"
+uid="uid://dkuxb5xwn4xqy"
+path="res://.godot/imported/shantell_sans_light.ttf-f1629e5542ba214b662828149013a504.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-Bold.ttf"
-dest_files=["res://.godot/imported/ShantellSans-Bold.ttf-9a23d6c3bc37bd430d5c784201097fce.fontdata"]
+source_file="res://visuals/fonts/shantell_sans/shantell_sans_light.ttf"
+dest_files=["res://.godot/imported/shantell_sans_light.ttf-f1629e5542ba214b662828149013a504.fontdata"]
 
 [params]
 

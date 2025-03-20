@@ -1,10 +1,12 @@
 extends Control
 
+@warning_ignore('unused_signal')
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 # Константы для настройки игры
-const MIN_TOYS_TO_WIN = 5   # Минимальное количество игрушек для победы
+const MIN_TOYS_TO_WIN = 5   # Минимальное к оличество игрушек для победы
 const GAME_DURATION = 60    # Продолжительность игры в секундах
 const TOY_SCENE = preload("res://scenes/mini-games/cleanup_toys/toy.tscn")
 const INITIAL_TOYS = 5      # Начальное количество игрушек

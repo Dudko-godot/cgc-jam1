@@ -1,0 +1,207 @@
+[gd_scene load_steps=6 format=3 uid="uid://yb5pd12662tk"]
+
+[ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="1_toj8g"]
+[ext_resource type="Script" path="res://scenes/settings/settings_ui.gd" id="2_326cc"]
+[ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="2_wpuft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgs2c"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_u64ce"]
+font_size = 24
+
+[node name="SettingsUi" type="MarginContainer" node_paths=PackedStringArray("locale_button", "fullscreen_checkbox", "button_discard", "button_keep")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = -177.5
+offset_right = 322.0
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_toj8g")
+script = ExtResource("2_326cc")
+locale_button = NodePath("VBoxContainer/Language/LanguageDropdown")
+fullscreen_checkbox = NodePath("VBoxContainer/Fullscreen/Control/FullscreenCheckbox")
+button_discard = NodePath("VBoxContainer/HBoxContainer/Left/ButtonDiscard")
+button_keep = NodePath("VBoxContainer/HBoxContainer/Right/ButtonKeep")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_qgs2c")
+horizontal_alignment = 1
+
+[node name="Padding_00" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Language" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Language"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "LANGUAGE"
+label_settings = SubResource("LabelSettings_u64ce")
+horizontal_alignment = 1
+
+[node name="LanguageDropdown" type="OptionButton" parent="VBoxContainer/Language"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+focus_mode = 0
+selected = 1
+item_count = 3
+popup/item_0/text = "English"
+popup/item_0/id = 1
+popup/item_1/text = "Русский"
+popup/item_1/id = 1
+popup/item_2/text = "Deutsch"
+popup/item_2/id = 2
+
+[node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Fullscreen"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "FULLSCREEN"
+label_settings = SubResource("LabelSettings_u64ce")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/Fullscreen"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="VBoxContainer/Fullscreen/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+
+[node name="Volume" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Volume"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_u64ce")
+horizontal_alignment = 1
+
+[node name="SliderVolume" type="HSlider" parent="VBoxContainer/Volume"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 1
+focus_mode = 0
+
+[node name="VolumeMusic" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VolumeMusic"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "VOLUME_MUSIC"
+label_settings = SubResource("LabelSettings_u64ce")
+horizontal_alignment = 1
+
+[node name="SliderVolumeMusic" type="HSlider" parent="VBoxContainer/VolumeMusic"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 1
+focus_mode = 0
+
+[node name="VolumeSFX" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VolumeSFX"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "VOLUME_SFX"
+label_settings = SubResource("LabelSettings_u64ce")
+horizontal_alignment = 1
+
+[node name="SliderVolumeSFX" type="HSlider" parent="VBoxContainer/VolumeSFX"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_vertical = 1
+focus_mode = 0
+
+[node name="Padding_01" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Left" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(320, 40)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ButtonDiscard" parent="VBoxContainer/HBoxContainer/Left" instance=ExtResource("2_wpuft")]
+modulate = Color(0.97, 0.2522, 0.39576, 1)
+custom_minimum_size = Vector2(70, 33)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DISCARD_SETTINGS"
+autowrap_mode = 2
+font_size = 24
+
+[node name="Right" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(320, 40)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ButtonKeep" parent="VBoxContainer/HBoxContainer/Right" instance=ExtResource("2_wpuft")]
+custom_minimum_size = Vector2(70, 33)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEEP_SETTINGS"
+autowrap_mode = 2
+font_size = 24

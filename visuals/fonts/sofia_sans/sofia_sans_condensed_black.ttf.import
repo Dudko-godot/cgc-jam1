@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bqw3tapshp8ed"
-path="res://.godot/imported/ShantellSans-Italic.ttf-70bba3c7853b40fc1ace6c7f4c42ca8b.fontdata"
+uid="uid://btiiam6o88lj5"
+path="res://.godot/imported/sofia_sans_condensed_black.ttf-ae51ae1113750b3d721f82dadfa86907.fontdata"
 
 [deps]
 
-source_file="res://visuals/fonts/ShantellSans/ShantellSans-Italic.ttf"
-dest_files=["res://.godot/imported/ShantellSans-Italic.ttf-70bba3c7853b40fc1ace6c7f4c42ca8b.fontdata"]
+source_file="res://visuals/fonts/sofia_sans/sofia_sans_condensed_black.ttf"
+dest_files=["res://.godot/imported/sofia_sans_condensed_black.ttf-ae51ae1113750b3d721f82dadfa86907.fontdata"]
 
 [params]
 
