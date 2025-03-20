@@ -33,7 +33,7 @@ func update_ui() -> void:
 	
 	# Обновляем текст метки
 	if water_label:
-		water_label.text = "Вода: " + str(int(current_water)) + "/" + str(int(max_water))
+		water_label.text = tr('WATER') + ' : ' + str(int(current_water)) + "/" + str(int(max_water))
 	
 	# Меняем цвет в зависимости от уровня воды
 	update_progress_color(current_water < max_water * 0.3)

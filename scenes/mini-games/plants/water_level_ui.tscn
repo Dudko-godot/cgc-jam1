@@ -63,6 +63,6 @@ offset_left = 10.0
 offset_top = 45.0
 offset_right = 190.0
 offset_bottom = 71.0
-text = "Вода: 5/10"
+text = "WATER : 5/10"
 label_settings = SubResource("LabelSettings_62sas")
 horizontal_alignment = 1

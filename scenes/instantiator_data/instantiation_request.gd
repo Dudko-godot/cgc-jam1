@@ -52,7 +52,7 @@ func claim() -> InstantiationRequest:
 func get_failed_to_start() -> void:
 	status = STATUS.FAILED_TO_START
 	failed.emit()
-	free.call_deferred()
+	#free.call_deferred()
 
 	push_warning('Failed to start threaded instantiating of ' + scene.resource_path.get_file())
 
@@ -60,6 +60,6 @@ func get_failed_to_start() -> void:
 func get_failed() -> void:
 	status = STATUS.FAILED_TO_INSTANTIATE
 	failed.emit()
-	free.call_deferred()
+	#free.call_deferred()
 	
 	push_warning('Failed to instantiate on a thread ' + scene.resource_path.get_file())

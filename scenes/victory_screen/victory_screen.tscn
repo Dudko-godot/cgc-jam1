@@ -588,7 +588,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Interface/TopContainer/MarginContainer/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1280, 316)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Title3d" parent="Interface/TopContainer/MarginContainer/SubViewportContainer/SubViewport" instance=ExtResource("65_hjx17")]
