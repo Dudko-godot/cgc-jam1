@@ -1,6 +1,7 @@
 extends Control
 
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 const LaundryUnit = preload("res://scenes/mini-games/laundry/laundry_unit.tscn")
@@ -26,6 +27,7 @@ func setup_game():
 		current_unit.queue_free()
 		current_unit = null
 
+@warning_ignore('unused_parameter')
 func _on_clothes_taken(clothes_type: String = types[current_score]):
 	if current_unit:
 		current_unit.queue_free()

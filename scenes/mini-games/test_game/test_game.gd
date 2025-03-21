@@ -1,6 +1,8 @@
 extends Control
 
+@warning_ignore('unused_signal')
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 @onready var button1 = $ButtonsContainer/Button1

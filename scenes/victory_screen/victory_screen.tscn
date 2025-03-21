@@ -66,7 +66,7 @@
 [ext_resource type="PackedScene" uid="uid://chbu50o6l34jl" path="res://scenes/victory_screen/particles.tscn" id="66_2a54x"]
 [ext_resource type="Texture2D" uid="uid://ixejnmws2ght" path="res://visuals/victory_screen/title.png" id="66_xgbkl"]
 [ext_resource type="PackedScene" uid="uid://bt33ri6tu17fr" path="res://scenes/custom_button/custom_button.tscn" id="67_7fjea"]
-[ext_resource type="AudioStream" uid="uid://qcl4myqr85y1" path="res://audio/menusound/Win.ogg" id="69_c6ccp"]
+[ext_resource type="AudioStream" uid="uid://qcl4myqr85y1" path="res://audio/menusound/victory_jingle.ogg" id="69_c6ccp"]
 
 [sub_resource type="Gradient" id="Gradient_c0v64"]
 interpolation_mode = 2

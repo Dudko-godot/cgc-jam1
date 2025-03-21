@@ -38,7 +38,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="."]
 clip_children = 1
 layout_mode = 2
-text = "VICTORY_TITLE"
+text = "victory_title"
 label_settings = SubResource("LabelSettings_df2at")
 horizontal_alignment = 1
 vertical_alignment = 1

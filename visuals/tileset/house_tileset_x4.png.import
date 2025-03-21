@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ly6majny48ul"
-path="res://.godot/imported/plant_08.png-11dc58ac2c019591c9ef7fc3ac8ab2c6.ctex"
+uid="uid://br0d7yny8ckwh"
+path="res://.godot/imported/house_tileset_x4.png-65b47d7a31b4391fcc1a7605d9bb80ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mini-games/plants/plant_08.png"
-dest_files=["res://.godot/imported/plant_08.png-11dc58ac2c019591c9ef7fc3ac8ab2c6.ctex"]
+source_file="res://visuals/tileset/house_tileset_x4.png"
+dest_files=["res://.godot/imported/house_tileset_x4.png-65b47d7a31b4391fcc1a7605d9bb80ca.ctex"]
 
 [params]
 

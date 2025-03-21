@@ -1,6 +1,7 @@
 extends Control
 
 signal game_completed
+@warning_ignore('unused_signal')
 signal game_cancelled
 
 # Параметры игры

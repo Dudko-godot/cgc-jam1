@@ -66,7 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://dyvtmw60o0d0j" path="res://visuals/menus/defeat_screen/text_prompt/belt_00059.png" id="64_7pfqp"]
 [ext_resource type="FontFile" uid="uid://dc7x50bmudok0" path="res://visuals/fonts/garamond_eb/garamond_bold.ttf" id="64_mfe2h"]
 [ext_resource type="Script" path="res://scenes/defeat_screen/animated_text_prompt.gd" id="66_sxnjp"]
-[ext_resource type="AudioStream" uid="uid://d07dlkd2xqf08" path="res://audio/menusound/endgamesound.ogg" id="67_7qmil"]
+[ext_resource type="AudioStream" uid="uid://d07dlkd2xqf08" path="res://audio/menusound/defeat_jingle.ogg" id="67_7qmil"]
 
 [sub_resource type="Gradient" id="Gradient_krthr"]
 offsets = PackedFloat32Array(0, 0.4, 0.6, 1)
