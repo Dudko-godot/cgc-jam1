@@ -14,7 +14,7 @@ var normal_linear_damp: float = 5.0  # Затухание в обычном со
 var grab_radius: float = 50.0  # Радиус для захвата лейки
 
 # Параметры стабилизации вращения
-var rotation_damp_factor: float = 2.5  # Затухание вращения
+var rotation_damp_factor: float = 3.5  # Затухание вращения
 var custom_angular_damp: float = 8.0  # Затухание углового движения при перетаскивании
 var normal_angular_damp_value: float = 4.0  # Затухание углового движения в обычном состоянии
 var upright_force: float = 1.5  # Сила выравнивания
@@ -46,7 +46,9 @@ var attraction_point: Vector2 = Vector2()  # Точка притяжения (к
 var local_grab_point: Vector2 = Vector2()  # Точка захвата на лейке
 
 # Визуальные элементы
-var grab_point: ColorRect = null
+@export var grab_point : Sprite2D
+@export var main_sprite : Sprite2D
+@export var water_progress : ProgressBar
 
 signal clicked
 
@@ -58,10 +60,12 @@ func initialize() -> void:
 	add_to_group("watering_can")
 	setup_physics()
 	last_position = global_position
+	water_level_changed.connect(_on_water_level_changed)
 	water_level_changed.emit(current_water, max_water)
 	
 	# Инициализация окружения
-	_create_visual_elements()
+	#_create_visual_elements()
+	
 	_connect_signals()
 
 func setup_physics() -> void:
@@ -70,14 +74,14 @@ func setup_physics() -> void:
 	linear_damp = normal_linear_damp
 	angular_damp = normal_angular_damp_value
 
-# Создаем индикатор точки захвата
-func _create_visual_elements() -> void:
-	grab_point = ColorRect.new()
-	grab_point.name = "GrabPoint"
-	grab_point.size = Vector2(10, 10)
-	grab_point.color = Color(1, 0, 0, 0.5)  # Полупрозрачный красный
-	grab_point.visible = false
-	add_child(grab_point)
+## Создаем индикатор точки захвата
+#func _create_visual_elements() -> void:
+	#grab_point = ColorRect.new()
+	#grab_point.name = "GrabPoint"
+	#grab_point.size = Vector2(10, 10)
+	#grab_point.color = Color(1, 0, 0, 0.5)  # Полупрозрачный красный
+	#grab_point.visible = false
+	#add_child(grab_point)
 
 # Подключаем сигналы коллизий для носика лейки и основного тела
 func _connect_signals() -> void:
@@ -240,7 +244,7 @@ func start_dragging(mouse_pos: Vector2) -> void:
 	
 	# Показываем точку захвата
 	if grab_point:
-		grab_point.position = local_grab_point - Vector2(5, 5)  # Центрируем
+		grab_point.position = main_sprite.to_local(mouse_pos)  # Центрируем
 		grab_point.visible = true
 
 func handle_mouse_release() -> void:
@@ -302,3 +306,8 @@ func handle_plant_watering(delta: float) -> void:
 			current_water -= water_amount
 			current_plant.add_water(water_amount)
 			water_level_changed.emit(current_water, max_water)
+
+
+
+func _on_water_level_changed(current_water_: float, _max_water: float) -> void:
+	water_progress.value = current_water_

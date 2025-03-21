@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3dankgimqthf"]
+[gd_scene load_steps=17 format=3 uid="uid://b3dankgimqthf"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plant.gd" id="1_yvnqm"]
-[ext_resource type="Texture2D" uid="uid://ddjwaj2paffst" path="res://scenes/mini-games/plants/plant_00.png" id="2_tys01"]
+[ext_resource type="Texture2D" uid="uid://dnagocp0pd3ma" path="res://visuals/minigames/plants/plant_00.png" id="3_k6hee"]
 [ext_resource type="Theme" uid="uid://bylwp77cy87mw" path="res://visuals/theme/main_theme.tres" id="3_m44wc"]
 [ext_resource type="Script" path="res://scenes/mini-games/plants/sprites.gd" id="3_snvlm"]
-[ext_resource type="Texture2D" uid="uid://cq3ovxnc1ptws" path="res://scenes/mini-games/plants/plant_01.png" id="4_heh2q"]
-[ext_resource type="Texture2D" uid="uid://b4g28ejh1u0vh" path="res://scenes/mini-games/plants/plant_02.png" id="5_w0mbl"]
-[ext_resource type="Texture2D" uid="uid://d3lwtqxygiu6x" path="res://scenes/mini-games/plants/plant_03.png" id="6_6a417"]
-[ext_resource type="Texture2D" uid="uid://dx3fm7fe41wnl" path="res://scenes/mini-games/plants/plant_04.png" id="7_meysn"]
-[ext_resource type="Texture2D" uid="uid://b1hfoo7r4xlw6" path="res://scenes/mini-games/plants/plant_05.png" id="8_2fcuc"]
-[ext_resource type="Texture2D" uid="uid://btr0twwxul3gp" path="res://scenes/mini-games/plants/plant_06.png" id="9_6c1x6"]
-[ext_resource type="Texture2D" uid="uid://dewwostbbldo8" path="res://scenes/mini-games/plants/plant_07.png" id="10_g82o2"]
-[ext_resource type="Texture2D" uid="uid://ly6majny48ul" path="res://scenes/mini-games/plants/plant_08.png" id="11_67lxv"]
+[ext_resource type="Texture2D" uid="uid://dl033p4qs2igd" path="res://visuals/minigames/plants/plant_01.png" id="4_37t7m"]
+[ext_resource type="Texture2D" uid="uid://cv7n0u3ur72kg" path="res://visuals/minigames/plants/plant_02.png" id="5_p6kko"]
+[ext_resource type="Texture2D" uid="uid://5k5bgwgenyco" path="res://visuals/minigames/plants/plant_03.png" id="6_udm0f"]
+[ext_resource type="Texture2D" uid="uid://b3mmmi7081q8e" path="res://visuals/minigames/plants/plant_04.png" id="7_hdxr7"]
+[ext_resource type="Texture2D" uid="uid://dotqota0s4kq2" path="res://visuals/minigames/plants/plant_05.png" id="8_b7gvp"]
+[ext_resource type="Texture2D" uid="uid://i7g4aat8bics" path="res://visuals/minigames/plants/plant_06.png" id="9_tqaxt"]
+[ext_resource type="Texture2D" uid="uid://exkxkevemeuj" path="res://visuals/minigames/plants/plant_07.png" id="10_c55g0"]
+[ext_resource type="Texture2D" uid="uid://mwauj62wckap" path="res://visuals/minigames/plants/plant_08.png" id="11_53lo4"]
+[ext_resource type="Texture2D" uid="uid://bnvyxxr5mjikt" path="res://visuals/minigames/plants/plant_09.png" id="12_mxjp0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyej8"]
 radius = 27.0
@@ -31,56 +32,63 @@ progress_bar = NodePath("Info/WaterProgressBar")
 water_label = NodePath("Info/WaterLabel")
 
 [node name="Sprites" type="Node2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("3_snvlm")
 metadata/_edit_lock_ = true
 
 [node name="sprite_00" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(-3, -48)
-texture = ExtResource("2_tys01")
+position = Vector2(0.666667, -141)
+texture = ExtResource("3_k6hee")
 
 [node name="sprite_01" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(3.5, -52)
-texture = ExtResource("4_heh2q")
+position = Vector2(-18.6667, -85.3333)
+texture = ExtResource("4_37t7m")
 
 [node name="sprite_02" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(0, -28)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_w0mbl")
+position = Vector2(-2.66667, -104)
+texture = ExtResource("5_p6kko")
 
 [node name="sprite_03" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(-2, -54.5)
+position = Vector2(-0.666667, -106.5)
 scale = Vector2(1.155, 1.155)
-texture = ExtResource("6_6a417")
+texture = ExtResource("6_udm0f")
 
 [node name="sprite_04" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(-4, -40.5)
-texture = ExtResource("7_meysn")
+position = Vector2(-1.33333, -100.5)
+texture = ExtResource("7_hdxr7")
 
 [node name="sprite_05" type="Sprite2D" parent="Sprites"]
-position = Vector2(-4.5, -52.5)
-texture = ExtResource("8_2fcuc")
+visible = false
+position = Vector2(8, -138.667)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("8_b7gvp")
 
 [node name="sprite_06" type="Sprite2D" parent="Sprites"]
 visible = false
-position = Vector2(2.5, -39)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("9_6c1x6")
+position = Vector2(-1.33333, -66.6667)
+texture = ExtResource("9_tqaxt")
 
 [node name="sprite_07" type="Sprite2D" parent="Sprites"]
-position = Vector2(0, -29.5)
-scale = Vector2(0.765, 0.765)
-texture = ExtResource("10_g82o2")
+visible = false
+position = Vector2(1.33333, -92)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("10_c55g0")
 
 [node name="sprite_08" type="Sprite2D" parent="Sprites"]
-position = Vector2(3.5, -26)
-scale = Vector2(0.64, 0.64)
-texture = ExtResource("11_67lxv")
+visible = false
+position = Vector2(-10.6667, -98.6667)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("11_53lo4")
+
+[node name="sprite_09" type="Sprite2D" parent="Sprites"]
+position = Vector2(-4, -149.333)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("12_mxjp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
@@ -101,10 +109,10 @@ metadata/_edit_lock_ = true
 [node name="Info" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -64.0
-offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 48.0
+offset_left = -72.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 64.0
 mouse_filter = 2
 
 [node name="WaterProgressBar" type="ProgressBar" parent="Info"]

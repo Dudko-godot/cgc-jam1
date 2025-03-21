@@ -1,23 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://c35iv2kfu2pfm"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/water_tap.gd" id="1_ixnqm"]
-[ext_resource type="Texture2D" uid="uid://bjl12klelbdsr" path="res://scenes/mini-games/plants/water_tap.png" id="2_ixnqm"]
+[ext_resource type="Texture2D" uid="uid://bj506nuclnd8i" path="res://visuals/minigames/plants/tap.png" id="3_l1are"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfxvs"]
-radius = 43.0
+radius = 45.1774
 
 [node name="WaterTap" type="Node2D"]
 script = ExtResource("1_ixnqm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_ixnqm")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-94, 79)
+scale = Vector2(0.6, 0.568)
+texture = ExtResource("3_l1are")
 
 [node name="WaterArea" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
-position = Vector2(-65, 71)
+position = Vector2(-173, 156)
 shape = SubResource("CircleShape2D_lfxvs")

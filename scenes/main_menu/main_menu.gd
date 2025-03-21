@@ -18,7 +18,7 @@ class_name MainMenu extends Control
 @export_subgroup('Misc')
 @export var darkener_animation_player : AnimationPlayer
 
-#signal start_game_clicked
+
 var is_start_requested : bool = false
 
 func _ready() -> void:

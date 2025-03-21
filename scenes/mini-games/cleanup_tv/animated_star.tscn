@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8qk7jm2hvn2f"]
+
+[ext_resource type="Script" path="res://scenes/mini-games/cleanup_tv/animated_star.gd" id="1_3romd"]
+[ext_resource type="Texture2D" uid="uid://5mgxv6s1nh4" path="res://visuals/minigames/television/star.png" id="1_vfewu"]
+
+[sub_resource type="Animation" id="Animation_gxmcu"]
+resource_name = "default"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Star:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.1, 0.625201, 1, -0.25, 0, 0.25, 0, 1e-05, -0.0666667, 0.487678, 0.25, 0),
+"times": PackedFloat32Array(0, 0.566667, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Star:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.1, 0.614623, 1, -0.25, 0, 0.25, 0, 1e-05, -0.0666667, 0.482389, 0.25, 0),
+"times": PackedFloat32Array(0, 0.566667, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Star:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.333333, 0.527358, 1.5708, -0.2, -0.313509, 0.1, 0.157242),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_bi2oj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Star:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Star:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Star:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kg8gw"]
+_data = {
+"RESET": SubResource("Animation_bi2oj"),
+"default": SubResource("Animation_gxmcu")
+}
+
+[node name="AnimatedStar" type="Node2D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_3romd")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Star" type="Sprite2D" parent="."]
+texture = ExtResource("1_vfewu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kg8gw")
+}
+autoplay = "RESET"
+speed_scale = 1.8

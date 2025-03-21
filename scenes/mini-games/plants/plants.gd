@@ -40,16 +40,16 @@ func _initialize_plants() -> void:
 
 # Подключает сигналы
 func _connect_signals() -> void:
-	if watering_can:
-		watering_can.water_level_changed.connect(_on_water_level_changed)
+	#if watering_can:
+		#watering_can.water_level_changed.connect(_on_water_level_changed)
 	
 	for plant in plants:
 		plant.watering_completed.connect(_on_plant_watering_completed)
 
-# Обработчик изменения уровня воды
-func _on_water_level_changed(current_water: float, max_water: float) -> void:
-	if water_level_ui:
-		water_level_ui.update_level(current_water, max_water)
+## Обработчик изменения уровня воды
+#func _on_water_level_changed(current_water: float, max_water: float) -> void:
+	#if water_level_ui:
+		#water_level_ui.update_level(current_water, max_water)
 
 # Обработчик завершения полива растения
 func _on_plant_watering_completed() -> void:

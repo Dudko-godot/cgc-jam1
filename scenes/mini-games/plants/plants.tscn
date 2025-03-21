@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bndxdbo54lffu"]
+[gd_scene load_steps=15 format=3 uid="uid://bndxdbo54lffu"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/plants/plants.gd" id="1_ixnqm"]
 [ext_resource type="PackedScene" uid="uid://b3dankgimqthf" path="res://scenes/mini-games/plants/plant.tscn" id="2_ixnqm"]
@@ -9,19 +9,28 @@
 [ext_resource type="AudioStream" uid="uid://ml4ir0b7urod" path="res://audio/sound/forplant.ogg" id="7_y82r7"]
 [ext_resource type="Script" path="res://scenes/mini-games/plants/can_holder.gd" id="8_nv1ck"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_585oo"]
-bg_color = Color(0.12549, 0.12549, 0.12549, 0.784314)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.4, 0.4, 0.4, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47uby"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Gradient" id="Gradient_ddq1b"]
+offsets = PackedFloat32Array(0.0844156, 0.290043, 0.484848, 1)
+colors = PackedColorArray(0.172549, 0.117647, 0.184314, 1, 0.182492, 0.121575, 0.190593, 0.958698, 0.204684, 0.130343, 0.204607, 0.866517, 0.3, 0.168, 0.2648, 0.470588)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v5e0e"]
+gradient = SubResource("Gradient_ddq1b")
+width = 32
+height = 32
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0.00854701)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c04ix"]
-size = Vector2(20, 614)
+size = Vector2(20, 623)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hsh8"]
-size = Vector2(20, 912)
+size = Vector2(20, 1036)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqf0i"]
 size = Vector2(112, 20)
@@ -33,61 +42,78 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -464.0
+offset_left = -520.0
 offset_top = -304.0
-offset_right = 456.0
-offset_bottom = 328.0
+offset_right = 512.0
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ixnqm")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Mask" type="Panel" parent="."]
+clip_children = 1
 layout_mode = 1
-offset_right = 912.0
-offset_bottom = 612.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_585oo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47uby")
+
+[node name="TextureRect" type="TextureRect" parent="Mask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_v5e0e")
+expand_mode = 1
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 16
 collision_mask = 16
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(0, 306)
+position = Vector2(-8, 303.5)
 shape = SubResource("RectangleShape2D_c04ix")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(912, 305)
+position = Vector2(1040, 307)
 shape = SubResource("RectangleShape2D_c04ix")
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(456, 0)
+position = Vector2(518, -7.62939e-06)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2hsh8")
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls"]
-position = Vector2(456, 612)
+position = Vector2(516, 624)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2hsh8")
 
 [node name="WaterTap" parent="." instance=ExtResource("4_ixnqm")]
-position = Vector2(840, 116)
+position = Vector2(1032, 32)
 
 [node name="PlantsContainer" type="Node2D" parent="."]
-position = Vector2(400, 524)
+position = Vector2(520, 560)
+metadata/_edit_group_ = true
 
 [node name="Plant1" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(-216, -56)
+position = Vector2(-280, -50)
 
 [node name="Plant2" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(64, -8)
+position = Vector2(0, -50)
 
 [node name="Plant3" parent="PlantsContainer" instance=ExtResource("2_ixnqm")]
-position = Vector2(320, -40)
+position = Vector2(256, -50)
 
 [node name="WateringCan" parent="." instance=ExtResource("3_ixnqm")]
-position = Vector2(472, 90)
+position = Vector2(577, 180)
 
 [node name="WaterLevelUI" parent="." instance=ExtResource("5_ixnqm")]
+visible = false
 layout_mode = 1
 offset_left = -904.0
 offset_top = 20.0
@@ -103,7 +129,7 @@ stream = ExtResource("7_y82r7")
 bus = &"Sound"
 
 [node name="CanHolder" type="StaticBody2D" parent="." node_paths=PackedStringArray("can")]
-position = Vector2(464, 140)
+position = Vector2(592, 234)
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("8_nv1ck")

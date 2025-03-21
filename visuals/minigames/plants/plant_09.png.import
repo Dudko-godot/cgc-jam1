@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4i2c4io4k3pg"
-path="res://.godot/imported/dust_01.png-3f83d615e2cb284923678bf803cbbbe9.ctex"
+uid="uid://bnvyxxr5mjikt"
+path="res://.godot/imported/plant_09.png-5ad3edf9665ec562c7eaa150571b2f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/minigames/dust/dust_01.png"
-dest_files=["res://.godot/imported/dust_01.png-3f83d615e2cb284923678bf803cbbbe9.ctex"]
+source_file="res://visuals/minigames/plants/plant_09.png"
+dest_files=["res://.godot/imported/plant_09.png-5ad3edf9665ec562c7eaa150571b2f69.ctex"]
 
 [params]
 

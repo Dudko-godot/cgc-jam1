@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b66q7t3qddls5"
-path="res://.godot/imported/mud_01.png-21b05e61084b3dad0351cd5e6d434c5a.ctex"
+uid="uid://bit0gnd06aubm"
+path="res://.godot/imported/watering_can.png-adff2388d3be66654870844faa3737e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/minigames/dust/mud_01.png"
-dest_files=["res://.godot/imported/mud_01.png-21b05e61084b3dad0351cd5e6d434c5a.ctex"]
+source_file="res://visuals/minigames/plants/watering_can.png"
+dest_files=["res://.godot/imported/watering_can.png-adff2388d3be66654870844faa3737e0.ctex"]
 
 [params]
 

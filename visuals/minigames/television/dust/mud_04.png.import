@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0kd5x18l3apn"
-path="res://.godot/imported/dust_03.png-02debe4671fa23102b38236988420e2f.ctex"
+uid="uid://f3ci50qktipv"
+path="res://.godot/imported/mud_04.png-f1ae0f26c3437b0b88949750651a8060.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visuals/minigames/dust/dust_03.png"
-dest_files=["res://.godot/imported/dust_03.png-02debe4671fa23102b38236988420e2f.ctex"]
+source_file="res://visuals/minigames/television/dust/mud_04.png"
+dest_files=["res://.godot/imported/mud_04.png-f1ae0f26c3437b0b88949750651a8060.ctex"]
 
 [params]
 

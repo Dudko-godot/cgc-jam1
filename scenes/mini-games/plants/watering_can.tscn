@@ -1,34 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvabf0yjqxjm1"]
+[gd_scene load_steps=10 format=3 uid="uid://bvabf0yjqxjm1"]
 
-[ext_resource type="Texture2D" uid="uid://bhxp60e032p0m" path="res://scenes/mini-games/plants/watering can.png" id="1_2is63"]
 [ext_resource type="Script" path="res://scenes/mini-games/plants/watering_can.gd" id="1_ixnqm"]
+[ext_resource type="Texture2D" uid="uid://cmlyhfgprloyf" path="res://visuals/minigames/plants/watering_can_mask_a.png" id="3_i7tnv"]
+[ext_resource type="Texture2D" uid="uid://bit0gnd06aubm" path="res://visuals/minigames/plants/watering_can.png" id="3_kb0kk"]
+
+[sub_resource type="Gradient" id="Gradient_y85uo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.715128)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uml0t"]
+gradient = SubResource("Gradient_y85uo")
+width = 48
+height = 48
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l20hn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxckh"]
+bg_color = Color(0, 0.203, 0.87, 0.627451)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvnqm"]
-size = Vector2(95, 71)
+size = Vector2(132, 82)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cnvsu"]
-radius = 18.1108
+radius = 23.0217
 
-[node name="WateringCan" type="RigidBody2D"]
+[node name="WateringCan" type="RigidBody2D" node_paths=PackedStringArray("grab_point", "main_sprite", "water_progress")]
 collision_layer = 16
 collision_mask = 16
 mass = 2.0
 can_sleep = false
 linear_damp = 5.0
 script = ExtResource("1_ixnqm")
+grab_point = NodePath("Sprite/GrabPointVisuals")
+main_sprite = NodePath("Sprite")
+water_progress = NodePath("Mask/ProgressBar")
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_2is63")
+[node name="Sprite" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(-7.64823, -8.00005)
+scale = Vector2(0.481481, 0.481481)
+texture = ExtResource("3_kb0kk")
+
+[node name="GrabPointVisuals" type="Sprite2D" parent="Sprite"]
+visible = false
+position = Vector2(57.3078, 24.9231)
+scale = Vector2(2.07693, 2.07693)
+texture = SubResource("GradientTexture2D_uml0t")
+
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(-7.64823, -8.00005)
+scale = Vector2(0.481481, 0.481481)
+texture = ExtResource("3_i7tnv")
+
+[node name="ProgressBar" type="ProgressBar" parent="Mask"]
+offset_left = -175.0
+offset_top = -66.0
+offset_right = 101.0
+offset_bottom = 106.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_l20hn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yxckh")
+max_value = 10.0
+step = 0.05
+value = 10.0
+fill_mode = 3
+show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 3.5)
+position = Vector2(1, 1.99995)
 shape = SubResource("RectangleShape2D_yvnqm")
 
 [node name="SpoutCollider" type="Area2D" parent="."]
+position = Vector2(19.9444, 3.99995)
 collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpoutCollider"]
-position = Vector2(-77, -19)
+position = Vector2(-103, -50)
 shape = SubResource("CircleShape2D_cnvsu")

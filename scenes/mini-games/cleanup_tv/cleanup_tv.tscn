@@ -1,22 +1,40 @@
-[gd_scene load_steps=13 format=3 uid="uid://dag1r831g2uro"]
+[gd_scene load_steps=17 format=3 uid="uid://dag1r831g2uro"]
 
 [ext_resource type="Script" path="res://scenes/mini-games/cleanup_tv/cleanuptv.gd" id="1_wkt2i"]
-[ext_resource type="Texture2D" uid="uid://bs0psawdomv8j" path="res://scenes/mini-games/cleanup_tv/tv.png" id="2_3k4yd"]
-[ext_resource type="Texture2D" uid="uid://d4i2c4io4k3pg" path="res://visuals/minigames/dust/dust_01.png" id="2_7h60l"]
-[ext_resource type="Texture2D" uid="uid://dxqo71txpik3a" path="res://visuals/minigames/dust/dust_02.png" id="3_08cyd"]
+[ext_resource type="Texture2D" uid="uid://d4i2c4io4k3pg" path="res://visuals/minigames/television/dust/dust_01.png" id="2_6oqhw"]
 [ext_resource type="AudioStream" uid="uid://cwvqodgm8oswa" path="res://audio/sound/piltelek.ogg" id="3_m17rm"]
-[ext_resource type="Texture2D" uid="uid://b0kd5x18l3apn" path="res://visuals/minigames/dust/dust_03.png" id="4_rakaq"]
-[ext_resource type="Texture2D" uid="uid://433xc0sy3ay1" path="res://visuals/minigames/dust/dust_04.png" id="5_ywl53"]
+[ext_resource type="Texture2D" uid="uid://dxqo71txpik3a" path="res://visuals/minigames/television/dust/dust_02.png" id="3_mqt7r"]
+[ext_resource type="Texture2D" uid="uid://b0kd5x18l3apn" path="res://visuals/minigames/television/dust/dust_03.png" id="4_b53i6"]
+[ext_resource type="Texture2D" uid="uid://433xc0sy3ay1" path="res://visuals/minigames/television/dust/dust_04.png" id="5_k27hh"]
+[ext_resource type="Texture2D" uid="uid://cmimp08d6juk8" path="res://visuals/minigames/television/tv_01.png" id="6_8r7r3"]
+[ext_resource type="PackedScene" uid="uid://b8qk7jm2hvn2f" path="res://scenes/mini-games/cleanup_tv/animated_star.tscn" id="7_nct6i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge42q"]
+bg_color = Color(0.6, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="Gradient" id="Gradient_dmy00"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.6843, 0.71843, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.606498, 0.635379, 0.761733, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.221755, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eyw3i"]
 gradient = SubResource("Gradient_dmy00")
 width = 128
 height = 128
+
+[sub_resource type="Gradient" id="Gradient_hajys"]
+offsets = PackedFloat32Array(0, 0.302752, 0.5, 0.669725, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.54902, 1, 1, 1, 0.313726, 1, 1, 1, 0.54902, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f0vxg"]
+gradient = SubResource("Gradient_hajys")
+width = 16
+height = 16
+fill_to = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_4nnv0"]
 length = 0.001
@@ -28,7 +46,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-61.4, -0.125, 0, 0.125, 0),
+"points": PackedFloat32Array(-660, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -39,7 +57,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(16.2, -0.125, 0, 0.125, 0),
+"points": PackedFloat32Array(16.2, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -86,10 +104,142 @@ tracks/5/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TVMask/Blink:modulate:r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TVMask/Blink:modulate:g")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TVMask/Blink:modulate:b")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TVMask/Blink:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Stars/AnimatedStar2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Stars/AnimatedStar")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Stars/AnimatedStar8")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Stars/AnimatedStar3")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Stars/AnimatedStar4")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Stars/AnimatedStar5")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/16/type = "method"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Stars/AnimatedStar7")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Stars/AnimatedStar6")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_j7dgf"]
 resource_name = "finished"
-length = 0.5
+length = 0.8
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,8 +248,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-61.4, -0.125, 0, 0.125, 0, 214.8, -0.125, 0, 0.125, 0),
-"times": PackedFloat32Array(0, 0.5)
+"points": PackedFloat32Array(-480, -0.25, 0, 0.25, 0, 1630.67, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -109,8 +259,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(16.2, -0.125, 0, 0.125, 0, 16.2, -0.125, 0, 0.125, 0),
-"times": PackedFloat32Array(0, 0.5)
+"points": PackedFloat32Array(160, -0.25, 0, 0.25, 0, 152.205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -119,7 +269,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -168,7 +318,163 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0.494118, -0.25, 0, 0.133333, 0.00530511, 1, -0.155, 0, 0.13302, -0.00110215, 0.5, -0.133333, -0.000577241, 0.25, 0),
-"times": PackedFloat32Array(0, 0.233333, 0.5)
+"times": PackedFloat32Array(0, 0.3, 0.7)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TVMask/Blink:modulate:r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667, 0.6)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TVMask/Blink:modulate:g")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667, 0.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TVMask/Blink:modulate:b")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667, 0.6)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TVMask/Blink:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.09, 0, 0.045, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667, 0.6)
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Stars/AnimatedStar2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Stars/AnimatedStar")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Stars/AnimatedStar8")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.166667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Stars/AnimatedStar3")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Stars/AnimatedStar4")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/16/type = "method"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Stars/AnimatedStar5")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Stars/AnimatedStar7")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Stars/AnimatedStar6")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yigh1"]
@@ -192,31 +498,88 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_wkt2i")
-dust_textures = Array[Texture2D]([ExtResource("2_7h60l"), ExtResource("3_08cyd"), ExtResource("4_rakaq"), ExtResource("5_ywl53")])
+dust_textures = Array[Texture2D]([ExtResource("2_6oqhw"), ExtResource("3_mqt7r"), ExtResource("4_b53i6"), ExtResource("5_k27hh")])
 animation_player = NodePath("AnimationPlayer")
 
 [node name="TV" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
-scale = Vector2(5, 5)
-texture = ExtResource("2_3k4yd")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_8r7r3")
 
-[node name="MASK" type="ColorRect" parent="TV"]
+[node name="MASK" type="Panel" parent="TV"]
 clip_children = 1
-offset_left = -68.0
-offset_top = -36.0
-offset_right = 71.0
-offset_bottom = 28.0
+offset_left = -464.0
+offset_top = -264.0
+offset_right = 465.0
+offset_bottom = 203.0
 mouse_filter = 2
-color = Color(1, 0, 1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ge42q")
 
 [node name="Sparkle" type="Sprite2D" parent="TV/MASK"]
 self_modulate = Color(0.998, 0.94, 1, 0.8)
-position = Vector2(-61.4, 16.2)
+position = Vector2(-660, 16.2)
 rotation = 0.523599
-scale = Vector2(0.658331, 1.68502)
+scale = Vector2(6.45259, 17.0314)
 texture = SubResource("GradientTexture2D_eyw3i")
 
+[node name="TVMask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(400, 300)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_8r7r3")
+
+[node name="Blink" type="TextureRect" parent="TVMask"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 0.53, 0.9295, 0.501961)
+offset_left = -523.0
+offset_top = -373.0
+offset_right = 512.0
+offset_bottom = 363.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_f0vxg")
+
 [node name="DustContainer" type="Node2D" parent="."]
+position = Vector2(16, 4)
+
+[node name="Stars" type="Node2D" parent="."]
+position = Vector2(80, 132)
+
+[node name="AnimatedStar2" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(8, 104)
+rotation = -0.253073
+scale = Vector2(0.2, 0.2)
+
+[node name="AnimatedStar" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(120, 40)
+rotation = 0.18326
+scale = Vector2(0.6, 0.6)
+
+[node name="AnimatedStar8" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(176, 296)
+rotation = 0.733038
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimatedStar3" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(240, 208)
+scale = Vector2(0.4, 0.4)
+
+[node name="AnimatedStar4" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(344, 24)
+rotation = -3.1189
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimatedStar5" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(440, 128)
+rotation = 2.65988
+scale = Vector2(0.4, 0.4)
+
+[node name="AnimatedStar7" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(632, 232)
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimatedStar6" parent="Stars" instance=ExtResource("7_nct6i")]
+position = Vector2(568, 304)
+scale = Vector2(0.2, 0.2)
 
 [node name="DustSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m17rm")
