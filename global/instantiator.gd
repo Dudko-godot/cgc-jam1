@@ -61,7 +61,7 @@ func _collect_thread() -> void:
 		# the efforts of instantiating it void.
 		current_request = null
 		
-		printc('Instantiated {name} successfully in {time} usec'.format(
+		_printc('Instantiated {name} successfully in {time} usec'.format(
 			{
 				'name' : _result.name,
 				'time' : _time_taken
@@ -94,6 +94,6 @@ func queue_up_multiple(scenes_ : Array[PackedScene]) -> Array[InstantiationReque
 
 
 # princ_c(onditional), if output is required
-func printc(string_ : String) -> void:
+func _printc(string_ : String) -> void:
 	if not is_output : return
 	print(string_)

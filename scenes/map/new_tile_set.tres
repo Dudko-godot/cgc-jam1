@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=68 format=3 uid="uid://eopr0cokwqxc"]
 
-[ext_resource type="Texture2D" uid="uid://br0d7yny8ckwh" path="res://denis_test/texturex4.png" id="1_itish"]
+[ext_resource type="Texture2D" uid="uid://br0d7yny8ckwh" path="res://visuals/tileset/texturex4.png" id="1_vqj6k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y1ydf"]
 vertices = PackedVector2Array(64, 64, -64, 64, -64, -64, 64, -64)
@@ -341,7 +341,7 @@ agent_radius = 0.0
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p6pur"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1egy"]
-texture = ExtResource("1_itish")
+texture = ExtResource("1_vqj6k")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_y1ydf")

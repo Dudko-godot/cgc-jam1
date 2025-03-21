@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqp1ukmsti0ek"
-path="res://.godot/imported/dust.png-f17d5a1592db8dd75232f60cd8e2f645.ctex"
+uid="uid://br0d7yny8ckwh"
+path="res://.godot/imported/texturex4.png-7f546c3a8ce5d33e297d379b25da2ba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://denis_test/dust.png"
-dest_files=["res://.godot/imported/dust.png-f17d5a1592db8dd75232f60cd8e2f645.ctex"]
+source_file="res://visuals/tileset/texturex4.png"
+dest_files=["res://.godot/imported/texturex4.png-7f546c3a8ce5d33e297d379b25da2ba7.ctex"]
 
 [params]
 

@@ -6,6 +6,7 @@ class_name LoadInfoFile extends LoadInfo
 @export var path : String = ''
 @export var use_resource_name : bool = true
 
+
 func get_started() -> void:
 	if use_resource_name:
 		name = _get_file_name()

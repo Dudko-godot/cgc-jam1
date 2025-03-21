@@ -84,18 +84,18 @@ signal game_completed  # Сигнал успешного завершения
 signal game_cancelled  # Сигнал отмены/неудачи
 
 func _ready():
-    # Инициализация мини-игры
-    pass
+	# Инициализация мини-игры
+	pass
 
 # Ваша логика мини-игры
 
 # Когда мини-игра успешно завершена:
 func success_handler():
-    emit_signal("game_completed")
+	emit_signal("game_completed")
 
 # Когда мини-игра отменена или проиграна:
 func fail_handler():
-    emit_signal("game_cancelled")
+	emit_signal("game_cancelled")
 ```
 
 4. Сохраните сцену в папке `scenes/mini-games/`
@@ -107,8 +107,8 @@ func fail_handler():
 
 ```gdscript
 var minigames = {
-    "test_game": "res://scenes/mini-games/test-game.tscn",
-    "my_new_game": "res://scenes/mini-games/my_new_game.tscn"  # Добавьте эту строку
+	"test_game": "res://scenes/mini-games/test-game.tscn",
+	"my_new_game": "res://scenes/mini-games/my_new_game.tscn"  # Добавьте эту строку
 }
 ```
 
