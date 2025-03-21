@@ -8,7 +8,7 @@ extends Control
 const MESSAGE : String = '[center][wave amp=50.0 freq=5.0 connected=0] {text}... [/wave][/center]'
 
 func _ready() -> void:
-	DisplayServer.window_set_title(tr('GAME_TITLE'))
+	#DisplayServer.window_set_title(tr('GAME_TITLE'))
 	label.text = MESSAGE.format(
 		{
 			'text' : tr('LOADING')

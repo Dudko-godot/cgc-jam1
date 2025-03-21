@@ -96,9 +96,11 @@ offset_bottom = 100.0
 
 [node name="NaborWasser" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pj1hg")
+bus = &"Sound"
 
 [node name="ForPlant" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_y82r7")
+bus = &"Sound"
 
 [node name="CanHolder" type="StaticBody2D" parent="." node_paths=PackedStringArray("can")]
 position = Vector2(464, 140)

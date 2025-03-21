@@ -16,6 +16,7 @@ stream = ExtResource("1_px6sl")
 volume_db = -22.0
 max_distance = 400.0
 attenuation = 0.466515
+bus = &"Sound"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

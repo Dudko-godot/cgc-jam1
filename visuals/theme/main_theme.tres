@@ -1,10 +1,8 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bylwp77cy87mw"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bylwp77cy87mw"]
 
 [ext_resource type="Texture2D" uid="uid://ck2jgg25e8ux5" path="res://visuals/ui/checkbox/checkbox_checked.png" id="1_h0ifh"]
 [ext_resource type="FontFile" uid="uid://d32pmqchv2b5d" path="res://visuals/fonts/shantell_sans/shantell_sans_semi_bold.ttf" id="1_ke7k3"]
 [ext_resource type="Texture2D" uid="uid://beeli3pyxacs2" path="res://visuals/ui/checkbox/checkbox_unchecked.png" id="2_bumt0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0p7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mb1m"]
 bg_color = Color(0.97, 0.2522, 0.39576, 1)
@@ -80,7 +78,7 @@ expand_margin_bottom = 2.0
 default_font = ExtResource("1_ke7k3")
 CheckBox/icons/checked = ExtResource("1_h0ifh")
 CheckBox/icons/unchecked = ExtResource("2_bumt0")
-HSlider/styles/grabber_area = SubResource("StyleBoxFlat_u0p7w")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6mb1m")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_6mb1m")
 HSlider/styles/slider = SubResource("StyleBoxFlat_lldrv")
 Label/colors/font_shadow_color = Color(0.172549, 0.117647, 0.184314, 1)

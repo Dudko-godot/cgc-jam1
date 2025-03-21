@@ -221,6 +221,7 @@ texture = SubResource("GradientTexture2D_eyw3i")
 [node name="DustSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m17rm")
 volume_db = -10.0
+bus = &"Sound"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

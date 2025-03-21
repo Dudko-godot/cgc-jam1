@@ -588,7 +588,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Interface/TopContainer/MarginContainer/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1280, 316)
 render_target_update_mode = 4
 
 [node name="Title3d" parent="Interface/TopContainer/MarginContainer/SubViewportContainer/SubViewport" instance=ExtResource("65_hjx17")]
@@ -729,6 +729,7 @@ autoplay = "appear"
 stream = ExtResource("69_c6ccp")
 volume_db = -12.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Interface/SideButtons/Left/ButtonExit" to="." method="_on_button_main_menu_pressed"]
 [connection signal="pressed" from="Interface/SideButtons/Top/ButtonTryAgain" to="." method="_on_button_again_pressed"]
