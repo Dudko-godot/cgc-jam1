@@ -174,7 +174,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_k7q6w")
 script = ExtResource("2_2dmub")
-game_title = "Возвращение отца"
 label = NodePath("RichTextLabel")
 animation_player = NodePath("AnimationPlayer")
 

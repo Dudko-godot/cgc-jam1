@@ -13,7 +13,7 @@ var queue : Array[LoadRequest] = []
 var current_load_request : LoadRequest = null
 
 var current_request_start_time : int = 0
-var is_output : bool = true
+var is_output : bool = false
 
 
 func _start_loading(request_ : LoadRequest) -> void:
