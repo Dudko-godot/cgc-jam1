@@ -1,7 +1,13 @@
 extends Node
 
+
+const PATH_MAIN_GAME : String = 'res://scenes/levels/game.tscn'
+const PATH_MAIN_MENU : String = 'res://scenes/main_menu/main_menu.tscn'
+const PATH_DEFEAT_SCREEN : String = 'res://scenes/defeat_screen/defeat_screen.tscn'
+const PATH_VICTORY_SCREEN : String = 'res://scenes/victory_screen/victory_screen.tscn'
+
 ## Scenes to load
-@export var paths : Array[LoadInfo]
+#var requests : Array[LoadRequest]
 
 const FLAG_NAME : String = 'SceneManager'
 
@@ -25,13 +31,22 @@ enum SCENE {
 
 
 func _ready() -> void:
-	Loader.queue_up_multiple(paths)
+	Loader.queue_up_multiple(
+		[
+				LoadRequestFile.new(PATH_MAIN_MENU),
+				LoadRequestFile.new(PATH_MAIN_GAME),
+				LoadRequestFile.new(PATH_VICTORY_SCREEN),
+				LoadRequestFile.new(PATH_DEFEAT_SCREEN),
+				LoadRequest.new(FLAG_NAME)
+			]
+		)
 	
-	Loader.loading_finished_payload.connect(_on_loaded)
+	Loader.loading_finished.connect(_on_loaded)
 	Loader.reached_flag.connect(_on_flag_reached)
 	
 	full_loading_complete.emit()
-	
+
+
 	
 func _on_flag_reached(name_ : String) -> void:
 	if not name_ == FLAG_NAME : return
@@ -41,13 +56,12 @@ func _on_flag_reached(name_ : String) -> void:
 	full_loading_complete.emit()
 
 
-func _on_loaded(resource_ : Resource, name_ : String) -> void:
-	if name_.is_empty():
-		print(name_)
+func _on_loaded(request_ : LoadRequestFile) -> void:
+	if request_.name.is_empty():
 		return
 		
-	scenes[name_] = resource_
-	instances[name_] = []
+	scenes[request_.name] = request_.result
+	instances[request_.name] = []
 
 
 func _prepare_victory_screen() -> void:
@@ -59,13 +73,13 @@ func _get_name_from_enum(scene_enum_ : SCENE) -> String:
 	
 	match scene_enum_:
 		SCENE.MAIN_MENU:
-			_name = 'main_menu'
+			_name = PATH_MAIN_MENU.get_file()
 		SCENE.MAIN_GAME:
-			_name = 'game'
+			_name = PATH_MAIN_GAME.get_file()
 		SCENE.DEFEAT_SCREEN:
-			_name = 'defeat_screen'
+			_name = PATH_DEFEAT_SCREEN.get_file()
 		SCENE.VICTORY_SCREEN:
-			_name = 'victory_screen'
+			_name = PATH_VICTORY_SCREEN.get_file()
 			
 	return _name
 
@@ -86,7 +100,7 @@ func _get_scene_from_enum(scene_enum_ : SCENE) -> PackedScene:
 
 
 func _on_instantiation_request_fulfilled(request_ : InstantiationRequest) -> void:
-	instances[request_.scene.resource_path.get_file().get_slice('.', 0)].append(request_)
+	instances[request_.scene.resource_path.get_file()].append(request_)
 
 
 
@@ -176,4 +190,3 @@ func to_main_game(ruleset_ : GameRuleset) -> void:
 	var _main_game : MainGame = _request.node as MainGame
 	_main_game.ruleset = ruleset_
 	_change_scene_to_instantiated(_request.node)
-	
